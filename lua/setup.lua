@@ -1,6 +1,7 @@
 local o = vim.o
 local wo = vim.wo
 local bo = vim.bo
+local set = vim.opt
 
 -- global options
 o.swapfile = true
@@ -19,3 +20,7 @@ wo.wrap = false
 
 -- buffer-local options
 bo.expandtab = true
+
+
+-- sets
+set.clipboard='unnamedplus'

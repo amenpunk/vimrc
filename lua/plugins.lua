@@ -50,7 +50,7 @@ display = {
 }
   },
   luarocks = {
-          python_cmd = 'python' -- Set the python command to use for running hererocks
+          python_cmd = 'python3' -- Set the python command to use for running hererocks
   },
   log = { level = 'warn' }, -- The default print log level. One of: "trace", "debug", "info", "warn", "error", "fatal".
   profile = {
@@ -64,4 +64,7 @@ local use = packer.use
 packer.reset()
 packer.startup( function()
         use 'wbthomason/packer.nvim'
+	use 'liuchengxu/eleline.vim'
+	use {'ms-jpq/chadtree', branch='chad', config='python3 -m chadtree deps'}
+
 end)
