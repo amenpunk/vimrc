@@ -65,6 +65,12 @@ packer.reset()
 packer.startup( function()
         use 'wbthomason/packer.nvim'
 	use 'liuchengxu/eleline.vim'
+        use 'mhinz/vim-startify'
+        use 'tpope/vim-fugitive'
+        use 'jiangmiao/auto-pairs'
+        use 'alvan/vim-closetag'
+        use 'tpope/vim-surround'
+        use 'ryanoasis/vim-webdevicons'
+        use 'easymotion/vim-easymotion'
 	use {'ms-jpq/chadtree', branch='chad', config='python3 -m chadtree deps'}
-
 end)
