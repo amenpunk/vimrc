@@ -64,13 +64,26 @@ local use = packer.use
 packer.reset()
 packer.startup( function()
         use 'wbthomason/packer.nvim'
-	use 'liuchengxu/eleline.vim'
         use 'mhinz/vim-startify'
         use 'tpope/vim-fugitive'
         use 'jiangmiao/auto-pairs'
         use 'alvan/vim-closetag'
         use 'tpope/vim-surround'
         use 'ryanoasis/vim-webdevicons'
+        use 'kyazdani42/nvim-web-devicons'
         use 'easymotion/vim-easymotion'
-	use {'ms-jpq/chadtree', branch='chad', config='python3 -m chadtree deps'}
+        use 'dart-lang/dart-vim-plugin'
+        use 'thosakwe/vim-flutter'
+        use 'tveskag/nvim-blame-line'
+        use 'mxw/vim-jsx'
+        use 'maxmellon/vim-jsx-pretty'
+        use "savq/melange"
+        use 'tpope/vim-commentary'
+        use 'tamton-aquib/staline.nvim'
+        use {'kaicataldo/material.vim', branch='main' }
+        use {'neoclide/coc.nvim', branch='release'}
+        use { 'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
+        use {'ms-jpq/chadtree', branch='chad', config='python3 -m chadtree deps'}
+        -- use 'liuchengxu/eleline.vim' -- current status line
+        -- use 'tiagofumo/dart-vim-flutter-layout.git'
 end)

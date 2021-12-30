@@ -9,6 +9,7 @@ vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 
 options = { noremap = true }
 map('n', '<leader>q', ':q! <cr>', options)
+map('n', '<leader>a', '<Plug>(easymotion-bd-w)', { silent = true })
 map('n', '<leader>w', ':w! <cr>', options)
 map('n', '<leader>n', ':bnext<cr>', options)
 map('n', '<leader>p', ':bprev<cr>', options)
@@ -24,3 +25,7 @@ map('n','<C-J>', '<C-W>j', options)
 map('n','<C-K>', '<C-W>k', options)
 map('n','<C-L>', '<C-W>l', options)
 map('n','<C-H>', '<C-W>h', options)
+
+map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
+map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
+
