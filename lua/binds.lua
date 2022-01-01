@@ -34,3 +34,17 @@ map('n','<C-H>', '<C-W>h', options)
 
 map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
+
+map('n','<A-1>', '<Cmd>BufferLineGoToBuffer 1 <CR>', { silent=true, noremap=true })
+map('n','<A-2>', '<Cmd>BufferLineGoToBuffer 2 <CR>', { silent=true, noremap=true })
+map('n','<A-3>', '<Cmd>BufferLineGoToBuffer 3 <CR>', { silent=true, noremap=true })
+map('n','<A-4>', '<Cmd>BufferLineGoToBuffer 4 <CR>', { silent=true, noremap=true })
+map('n','<A-5>', '<Cmd>BufferLineGoToBuffer 5 <CR>', { silent=true, noremap=true })
+map('n','<A-6>', '<Cmd>BufferLineGoToBuffer 6 <CR>', { silent=true, noremap=true })
+map('n','<A-7>', '<Cmd>BufferLineGoToBuffer 7 <CR>', { silent=true, noremap=true })
+map('n','<A-8>', '<Cmd>BufferLineGoToBuffer 8 <CR>', { silent=true, noremap=true })
+map('n','<A-9>', '<Cmd>BufferLineGoToBuffer 9 <CR>', { silent=true, noremap=true })
+map('n','<A-0>', '<Cmd>BufferLinePickClose <CR>', { silent=true, noremap=true })
+
+map('n','<A-<>', ':BufferLineMovePrev <CR>', { silent=true, noremap=true })
+map('n','<A->>', ':BufferLineMoveNext <CR>', { silent=true, noremap=true })
