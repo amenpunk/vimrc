@@ -64,6 +64,8 @@ local use = packer.use
 packer.reset()
 packer.startup( function()
     use 'wbthomason/packer.nvim'
+    use "tpope/vim-dadbod"
+    use "kristijanhusak/vim-dadbod-ui"
     use "lukas-reineke/indent-blankline.nvim"
     use 'lukas-reineke/onedark.nvim'
     use 'mhinz/vim-startify'

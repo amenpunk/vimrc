@@ -9,10 +9,16 @@ vim.g.mapleader = ' '  -- 'vim.g' sets global variables
 
 options = { noremap = true }
 map('n', '<leader>q', ':q!<CR>', options)
-map('', '<C-p>', ':GitFiles<CR>', options)
+-- map('', '<C-p>', ':GitFiles<CR>', options)
+map('', '<C-p>', ':Files<CR>', options)
 map('n', '<leader>gn', ':GitGutterNextHunk<CR>', options)
 
 map('', '<leader>a', '<Plug>(easymotion-bd-w)', { silent = true })
+map('', '<leader>l', ':Lines<CR>', { silent = true })
+map('', '<leader>m', ':Marks<CR>', { silent = true })
+map('', '<leader>b', ':DBUI<CR>', { silent = true })
+map('', '<leader>f', ':Rg<CR>', { silent = true })
+
 map('n', '<S-h>', ':bprevious<CR>', { silent = true, noremap=true })
 map('n', '<S-l>', ':bnext<CR>', { silent = true, noremap=true })
 
