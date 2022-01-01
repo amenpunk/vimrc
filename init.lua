@@ -10,4 +10,5 @@ require('binds')
 require('plugins')
 require('setup')
 require('gitsigns').setup { }
+require('Comment').setup()
 

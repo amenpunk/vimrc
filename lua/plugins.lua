@@ -14,22 +14,24 @@ packer.init{
     git = {
         cmd = 'git', -- The base command for git operations
         subcommands = { -- Format strings for git subcommands
-        update         = 'pull --ff-only --progress --rebase=false',
-        install        = 'clone --depth %i --no-single-branch --progress',
-        fetch          = 'fetch --depth 999999 --progress',
-        checkout       = 'checkout %s --',
-        update_branch  = 'merge --ff-only @{u}',
-        current_branch = 'branch --show-current',
-        diff           = 'log --color=never --pretty=format:FMT --no-show-signature HEAD@{1}...HEAD',
-        diff_fmt       = '%%h %%s (%%cr)',
-        get_rev        = 'rev-parse --short HEAD',
-        get_msg        = 'log --color=never --pretty=format:FMT --no-show-signature HEAD -n 1',
-        submodules     = 'submodule update --init --recursive --progress'
-    },
+            update         = 'pull --ff-only --progress --rebase=false',
+            install        = 'clone --depth %i --no-single-branch --progress',
+            fetch          = 'fetch --depth 999999 --progress',
+            checkout       = 'checkout %s --',
+            update_branch  = 'merge --ff-only @{u}',
+            current_branch = 'branch --show-current',
+            diff           = 'log --color=never --pretty=format:FMT --no-show-signature HEAD@{1}...HEAD',
+            diff_fmt       = '%%h %%s (%%cr)',
+            get_rev        = 'rev-parse --short HEAD',
+            get_msg        = 'log --color=never --pretty=format:FMT --no-show-signature HEAD -n 1',
+            submodules     = 'submodule update --init --recursive --progress'
+        },
     depth = 1, -- Git clone depth
     clone_timeout = 60, -- Timeout, in seconds, for git clones
     default_url_format = 'https://github.com/%s' -- Lua format string used for "aaa/bbb" style plugins
 },
+
+
 display = {
     non_interactive = false, -- If true, disable display windows for all operations
     open_fn  = nil, -- An optional function to open a window for packer's display
@@ -83,7 +85,7 @@ packer.startup( function()
     use 'maxmellon/vim-jsx-pretty'
     use "savq/melange"
     use "junegunn/fzf.vim"
-    use 'tpope/vim-commentary'
+    use 'numToStr/Comment.nvim'
     use 'tamton-aquib/staline.nvim'
     use {'kaicataldo/material.vim', branch='main' }
     use {'neoclide/coc.nvim', branch='release'}
