@@ -49,8 +49,6 @@ local chadtree_settings = {
 g("chadtree_settings", chadtree_settings)
 -- g("material_theme_style", 'darker')
 vim.g.material_theme_style='darker'
-
-
 -- Set barbar's options
 vim.g.bufferline = {
     -- Enable/disable animations

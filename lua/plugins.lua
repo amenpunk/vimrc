@@ -87,6 +87,8 @@ packer.startup( function()
     use {'neoclide/coc.nvim', branch='release'}
     use {'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
     use {'ms-jpq/chadtree', branch='chad', config='python3 -m chadtree deps'}
+    use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }, tag = 'release' }
+    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     -- use { 'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'} }
     -- use 'liuchengxu/eleline.vim' -- current status line
     -- use 'tiagofumo/dart-vim-flutter-layout.git'
