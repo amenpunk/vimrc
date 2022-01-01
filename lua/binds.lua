@@ -12,6 +12,7 @@ map('n', '<leader>q', ':q!<CR>', options)
 -- map('', '<C-p>', ':GitFiles<CR>', options)
 map('', '<C-p>', ':Files<CR>', options)
 map('n', '<leader>gn', ':GitGutterNextHunk<CR>', options)
+map('n', '<leader>gs', ':Gitsigns toggle_signs<CR>', options)
 
 map('', '<leader>a', '<Plug>(easymotion-bd-w)', { silent = true })
 map('', '<leader>l', ':Lines<CR>', { silent = true })
@@ -54,3 +55,10 @@ map('n','<A-0>', '<Cmd>BufferLinePickClose <CR>', { silent=true, noremap=true })
 
 map('n','<A-<>', ':BufferLineMovePrev <CR>', { silent=true, noremap=true })
 map('n','<A->>', ':BufferLineMoveNext <CR>', { silent=true, noremap=true })
+
+-- coc config
+map('n', '<leader>s', ':CocList -I symbols<CR>', { noremap = true, nowait=true })
+map('n', '<leader>o', ':CocList outline<CR>', { noremap = true, nowait=true })
+map('', 'gd', '<Plug>(coc-definition)', {silent=true})
+map('n', '<c-space>', ':CocAction<CR>', { silent=true })
+

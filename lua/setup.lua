@@ -33,7 +33,8 @@ set.wildignore='*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,node
 set.showcmd=false
 set.cmdheight=1
 set.updatetime=200
-set.signcolumn="number"
+set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
+-- set.signcolumn='auto'
 set.termguicolors=true
 
 -- set.laststatus=0
