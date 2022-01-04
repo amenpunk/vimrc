@@ -87,6 +87,8 @@ packer.startup( function()
     use "junegunn/fzf.vim"
     use 'numToStr/Comment.nvim'
     use 'tamton-aquib/staline.nvim'
+    use {'smolck/nvim-todoist.lua', requires= {'nvim-lua/plenary.nvim' } }
+    use 'rcarriga/nvim-notify'
     use {'kaicataldo/material.vim', branch='main' }
     use {'neoclide/coc.nvim', branch='release'}
     use {'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }

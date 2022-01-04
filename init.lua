@@ -11,4 +11,6 @@ require('plugins')
 require('setup')
 require('gitsigns').setup { }
 require('Comment').setup()
+require'nvim-todoist'.neovim_stuff.use_defaults()
+
 

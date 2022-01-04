@@ -68,3 +68,32 @@ require('gitsigns').setup {
         col = 1
     },
 }
+
+require("notify").setup({
+    stages = "fade_in_slide_out",
+    on_open = nil,
+    on_close = nil,
+    render = "default",
+    timeout = 5000,
+    background_colour = "Normal",
+    minimum_width = 50,
+    icons = {
+        ERROR = "",
+        WARN = "",
+        INFO = "",
+        DEBUG = "",
+        TRACE = "✎",
+    },
+})
+
+g('flutter_hot_reload_on_save', 1)
+g('flutter_autoscroll', 1)
+g('flutter_use_last_run_option', 1)
+
+g('todoist', {
+    defaultProject = 'GrupoDIT',
+    useMarkdownSyntax = true
+})
+
+
+require('database')
