@@ -39,6 +39,8 @@ map('n','<C-K>', '<C-W>k', options)
 map('n','<C-L>', '<C-W>l', options)
 map('n','<C-H>', '<C-W>h', options)
 
+map('n','<leader>dm', ':delmarks A-Z0-9 <CR>', options)
+
 map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
 map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
 
@@ -62,3 +64,5 @@ map('n', '<leader>o', ':CocList outline<CR>', { noremap = true, nowait=true })
 map('', 'gd', '<Plug>(coc-definition)', {silent=true})
 map('n', '<c-space>', ':CocAction<CR>', { silent=true })
 
+map('v', 'J', ":m '>+1<CR>gv=gv", { noremap=true })
+map('v', 'K', ":m '<-2<CR>gv=gv", { noremap=true })

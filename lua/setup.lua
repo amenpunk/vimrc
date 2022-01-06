@@ -127,20 +127,34 @@ require("toggleterm").setup{
 
 g('toggleterm_terminal_mapping', '<C-t>')
 
+require'marks'.setup {
+    default_mappings = true,
+    builtin_marks = { ".", "<", ">", "^" },
+    cyclic = true,
+    force_write_shada = false,
+    refresh_interval = 250,
+    sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
+    excluded_filetypes = {},
+    bookmark_0 = {
+        sign = "⚑",
+        virt_text = "hello world"
+    },
+    mappings = {}
+}
 
-function _G.set_terminal_keymaps()
-  local opts = {noremap = true}
-  vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
-  vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
-end
+
+
+-- function _G.set_terminal_keymaps()
+--   local opts = {noremap = true}
+--   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
+--   vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
+--   vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
+--   vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
+--   vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
+--   vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
+-- end
 
 -- if you only want these mappings for toggle term use term://*toggleterm#* instead
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-
-
+-- vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
 
 require('database')
