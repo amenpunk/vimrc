@@ -80,8 +80,11 @@ packer.startup( function()
     use 'easymotion/vim-easymotion'
     use 'dart-lang/dart-vim-plugin'
     use 'thosakwe/vim-flutter'
+    use 'tiagofumo/dart-vim-flutter-layout.git'
     use 'tveskag/nvim-blame-line'
     use 'mxw/vim-jsx'
+    use 'yuezk/vim-js'
+    use 'HerringtonDarkholme/yats.vim'
     use 'maxmellon/vim-jsx-pretty'
     use "savq/melange"
     use "junegunn/fzf.vim"
@@ -100,5 +103,4 @@ packer.startup( function()
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     -- use { 'romgrk/barbar.nvim', requires = {'kyazdani42/nvim-web-devicons'} }
     -- use 'liuchengxu/eleline.vim' -- current status line
-    -- use 'tiagofumo/dart-vim-flutter-layout.git'
 end)

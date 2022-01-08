@@ -3,6 +3,8 @@ vim.cmd("colorscheme material")
 vim.g.material_theme_style='darker'
 vim.opt.list = true
 
+-- vim.o.updatetime = 300
+-- vim.wo.signcolumn = 'yes'
 -- vim.cmd[[colorscheme tokyonight]]
 
 require("indent_blankline").setup { }

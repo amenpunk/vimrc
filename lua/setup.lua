@@ -12,20 +12,19 @@ set.splitbelow=true
 set.showmatch=true
 set.modifiable=true
 set.encoding='UTF-8'
-set.wrap = true
+set.wrap = false --  hide and not generate new line
 set.background='dark'
 set.relativenumber=true
 set.ts=4
 set.autoindent=true
 set.expandtab=true
 set.shiftwidth=4
-set.ignorecase=true
+set.ignorecase=false
 set.winwidth=110
 set.number=true
 set.backup=false
 set.writebackup=false
 set.swapfile=false
-set.shiftwidth=4
 -- set.guifont='Fira Code 12'
 set.wildignore='*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,node_modules'
 -- set.showmode=false
@@ -50,9 +49,6 @@ vim.g.material_theme_style='darker'
 
 g("db_ui_winwidth", 27)
 
-g("dbs", {
-})
-
 require('gitsigns').setup {
     current_line_blame_opts = {
         virt_text = true,
@@ -69,30 +65,12 @@ require('gitsigns').setup {
     },
 }
 
-require("notify").setup({
-    stages = "fade_in_slide_out",
-    on_open = nil,
-    on_close = nil,
-    render = "default",
-    timeout = 5000,
-    background_colour = "Normal",
-    minimum_width = 50,
-    icons = {
-        ERROR = "",
-        WARN = "",
-        INFO = "",
-        DEBUG = "",
-        TRACE = "✎",
-    },
-})
-
 g('flutter_hot_reload_on_save', 1)
 g('flutter_autoscroll', 1)
 g('flutter_use_last_run_option', 1)
 
-g('todoist', {
-    defaultProject = 'GrupoDIT',
-    useMarkdownSyntax = true
+g("startify_bookmarks", {
+    { ["v"] = '~/.config/nvim/init.lua' }
 })
 
 require("toggleterm").setup{
@@ -107,16 +85,8 @@ require("toggleterm").setup{
     persist_size = true,
     direction = 'float', --| 'horizontal' | 'window' | 'float',
     close_on_exit = true, -- close the terminal window when the process exits
-    -- shell = vim.o.shell, -- change the default shell
-    -- This field is only relevant if direction is set to 'float'
     float_opts = {
-        -- The border key is *almost* the same as 'nvim_open_win'
-        -- see :h nvim_open_win for details on borders however
-        -- the 'curved' border is a custom border type
-        -- not natively supported but implemented in this plugin.
         border = 'single',--// | 'double' | 'shadow' | 'curved' | ... other options supported by win open
-        --width = 0,--<value>,
-        --height = 20,--<value>,
         winblend = 3,
         highlights = {
             border = "Normal",
@@ -126,6 +96,8 @@ require("toggleterm").setup{
 }
 
 g('toggleterm_terminal_mapping', '<C-t>')
+g('closetag_filenames', '.html,*.xhtml,*.phtml,*.jx')
+g('closetag_shortcut', '>')
 
 require'marks'.setup {
     default_mappings = true,
@@ -142,19 +114,18 @@ require'marks'.setup {
     mappings = {}
 }
 
-
-
--- function _G.set_terminal_keymaps()
---   local opts = {noremap = true}
---   vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
---   vim.api.nvim_buf_set_keymap(0, 't', 'jk', [[<C-\><C-n>]], opts)
---   vim.api.nvim_buf_set_keymap(0, 't', '<C-h>', [[<C-\><C-n><C-W>h]], opts)
---   vim.api.nvim_buf_set_keymap(0, 't', '<C-j>', [[<C-\><C-n><C-W>j]], opts)
---   vim.api.nvim_buf_set_keymap(0, 't', '<C-k>', [[<C-\><C-n><C-W>k]], opts)
---   vim.api.nvim_buf_set_keymap(0, 't', '<C-l>', [[<C-\><C-n><C-W>l]], opts)
--- end
-
--- if you only want these mappings for toggle term use term://*toggleterm#* instead
--- vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+-- g('header_ascii', {
+--    '⣿⣿⠏⣠⣾⣦⡐⢌⢿⣷⣦⣅⡑⠕⠡⠐⢿⠿⣛⠟⠛⠛⠛⠛⠡⢷⡈⢂⢕⢂ ',
+--    '⠟⣡⣾⣿⣿⣿⣿⣦⣑⠝⢿⣿⣿⣿⣿⣿⡵⢁⣤⣶⣶⣿⢿⢿⢿⡟⢻⣤⢑⢂ ',
+--    '⣾⣿⣿⡿⢟⣛⣻⣿⣿⣿⣦⣬⣙⣻⣿⣿⣷⣿⣿⢟⢝⢕⢕⢕⢕⢽⣿⣿⣷⣔ ',
+--    '⣿⣿⠵⠚⠉⢀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣗⢕⢕⢕⢕⢕⢕⣽⣿⣿⣿⣿ ',
+--    '⢷⣂⣠⣴⣾⡿⡿⡻⡻⣿⣿⣴⣿⣿⣿⣿⣿⣿⣷⣵⣵⣵⣷⣿⣿⣿⣿⣿⣿⡿ ',
+--    '⢌⠻⣿⡿⡫⡪⡪⡪⡪⣺⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃ ',
+--    '⠣⡁⠹⡪⡪⡪⡪⣪⣾⣿⣿⣿⣿⠋⠐⢉⢍⢄⢌⠻⣿⣿⣿⣿⣿⣿⣿⣿⠏⠈ ',
+--    '⡣⡘⢄⠙⣾⣾⣾⣿⣿⣿⣿⣿⣿⡀⢐⢕⢕⢕⢕⢕⡘⣿⣿⣿⣿⣿⣿⠏⠠⠈ ',
+--    '⠌⢊⢂⢣⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢐⢕⢕⢕⢕⢕⢅⣿⣿⣿⣿⡿⢋⢜⠠⠈ ',
+--    '⠄⠁⠕⢝⡢⠈⠻⣿⣿⣿⣿⣿⣿⣿⣷⣕⣑⣑⣑⣵⣿⣿⣿⡿⢋⢔⢕⣿⠠⠈ ',
+-- })
+-- g("startify_custom_header", 'g:header_ascii')
 
 require('database')
