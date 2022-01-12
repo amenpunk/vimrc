@@ -99,9 +99,12 @@ g('toggleterm_terminal_mapping', '<C-t>')
 g('closetag_filenames', '.html,*.xhtml,*.phtml,*.jx')
 g('closetag_shortcut', '>')
 
+g('indent_blankline_filetype_exclude', {'scratch', 'chadtree'})
+g('indent_blankline_buftype_exclude', {'scratch', 'chadtree'})
+
 require'marks'.setup {
     default_mappings = true,
-    builtin_marks = { ".", "<", ">", "^" },
+    builtin_marks = {},
     cyclic = true,
     force_write_shada = false,
     refresh_interval = 250,
