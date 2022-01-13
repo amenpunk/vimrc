@@ -101,6 +101,7 @@ g('closetag_shortcut', '>')
 
 g('indent_blankline_filetype_exclude', {'scratch', 'chadtree'})
 g('indent_blankline_buftype_exclude', {'scratch', 'chadtree'})
+g('coc_snippet_next', '<tab>')
 
 require'marks'.setup {
     default_mappings = true,
