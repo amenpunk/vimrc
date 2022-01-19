@@ -63,9 +63,11 @@ display = {
 
 
 local use = packer.use
-packer.reset()
+-- packer.reset()
 packer.startup( function()
-    -- use 'tiagofumo/dart-vim-flutter-layout.git'
+    use 'captbaritone/better-indent-support-for-php-with-html'
+    use 'phanviet/vim-monokai-pro'
+    use 'tiagofumo/dart-vim-flutter-layout.git'
     use 'wbthomason/packer.nvim'
     use "tpope/vim-dadbod"
     use "kristijanhusak/vim-dadbod-ui"
@@ -86,16 +88,19 @@ packer.startup( function()
     use 'maxmellon/vim-jsx-pretty'
     use "junegunn/fzf.vim"
     use 'numToStr/Comment.nvim'
-    use 'tamton-aquib/staline.nvim'
     use "pangloss/vim-javascript"
     use 'chentau/marks.nvim'
     use {"akinsho/toggleterm.nvim"}
     use 'rcarriga/nvim-notify'
     use 'famiu/bufdelete.nvim'
+    use 'gregsexton/matchtag'
     use {'kaicataldo/material.vim', branch='main' }
     use {'neoclide/coc.nvim', branch='release'}
-    use {'alvarosevilla95/luatab.nvim', requires='kyazdani42/nvim-web-devicons' }
-    use {'ms-jpq/chadtree', branch='chad', config='python3 -m chadtree deps'}
+    use {'ms-jpq/chadtree', branch='chad'}
     use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }, tag = 'release' }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
+    --- colorscheme
+    use 'bluz71/vim-moonfly-colors'
+
 end)
