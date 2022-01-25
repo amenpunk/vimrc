@@ -1,5 +1,5 @@
-require('opts')
 require('setup')
 require('binds')
 require('stl')
 require('plugins')
+require('opts')

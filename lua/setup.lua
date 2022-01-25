@@ -6,6 +6,7 @@ set.clipboard='unnamedplus'
 set.hidden=true
 set.updatetime=300
 set.shortmess='c'
+set.ruler = false
 -- set.cmdheight=2
 -- set.ma=true
 set.splitbelow=true
@@ -23,6 +24,7 @@ set.cindent=true
 
 set.expandtab=true
 set.softtabstop=2
+set.tabstop=8
 set.shiftwidth=4
 set.ignorecase=true
 set.winwidth=110
@@ -114,6 +116,11 @@ g('closetag_shortcut', '>')
 g('indent_blankline_filetype_exclude', {'scratch', 'chadtree'})
 g('indent_blankline_buftype_exclude', {'scratch', 'chadtree'})
 g('coc_snippet_next', '<tab>')
+g('db_ui_auto_execute_table_helpers', 1)
+g('db_ui_use_nerd_fonts' , 1)
+g('indent_blankline_buftype_exclude' , {'dbui'})
+g('indent_blankline_bufname_exclude' , {'dbui'})
+-- g('db_ui_default_query' , 'select * from "{table}" limit 10')
 
 -- PHP CONFIG
 
@@ -147,3 +154,89 @@ require'marks'.setup {
 -- g("startify_custom_header", 'g:header_ascii')
 
 require('database')
+
+
+
+---- lsp config
+  
+local lspkind = require "lspkind"
+lspkind.init()
+
+local luasnip = require("luasnip")
+local cmp = require "cmp"
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
+
+cmp.setup {
+    mapping = {
+        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-e>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.close()
+            elseif luasnip.expand_or_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        ["<C-n>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.choice_active() then
+                luasnip.change_choice(1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        ["<C-y>"] = cmp.mapping.confirm {
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+        },
+        ["<c-space>"] = cmp.mapping.complete(),
+    },
+    sources = {
+        { name = "nvim_lua" },
+        { name = "nvim_lsp" },
+        { name = "path" },
+        { name = "luasnip" },
+        {
+            name = "buffer",
+            keyword_length = 5,
+            option = {
+                get_bufnrs = function()
+                    local bufs = {}
+                    for _, win in ipairs(vim.api.nvim_list_wins()) do
+                        bufs[vim.api.nvim_win_get_buf(win)] = true
+                    end
+                    return vim.tbl_keys(bufs)
+                end
+            }
+        },
+    },
+
+    snippet = {
+        expand = function(args)
+            require("luasnip").lsp_expand(args.body)
+        end,
+    },
+
+    formatting = {
+        format = lspkind.cmp_format {
+            with_text = true,
+            menu = {
+                buffer = "[buf]",
+                nvim_lsp = "[LSP]",
+                nvim_lua = "[api]",
+                path = "[path]",
+                luasnip = "[snip]",
+            }
+        }
+    },
+
+    experimental = {
+        native_menu = false,
+
+        ghost_text = true,
+    }
+}

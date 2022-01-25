@@ -4,13 +4,29 @@ local map = vim.api.nvim_set_keymap
 
 -- map the leader key
 map('n', '<Space>', '', {})
+map('n', '<leader>r', ':source $MYVIMR<CR>', {silent=true, noremap=true}) -- reload config
+-- nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 vim.g.mapleader = ' '  -- 'vim.g' sets global variables
+
+
+
 
 
 options = { noremap = true }
 map('n', '<leader>q', ':q!<CR>', options)
+map('n', '<leader>v', 'gv<CR>', options)
+
+
+--- lsp config
+map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', options)
+map('n', 'gi', ':lua vim.lsp.buf.references()<CR>', options)
+map('n', '<C-space>', ':lua vim.lsp.buf.hover()<cr>', options)
+map('n', '<C-,>', ':lua vim.lsp.buf.hover()<cr>', options)
+--- lsp config
+
 -- map('', '<C-p>', ':GitFiles<CR>', options)
-map('', '<C-p>', ':Files<CR>', options)
+-- map('', '<C-p>', ':Files<CR>', options)  -- with fzf
+map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
 map('n', '<leader>gn', ':GitGutterNextHunk<CR>', options)
 map('n', '<leader>gs', ':Gitsigns toggle_signs<CR>', options)
 
@@ -38,7 +54,7 @@ map('n','<C-K>', '<C-W>k', options)
 map('n','<C-L>', '<C-W>l', options)
 map('n','<C-H>', '<C-W>h', options)
 
-map('i','<C-l>', '<Plug>(coc-snippets-expand)', { silent=true })
+-- map('i','<C-l>', '<Plug>(coc-snippets-expand)', { silent=true })
 
 map('n','<leader>dm', ':delmarks A-Z0-9 <CR>', options)
 
@@ -61,10 +77,11 @@ map('n','<A-<>', ':BufferLineMovePrev <CR>', { silent=true, noremap=true })
 map('n','<A->>', ':BufferLineMoveNext <CR>', { silent=true, noremap=true })
 
 -- coc config
-map('n', '<leader>s', ':CocList -I symbols<CR>', { noremap = true, nowait=true })
-map('n', '<leader>o', ':CocList outline<CR>', { noremap = true, nowait=true })
-map('', 'gd', '<Plug>(coc-definition)', {silent=true})
-map('n', '<c-space>', ':CocAction<CR>', { silent=true })
+-- map('n', '<leader>s', ':CocList -I symbols<CR>', { noremap = true, nowait=true })
+-- map('n', '<leader>o', ':CocList outline<CR>', { noremap = true, nowait=true })
+-- map('', 'gd', '<Plug>(coc-definition)', {silent=true})
+-- map('n', '<c-space>', ':CocAction<CR>', { silent=true })
 
 map('v', 'J', ":m '>+1<CR>gv=gv", { noremap=true })
 map('v', 'K', ":m '<-2<CR>gv=gv", { noremap=true })
+

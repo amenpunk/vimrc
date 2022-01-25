@@ -74,7 +74,7 @@ packer.startup( function()
     use "lukas-reineke/indent-blankline.nvim"
     use 'mhinz/vim-startify'
     use 'tpope/vim-fugitive'
-    use 'jiangmiao/auto-pairs'
+    -- use 'jiangmiao/auto-pairs'
     use 'alvan/vim-closetag'
     use 'tpope/vim-surround'
     use 'ryanoasis/vim-webdevicons'
@@ -95,12 +95,33 @@ packer.startup( function()
     use 'famiu/bufdelete.nvim'
     use 'gregsexton/matchtag'
     use {'kaicataldo/material.vim', branch='main' }
-    use {'neoclide/coc.nvim', branch='release'}
+    -- use {'neoclide/coc.nvim', branch='release'}
     use {'ms-jpq/chadtree', branch='chad'}
     use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }, tag = 'release' }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
-
+    use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
+    use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
     --- colorscheme
     use 'bluz71/vim-moonfly-colors'
+    use {
+        'neovim/nvim-lspconfig',
+        'williamboman/nvim-lsp-installer',
+    }
+
+    --- LSP plugins
+    use 'neovim/nvim-lspconfig'
+    -- Completition
+    use 'hrsh7th/cmp-cmdline'
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "hrsh7th/cmp-nvim-lua"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "saadparwaiz1/cmp_luasnip"
+    use "onsails/lspkind-nvim"
+    use "hrsh7th/cmp-nvim-lsp-signature-help"
+    use "windwp/nvim-autopairs"
+    use 'L3MON4D3/LuaSnip'
+
 
 end)
