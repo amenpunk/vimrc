@@ -108,6 +108,7 @@ packer.startup( function()
         'williamboman/nvim-lsp-installer',
     }
 
+    use 'tamton-aquib/staline.nvim'
     --- LSP plugins
     use 'neovim/nvim-lspconfig'
     -- Completition
@@ -123,5 +124,15 @@ packer.startup( function()
     use "windwp/nvim-autopairs"
     use 'L3MON4D3/LuaSnip'
 
+    use 'folke/lsp-colors.nvim'
+
+    use {
+        'tanvirtin/vgit.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        }
+    }
+
+    use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", }
 
 end)
