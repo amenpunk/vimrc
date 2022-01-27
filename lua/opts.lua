@@ -1,123 +1,67 @@
--- local function on_attach()
---     -- keymaps for lsp
---     vim.api.nvim_set_keymap('n', 'K', ':lua vim.lsp.buf.hover()<cr>', {noremap = true})
---     vim.api.nvim_set_keymap('n', '<leader>vd', ':lua vim.lsp.buf.definition()<cr>', {noremap = true})
---
---
---     vim.api.nvim_set_keymap('n', '<leader>vo', ':LspRestart<cr>', {noremap = true})
---
---     -- diagnostics to move between info and errors
---     vim.api.nvim_set_keymap('n', '<leader>vn', ':lua vim.lsp.diagnostic.goto_next()<cr>', {noremap = true})
---     vim.api.nvim_set_keymap('n', '<leader>vp', ':lua vim.lsp.diagnostic.goto_prev()<cr>', {noremap = true})
---
---
---     vim.api.nvim_set_keymap('n', '<leader>vca', ':lua vim.lsp.buf.code_action()<cr>', {noremap = true})
---     vim.api.nvim_set_keymap('n', '<leader>vf', ':lua vim.lsp.buf.formatting()<cr>', {noremap = true})
---
---     vim.api.nvim_set_keymap('n', '<leader>vi', ':lua vim.lsp.buf.implementation()<cr>', {noremap = true})
---     vim.api.nvim_set_keymap('n', '<leader>vrn', ':lua vim.lsp.buf.rename()<cr>', {noremap = true})
---
---     require "lsp_signature".on_attach()
---
---     vim.cmd [[au Filetype php setl omnifunc=v:lua.vim.lsp.omnifunc]]
---     vim.cmd [[autocmd FileType go setlocal omnifunc=v:lua.vim.lsp.omnifunc]]
---
---     vim.g.completion_matching_strategy_list = { 'exact', 'substring', 'fuzzy' }
---
--- end
---
--- local lsp_installer = require("nvim-lsp-installer")
---
--- lsp_installer.on_server_ready(function(server)
---     local opts = {}
---
---     opts.on_attach = on_attach
---     -- This setup() function is exactly the same as lspconfig's setup function (:help lspconfig-quickstart)
---     server:setup(opts)
---     vim.cmd [[ do User LspAttachBuffers ]]
--- end)
---
---
+-- Setup nvim-cmp.
+local cmp = require'cmp'
+local luasnip = require 'luasnip'
 
-
-local lspkind = require "lspkind"
-lspkind.init()
-
-local luasnip = require("luasnip")
-local cmp = require "cmp"
-local cmp_autopairs = require('nvim-autopairs.completion.cmp')
-cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
-
-cmp.setup {
+cmp.setup({
+    snippet = {
+        -- REQUIRED - you must specify a snippet engine
+        expand = function(args)
+            vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+            -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
+            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+        end,
+    },
     mapping = {
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
-        ["<C-e>"] = cmp.mapping(function(fallback)
+        ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+        ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+        ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+        ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+        ['<C-e>'] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+        }),
+        ['<Tab>'] = function(fallback)
             if cmp.visible() then
-                cmp.close()
+                cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
             else
                 fallback()
             end
-        end, { "i", "s" }),
-        ["<C-n>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-                cmp.select_next_item()
-            elseif luasnip.choice_active() then
-                luasnip.change_choice(1)
-            else
-                fallback()
-            end
-        end, { "i", "s" }),
-        ["<C-y>"] = cmp.mapping.confirm {
-            behavior = cmp.ConfirmBehavior.Insert,
-            select = true,
-        },
-        ["<c-space>"] = cmp.mapping.complete(),
-    },
-    sources = {
-        { name = "nvim_lua" },
-        { name = "nvim_lsp" },
-        { name = "path" },
-        { name = "luasnip" },
-        {
-            name = "buffer",
-            keyword_length = 5,
-            option = {
-                get_bufnrs = function()
-                    local bufs = {}
-                    for _, win in ipairs(vim.api.nvim_list_wins()) do
-                        bufs[vim.api.nvim_win_get_buf(win)] = true
-                    end
-                    return vim.tbl_keys(bufs)
-                end
-            }
-        },
-    },
-
-    snippet = {
-        expand = function(args)
-            require("luasnip").lsp_expand(args.body)
         end,
+        ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     },
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' }, -- For vsnip users.
+        -- { name = 'luasnip' }, -- For luasnip users.
+        -- { name = 'ultisnips' }, -- For ultisnips users.
+        -- { name = 'snippy' }, -- For snippy users.
+    }, {
+        { name = 'buffer' },
+    })
+})
 
-    formatting = {
-        format = lspkind.cmp_format {
-            with_text = true,
-            menu = {
-                buffer = "[buf]",
-                nvim_lsp = "[LSP]",
-                nvim_lua = "[api]",
-                path = "[path]",
-                luasnip = "[snip]",
-            }
-        }
-    },
-
-    experimental = {
-        native_menu = false,
-
-        ghost_text = true,
+-- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline('/', {
+    sources = {
+        { name = 'buffer' }
     }
-}
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
+})
+
+-- Setup lspconfig.
+-- local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
+-- require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
+    -- capabilities = capabilities
+-- }

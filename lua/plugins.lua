@@ -65,10 +65,10 @@ display = {
 local use = packer.use
 -- packer.reset()
 packer.startup( function()
+    use 'wbthomason/packer.nvim'
     use 'captbaritone/better-indent-support-for-php-with-html'
     use 'phanviet/vim-monokai-pro'
-    use 'tiagofumo/dart-vim-flutter-layout.git'
-    use 'wbthomason/packer.nvim'
+    -- use 'tiagofumo/dart-vim-flutter-layout.git'
     use "tpope/vim-dadbod"
     use "kristijanhusak/vim-dadbod-ui"
     use "lukas-reineke/indent-blankline.nvim"
@@ -110,7 +110,6 @@ packer.startup( function()
 
     use 'tamton-aquib/staline.nvim'
     --- LSP plugins
-    use 'neovim/nvim-lspconfig'
     -- Completition
     use 'hrsh7th/cmp-cmdline'
     use "hrsh7th/nvim-cmp"

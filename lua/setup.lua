@@ -7,6 +7,7 @@ set.hidden=true
 set.updatetime=300
 set.shortmess='c'
 set.ruler = false
+set.completeopt="menu,menuone,noselect"
 -- set.cmdheight=2
 -- set.ma=true
 set.splitbelow=true
@@ -170,6 +171,16 @@ cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex 
 
 cmp.setup {
     mapping = {
+
+        ['<Tab>'] = function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            else
+                fallback()
+            end
+        end,
+
+
         ["<C-d>"] = cmp.mapping.scroll_docs(-4),
         ["<C-f>"] = cmp.mapping.scroll_docs(4),
         ["<C-e>"] = cmp.mapping(function(fallback)
