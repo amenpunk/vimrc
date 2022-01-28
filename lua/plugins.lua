@@ -97,7 +97,7 @@ packer.startup( function()
     use {'kaicataldo/material.vim', branch='main' }
     -- use {'neoclide/coc.nvim', branch='release'}
     use {'ms-jpq/chadtree', branch='chad'}
-    use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }, tag = 'release' }
+    --- use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }, tag = 'release' }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -132,6 +132,24 @@ packer.startup( function()
         }
     }
 
-    use { "folke/trouble.nvim", requires = "kyazdani42/nvim-web-devicons", }
+    use { 
+        "folke/trouble.nvim", 
+        requires = "kyazdani42/nvim-web-devicons", 
+        config = function()
+            require( 'trouble' ).setup {
+                action_keys = {
+                    toggle_fold = { '<Space>' }
+                },
+                signs = {
+                    error = ' ',
+                    warning = ' ',
+                    hint = ' ',
+                    information = ' '
+                }
+            }
+        end
+
+
+    }
 
 end)

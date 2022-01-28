@@ -27,8 +27,18 @@ map('n', '<C-,>', ':lua vim.lsp.buf.hover()<cr>', options)
 -- map('', '<C-p>', ':GitFiles<CR>', options)
 -- map('', '<C-p>', ':Files<CR>', options)  -- with fzf
 map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
-map('n', '<leader>gn', ':GitGutterNextHunk<CR>', options)
-map('n', '<leader>gs', ':Gitsigns toggle_signs<CR>', options)
+
+
+--- GIT CONFIF
+-- map('n', '<leader>gn', ':GitGutterNextHunk<CR>', options)
+-- map('n', '<leader>gs', ':Gitsigns toggle_signs<CR>', options)
+ -- map('n', '<leader>gp', ':VGit buffer_hunk_preview<CR>', options)
+ map('n', 'gs', ':VGit buffer_hunk_preview<CR>', options)
+ map('n', 'gh', ':VGit buffer_history_preview<CR>', options)
+-- map('n', 'gs', ':VGit buffer_gutter_blame_preview<CR>', options)
+ map('n', 'gn', ':VGit hunk_down<CR>', options)
+ map('n', 'gp', ':VGit hunk_up<CR>', options)
+--- GIT CONFIF
 
 map('', '<leader>a', '<Plug>(easymotion-bd-w)', { silent = true })
 map('', '<leader>l', ':Lines<CR>', { silent = true })
