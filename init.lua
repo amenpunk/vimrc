@@ -1,5 +1,5 @@
 vim.opt.termguicolors = true
-vim.cmd("colorscheme material")
+-- vim.cmd("colorscheme kanagawa")
 -- vim.cmd("colorscheme moonfly")
 vim.g.material_theme_style='darker'
 vim.opt.list = true

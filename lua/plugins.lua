@@ -65,7 +65,11 @@ display = {
 local use = packer.use
 -- packer.reset()
 packer.startup( function()
+
+    use "rebelot/kanagawa.nvim"
+
     use 'wbthomason/packer.nvim'
+    use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
     use 'captbaritone/better-indent-support-for-php-with-html'
     use 'phanviet/vim-monokai-pro'
     -- use 'tiagofumo/dart-vim-flutter-layout.git'
@@ -149,7 +153,6 @@ packer.startup( function()
                 }
             }
         end
-
 
     }
 

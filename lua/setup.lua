@@ -51,8 +51,8 @@ set.updatetime=200
 set.signcolumn='yes'
 set.termguicolors=true
 
--- set.laststatus=0
-set.laststatus=2
+set.laststatus=0
+-- set.laststatus=2
 set.showtabline=2
 
 local chadtree_settings = {
@@ -266,3 +266,35 @@ cmp.setup {
         ghost_text = true,
     }
 }
+
+require'nvim-treesitter.configs'.setup {
+    sync_install = false,
+    highlight = {
+        enable = true,
+        disable = { "c", "rust" },
+        additional_vim_regex_highlighting = false,
+    },
+}
+
+require('kanagawa').setup({
+    undercurl = true,           -- enable undercurls
+    commentStyle = "italic",
+    functionStyle = "NONE",
+    keywordStyle = "italic",
+    statementStyle = "bold",
+    typeStyle = "NONE",
+    variablebuiltinStyle = "italic",
+    specialReturn = true,       -- special highlight for the return keyword
+    specialException = true,    -- special highlight for exception handling keywords 
+    transparent = false,        -- do not set background color
+    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
+    colors = {
+        bg = '#252525'
+    },
+    overrides = {
+        MyHlGroup1 = { bg = "#252525", style="underline,bold", guisp="blue" },
+        VertSplit  = { bg = "NONE" },
+    },
+})
+
+vim.cmd("colorscheme kanagawa")
