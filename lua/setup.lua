@@ -65,21 +65,21 @@ vim.g.material_terminal_italics = 1
 
 g("db_ui_winwidth", 27)
 
-require('gitsigns').setup {
-    current_line_blame_opts = {
-        virt_text = true,
-        virt_text_pos = 'right_align',
-        delay = 1000,
-        ignore_whitespace = false,
-    },
-    preview_config = {
-        border = 'single',
-        style = 'minimal',
-        relative = 'cursor',
-        row = 0,
-        col = 1
-    },
-}
+-- require('gitsigns').setup {
+--     current_line_blame_opts = {
+--         virt_text = true,
+--         virt_text_pos = 'right_align',
+--         delay = 1000,
+--         ignore_whitespace = false,
+--     },
+--     preview_config = {
+--         border = 'single',
+--         style = 'minimal',
+--         relative = 'cursor',
+--         row = 0,
+--         col = 1
+--     },
+-- }
 
 g('flutter_hot_reload_on_save', 1)
 g('flutter_autoscroll', 1)

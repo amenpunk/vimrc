@@ -1,21 +1,16 @@
--- maps.lua
-
 local map = vim.api.nvim_set_keymap
 
 -- map the leader key
 map('n', '<Space>', '', {})
 map('n', '<leader>r', ':source $MYVIMR<CR>', {silent=true, noremap=true}) -- reload config
 -- nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
-vim.g.mapleader = ' '  -- 'vim.g' sets global variables
+vim.g.mapleader = ' '
 
 
-
-
-
-options = { noremap = true }
+local options = { noremap = true }
 map('n', '<leader>q', ':q!<CR>', options)
 map('n', '<leader>v', 'gv<CR>', options)
-
+map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
 
 --- lsp config
 map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', options)
@@ -24,15 +19,8 @@ map('n', '<C-space>', ':lua vim.lsp.buf.hover()<cr>', options)
 map('n', '<C-,>', ':lua vim.lsp.buf.hover()<cr>', options)
 --- lsp config
 
--- map('', '<C-p>', ':GitFiles<CR>', options)
--- map('', '<C-p>', ':Files<CR>', options)  -- with fzf
-map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
-
 
 --- GIT CONFIF
--- map('n', '<leader>gn', ':GitGutterNextHunk<CR>', options)
--- map('n', '<leader>gs', ':Gitsigns toggle_signs<CR>', options)
- -- map('n', '<leader>gp', ':VGit buffer_hunk_preview<CR>', options)
  map('n', 'gs', ':VGit buffer_hunk_preview<CR>', options)
  map('n', 'gh', ':VGit buffer_history_preview<CR>', options)
 -- map('n', 'gs', ':VGit buffer_gutter_blame_preview<CR>', options)
@@ -41,8 +29,8 @@ map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
 --- GIT CONFIF
 
 map('', '<leader>a', '<Plug>(easymotion-bd-w)', { silent = true })
-map('', '<leader>l', ':Lines<CR>', { silent = true })
-map('', '<leader>m', ':Marks<CR>', { silent = true })
+map('', '<leader>l', ':Telescope  lsp_document_symbols<CR>', { silent = true })
+map('', '<leader>m', ':Telescope Marks<CR>', { silent = true })
 map('', '<leader>b', ':DBUI<CR>', { silent = true })
 map('', '<leader>f', ':Rg<CR>', { silent = true })
 
@@ -63,13 +51,6 @@ map('n','<C-J>', '<C-W>j', options)
 map('n','<C-K>', '<C-W>k', options)
 map('n','<C-L>', '<C-W>l', options)
 map('n','<C-H>', '<C-W>h', options)
-
--- map('i','<C-l>', '<Plug>(coc-snippets-expand)', { silent=true })
-
-map('n','<leader>dm', ':delmarks A-Z0-9 <CR>', options)
-
-map('i', '<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<Tab>"', {expr = true})
-map('i', '<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"', {expr = true})
 
 map('n','<A-1>', '<Cmd>BufferLineGoToBuffer 1 <CR>', { silent=true, noremap=true })
 map('n','<A-2>', '<Cmd>BufferLineGoToBuffer 2 <CR>', { silent=true, noremap=true })

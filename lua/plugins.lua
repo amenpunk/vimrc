@@ -94,6 +94,7 @@ packer.startup( function()
     use 'rcarriga/nvim-notify'
     use 'famiu/bufdelete.nvim'
     use 'gregsexton/matchtag'
+    use 'nvim-lua/popup.nvim'
     use {'kaicataldo/material.vim', branch='main' }
     -- use {'neoclide/coc.nvim', branch='release'}
     use {'ms-jpq/chadtree', branch='chad'}
