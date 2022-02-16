@@ -48,7 +48,7 @@ set.cmdheight=1
 set.updatetime=200
 -- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
 -- set.signcolumn='auto'
-set.signcolumn='yes'
+set.signcolumn='auto'
 set.termguicolors=true
 
 set.laststatus=0
@@ -297,4 +297,4 @@ require('kanagawa').setup({
     },
 })
 
-vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme material")

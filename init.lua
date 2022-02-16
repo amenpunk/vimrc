@@ -8,7 +8,6 @@ vim.opt.list = true
 -- vim.wo.signcolumn = 'yes'
 -- vim.cmd[[colorscheme tokyonight]]
 require("indent_blankline").setup{ 
-    char = '|',
     buftype_exclude = {"terminal", "chadtree","scratch", "dbui"},
     filetype_exclude = {"dashboard", "chadtree", 'scratch', 'packer', 'NvimTree', 'dbui' },
 }
@@ -80,3 +79,17 @@ require("trouble").setup {
 }
 
 require('vgit').setup()
+
+--- good config
+local signs = {
+    Error = " ",
+    Warn = " ",
+    Hint = " ",
+    Info = " "
+}
+
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+end
+
