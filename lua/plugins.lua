@@ -70,7 +70,7 @@ packer.startup( function()
 
     use 'wbthomason/packer.nvim'
     use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
-    use 'captbaritone/better-indent-support-for-php-with-html'
+    -- use 'captbaritone/better-indent-support-for-php-with-html'
     use 'phanviet/vim-monokai-pro'
     -- use 'tiagofumo/dart-vim-flutter-layout.git'
     use "tpope/vim-dadbod"
