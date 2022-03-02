@@ -67,18 +67,14 @@ local use = packer.use
 packer.startup( function()
 
     use "rebelot/kanagawa.nvim"
-
     use 'wbthomason/packer.nvim'
     use {'nvim-treesitter/nvim-treesitter', run=':TSUpdate'}
-    -- use 'captbaritone/better-indent-support-for-php-with-html'
     use 'phanviet/vim-monokai-pro'
-    -- use 'tiagofumo/dart-vim-flutter-layout.git'
     use "tpope/vim-dadbod"
     use "kristijanhusak/vim-dadbod-ui"
     use "lukas-reineke/indent-blankline.nvim"
     use 'mhinz/vim-startify'
     use 'tpope/vim-fugitive'
-    -- use 'jiangmiao/auto-pairs'
     use 'alvan/vim-closetag'
     use 'tpope/vim-surround'
     use 'ryanoasis/vim-webdevicons'
@@ -100,9 +96,8 @@ packer.startup( function()
     use 'gregsexton/matchtag'
     use 'nvim-lua/popup.nvim'
     use {'kaicataldo/material.vim', branch='main' }
-    -- use {'neoclide/coc.nvim', branch='release'}
+    use 'kyazdani42/nvim-tree.lua'
     use {'ms-jpq/chadtree', branch='chad'}
-    --- use {'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' }, tag = 'release' }
     use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -113,7 +108,7 @@ packer.startup( function()
         'williamboman/nvim-lsp-installer',
     }
 
-    use 'tamton-aquib/staline.nvim'
+    -- use 'tamton-aquib/staline.nvim'
     --- LSP plugins
     -- Completition
     use 'hrsh7th/cmp-cmdline'
@@ -127,7 +122,10 @@ packer.startup( function()
     use "hrsh7th/cmp-nvim-lsp-signature-help"
     use "windwp/nvim-autopairs"
     use 'L3MON4D3/LuaSnip'
-
+    use({
+        "catppuccin/nvim",
+        as = "catppuccin"
+    })
     use 'folke/lsp-colors.nvim'
 
     use {
@@ -137,9 +135,10 @@ packer.startup( function()
         }
     }
 
-    use { 
-        "folke/trouble.nvim", 
-        requires = "kyazdani42/nvim-web-devicons", 
+    use 'tanvirtin/monokai.nvim'
+    use {
+        "folke/trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
         config = function()
             require( 'trouble' ).setup {
                 action_keys = {

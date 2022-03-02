@@ -93,3 +93,15 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
 
+require'nvim-tree'.setup {
+    view = {
+        auto_resize = true,
+        width = 5,
+        height = 20,
+        hide_root_folder = true,
+        side = 'left',
+        number = false,
+        relativenumber = false,
+        signcolumn = "yes"
+    },
+}
