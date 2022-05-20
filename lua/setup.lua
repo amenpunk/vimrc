@@ -7,7 +7,7 @@ set.hidden=true
 set.updatetime=300
 set.shortmess='c'
 set.ruler = false
-set.completeopt="menu,menuone,noselect"
+set.completeopt="menu,menuone,noselect,noinsert"
 -- set.cmdheight=2
 -- set.ma=true
 set.splitbelow=true
@@ -314,6 +314,7 @@ require('kanagawa').setup({
     },
 })
 
-vim.cmd("colorscheme material")
+-- vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme catppuccin")
 -- vim.cmd("colorscheme kanagawa")
+vim.cmd("colorscheme monokai_pro")

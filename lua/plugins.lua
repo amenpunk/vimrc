@@ -135,6 +135,11 @@ packer.startup( function()
         }
     }
 
+    use {
+        'weilbith/nvim-code-action-menu',
+        cmd = 'CodeActionMenu',
+    }
+
     use 'tanvirtin/monokai.nvim'
     use {
         "folke/trouble.nvim",
