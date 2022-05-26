@@ -47,11 +47,11 @@ set.scrollback=20
 set.showcmd=false
 set.cmdheight=1
 set.updatetime=200
-set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
--- set.signcolumn='auto'
--- set.signcolumn='auto'
-set.termguicolors=true
+--
+-- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
+set.signcolumn='auto'
 
+set.termguicolors=true
 set.laststatus=0
 -- set.laststatus=2
 set.showtabline=2
