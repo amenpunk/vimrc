@@ -1,6 +1,11 @@
 local set = vim.opt
 local g = vim.api.nvim_set_var
 
+vim.opt.termguicolors = true
+vim.g.material_theme_style='darker'
+vim.opt.list = true
+-- vim.wo.signcolumn = 'yes'
+
 vim.cmd("colorscheme material")
 -- sets
 set.clipboard='unnamedplus' -- only one clipboard
