@@ -1,7 +1,6 @@
 packer = require 'packer'
 
 packer.init{
-
     ensure_dependencies   = true, -- Should packer install plugin dependencies?
     plugin_package = 'packer', -- The default package for plugins
     max_jobs = nil, -- Limit the number of simultaneous jobs. nil means no limit
@@ -31,8 +30,6 @@ packer.init{
         clone_timeout = 60, -- Timeout, in seconds, for git clones
         default_url_format = 'https://github.com/%s' -- Lua format string used for "aaa/bbb" style plugins
     },
-
-
     display = {
         non_interactive = false, -- If true, disable display windows for all operations
         open_fn  = nil, -- An optional function to open a window for packer's display

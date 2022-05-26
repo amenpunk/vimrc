@@ -1,12 +1,8 @@
 vim.opt.termguicolors = true
--- vim.cmd("colorscheme kanagawa")
--- vim.cmd("colorscheme moonfly")
 vim.g.material_theme_style='darker'
 vim.opt.list = true
 
--- vim.o.updatetime = 300
 -- vim.wo.signcolumn = 'yes'
--- vim.cmd[[colorscheme tokyonight]]
 require("indent_blankline").setup{ 
     buftype_exclude = {"terminal", "chadtree","scratch", "dbui"},
     filetype_exclude = {"dashboard", "chadtree", 'scratch', 'packer', 'NvimTree', 'dbui' },
@@ -17,6 +13,7 @@ local actions = require "telescope.actions"
 require("bufferline").setup{}
 require('binds')
 require('plugins')
+require('opts')
 require('setup')
 require('Comment').setup()
 require('telescope').setup{
