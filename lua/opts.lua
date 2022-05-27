@@ -1,23 +1,23 @@
 require("toggleterm").setup{
     size = 20,
-    open_mapping = '<Leader><Enter>',
-    --hide_numbers = true, -- hide the number column in toggleterm buffers
-    --shade_filetypes = {},
-    --shade_terminals = true,
-    --shading_factor = '<number>',
-    --start_in_insert = true,
-    --insert_mappings = true, -- whether or not the open mapping applies in insert mode
-    --persist_size = true,
-    --direction = 'float', --| 'horizontal' | 'window' | 'float',
-    --close_on_exit = true, -- close the terminal window when the process exits
-    --float_opts = {
-    --    border = 'curved',--//'double' |'shadow'|'curved'| 
-    --    winblend = 3,
-    --    highlights = {
-    --        border = "Normal",
-    --        background = "Normal",
-    --    }
-    --}
+    open_mapping = [[<Leader><Enter>]],
+    hide_numbers = true, -- hide the number column in toggleterm buffers
+    shade_filetypes = {},
+    shade_terminals = true,
+    shading_factor = '<number>',
+    start_in_insert = true,
+    insert_mappings = true, -- whether or not the open mapping applies in insert mode
+    persist_size = true,
+    direction = 'float',
+    close_on_exit = true, -- close the terminal window when the process exits
+    float_opts = {
+       border = 'curved',--//'double' |'shadow'|'curved'|
+       winblend = 3,
+       highlights = {
+           border = "Normal",
+           background = "Normal",
+       }
+    }
 
 }
 
@@ -36,26 +36,26 @@ require'marks'.setup {
     mappings = {}
 }
 
-require('kanagawa').setup({
-    undercurl = true,           -- enable undercurls
-    commentStyle = "italic",
-    functionStyle = "NONE",
-    keywordStyle = "italic",
-    statementStyle = "bold",
-    typeStyle = "NONE",
-    variablebuiltinStyle = "italic",
-    specialReturn = true,       -- special highlight for the return keyword
-    specialException = true,    -- special highlight for exception handling keywords 
-    transparent = false,        -- do not set background color
-    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
-    colors = {
-        bg = '#252525'
-    },
-    overrides = {
-        MyHlGroup1 = { bg = "#252525", style="underline,bold", guisp="blue" },
-        VertSplit  = { bg = "NONE" },
-    },
-})
+--require('kanagawa').setup({
+--    undercurl = true,           -- enable undercurls
+--    commentStyle = "italic",
+--    functionStyle = "NONE",
+--    keywordStyle = "italic",
+--    statementStyle = "bold",
+--    typeStyle = "NONE",
+--    variablebuiltinStyle = "italic",
+--    specialReturn = true,       -- special highlight for the return keyword
+--    specialException = true,    -- special highlight for exception handling keywords 
+--    transparent = false,        -- do not set background color
+--    dimInactive = false,        -- dim inactive window `:h hl-NormalNC`
+--    colors = {
+--        bg = '#252525'
+--    },
+--    overrides = {
+--        MyHlGroup1 = { bg = "#252525", style="underline,bold", guisp="blue" },
+--        VertSplit  = { bg = "NONE" },
+--    },
+--})
 
 require'nvim-treesitter.configs'.setup {
     sync_install = false,
@@ -100,7 +100,6 @@ require'Comment'.setup{
 require("bufferline").setup{}
 require('Comment').setup()
 require('nvim-autopairs').setup{}
-require("lsp-colors").setup({ })
 
 require("indent_blankline").setup{ 
     buftype_exclude = {"terminal", "chadtree","scratch", "dbui"},
@@ -179,4 +178,11 @@ require'nvim-tree'.setup {
         signcolumn = "yes"
     },
 }
+
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
+})
 

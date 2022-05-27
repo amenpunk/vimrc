@@ -1,6 +1,7 @@
 local set = vim.opt
 local g = vim.api.nvim_set_var
 
+vim.g.code_action_menu_window_border = 'single'
 vim.opt.termguicolors = true
 vim.g.material_theme_style='darker'
 vim.opt.list = true
@@ -211,4 +212,7 @@ cmp.setup {
         ghost_text = true,
     }
 }
+
+
+
 

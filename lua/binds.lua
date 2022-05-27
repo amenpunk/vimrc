@@ -34,6 +34,7 @@ map('', '<leader>l', ':Telescope  lsp_document_symbols<CR>', { silent = true })
 map('', '<leader>m', ':Telescope Marks<CR>', { silent = true })
 map('', '<leader>b', ':DBUI<CR>', { silent = true })
 map('', '<leader>f', ':Rg<CR>', { silent = true })
+map('', '<leader><Enter>', ':ToggleTerm<CR>', { silent = true })
 
 map('n', '<S-h>', ':bprevious<CR>', { silent = true, noremap=true })
 map('n', '<S-l>', ':bnext<CR>', { silent = true, noremap=true })
