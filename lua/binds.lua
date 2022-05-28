@@ -80,10 +80,3 @@ map('n','<A->>', ':BufferLineMoveNext <CR>', { silent=true, noremap=true })
 
 map('v', 'J', ":m '>+1<CR>gv=gv", { noremap=true })
 map('v', 'K', ":m '<-2<CR>gv=gv", { noremap=true })
-
--- config for visual mode in term 
-function _G.set_terminal_keymaps()
-    local opts = {noremap = true}
-    vim.api.nvim_buf_set_keymap(0, 't', '<esc>', [[<C-\><C-n>]], opts)
-end
-vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')

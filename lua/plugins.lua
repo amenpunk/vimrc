@@ -77,6 +77,7 @@ require'packer'.startup( function()
     use 'wbthomason/packer.nvim'
     use {'nvim-treesitter/nvim-treesitter'}
     use "tpope/vim-dadbod"
+    use 'kristijanhusak/vim-dadbod-completion'
     use "kristijanhusak/vim-dadbod-ui"
     use "lukas-reineke/indent-blankline.nvim"
     use 'mhinz/vim-startify'

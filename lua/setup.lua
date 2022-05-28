@@ -96,6 +96,9 @@ g('db_ui_auto_execute_table_helpers', 1)
 g('db_ui_use_nerd_fonts' , 1)
 g('indent_blankline_buftype_exclude' , {'dbui'})
 g('indent_blankline_bufname_exclude' , {'dbui'})
+
+g("compe_source_vim_dadbod_completion", true)
+
 -- g('db_ui_default_query' , 'select * from "{table}" limit 10')
 -- g("startify_custom_header",{'     _           _                      _             ',
 --                              '             ▕                                 ',

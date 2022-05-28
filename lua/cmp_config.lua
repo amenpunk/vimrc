@@ -92,14 +92,20 @@ cmp.setup {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
             { name = 'path' }
-        }, {
-                { name = 'cmdline' }
-            })
+        }, 
+        {
+            { name = 'cmdline' }
+        })
     }),
 
     experimental = {
-        native_menu = false,
+        -- native_menu = true,
         ghost_text = true,
     }
 }
+
+vim.cmd[[
+  autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+]]
+
 
