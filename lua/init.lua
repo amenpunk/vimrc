@@ -1,5 +1,5 @@
 require('plugins')
+require('cmp_config')
 require('opts')
 require('setup')
 require('binds')
-require('plugconfig')
