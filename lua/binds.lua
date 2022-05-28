@@ -5,6 +5,7 @@ map('n', '<Space>', '', {})
 map('n', '<leader>r', ':source $MYVIMR<CR>', {silent=true, noremap=true}) -- reload config
 -- nnoremap <silent> <Leader><Leader> :source $MYVIMRC<cr>
 vim.g.mapleader = ' '
+vim.g.code_action_menu_window_border = 'single'
 
 
 local options = { noremap = true }
@@ -15,7 +16,8 @@ map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
 --- lsp config
 map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', options)
 map('n', 'gi', ':lua vim.lsp.buf.references()<CR>', options)
-map('n', '<C-space>', ':lua vim.lsp.buf.code_action()<CR>', options)
+--map('n', '<C-space>', ':lua vim.lsp.buf.code_action()<CR>', options)
+map('n', '<C-space>', ':CodeActionMenu<CR>', options)
 map('n', '<C-,>', ':lua vim.lsp.buf.hover()<cr>', options)
 --- lsp config
 
