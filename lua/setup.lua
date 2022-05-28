@@ -8,6 +8,7 @@ vim.opt.list = true
 -- vim.wo.signcolumn = 'yes'
 
 vim.cmd("colorscheme material")
+-- vim.cmd("colorscheme monokai")
 -- sets
 set.clipboard='unnamedplus' -- only one clipboard
 set.hidden=true

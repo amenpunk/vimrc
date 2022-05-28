@@ -102,6 +102,9 @@ require('Comment').setup()
 require('nvim-autopairs').setup{}
 
 require("indent_blankline").setup{ 
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
     buftype_exclude = {"terminal", "chadtree","scratch", "dbui"},
     filetype_exclude = {"dashboard", "chadtree", 'scratch', 'packer', 'NvimTree', 'dbui' },
 }

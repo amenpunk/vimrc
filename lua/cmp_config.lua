@@ -7,6 +7,10 @@ local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 cmp.event:on( 'confirm_done', cmp_autopairs.on_confirm_done({  map_char = { tex = '' } }))
 
 cmp.setup {
+    window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+    },
     mapping = {
 
         ['<Tab>'] = function(fallback)
@@ -44,6 +48,7 @@ cmp.setup {
         },
         ["<c-space>"] = cmp.mapping.complete(),
     },
+
     sources = {
         { name = "nvim_lua" },
         { name = "nvim_lsp" },
@@ -82,6 +87,15 @@ cmp.setup {
             }
         }
     },
+
+    cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+            { name = 'path' }
+        }, {
+                { name = 'cmdline' }
+            })
+    }),
 
     experimental = {
         native_menu = false,
