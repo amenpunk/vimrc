@@ -85,7 +85,7 @@ g("startify_bookmarks", {
     { ["v"] = '~/.config/nvim/init.lua' }
 })
 
-g('toggleterm_terminal_mapping', '<C-t>')
+--g('toggleterm_terminal_mapping', '<C-t>')
 g('closetag_filenames', '.html,*.xhtml,*.phtml,*.jx')
 g('closetag_shortcut', '>')
 

@@ -1,15 +1,15 @@
--- require("toggleterm").setup{
---     --size = 20,
---     open_mapping = [[<Leader><Enter>]],
+require("toggleterm").setup{
+    -- size = 20,
+    open_mapping = [[<Leader><Enter>]],
 --     hide_numbers = true, -- hide the number column in toggleterm buffers
 --     shade_filetypes = {},
---     shade_terminals = true,
+    shade_terminals = true,
 --     shading_factor = '<number>',
---     start_in_insert = true,
---     insert_mappings = true, -- whether or not the open mapping applies in insert mode
---     persist_size = true,
+    start_in_insert = true,
+    insert_mappings = true, -- whether or not the open mapping applies in insert mode
+    persist_size = true,
 --     direction = 'float',
---     close_on_exit = true, -- close the terminal window when the process exits
+    close_on_exit = true, -- close the terminal window when the process exits
 --     float_opts = {
 --        border = 'curved',--//'double' |'shadow'|'curved'|
 --        --winblend = 3,
@@ -19,7 +19,7 @@
 --        }
 --     }
 --
--- }
+}
 
 require'marks'.setup {
     default_mappings = true,
@@ -121,11 +121,7 @@ require('telescope').setup{
         }
     },
 }
-require("todo-comments").setup {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
-}
+require("todo-comments").setup { }
 
 -- require('gitsigns').setup {
 --     current_line_blame_opts = {
@@ -151,8 +147,7 @@ lsp_installer.on_server_ready(function(server)
     server:setup(opts)
 end)
 
-require("trouble").setup {
-}
+require("trouble").setup { }
 
 require('vgit').setup()
 

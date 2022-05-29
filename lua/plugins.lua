@@ -101,7 +101,7 @@ require'packer'.startup( function()
     }
     use "pangloss/vim-javascript"
     use 'chentoast/marks.nvim'
---    use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function() require("toggleterm").setup() end}
+    use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function() require("toggleterm").setup() end}
 
     use 'famiu/bufdelete.nvim'
     use 'gregsexton/matchtag'
