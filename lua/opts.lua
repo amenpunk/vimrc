@@ -1,23 +1,21 @@
 require("toggleterm").setup{
-    -- size = 20,
+    size = 10,
     open_mapping = [[<Leader><Enter>]],
---     hide_numbers = true, -- hide the number column in toggleterm buffers
---     shade_filetypes = {},
+    hide_numbers = true, -- hide the number column in toggleterm buffers
     shade_terminals = true,
---     shading_factor = '<number>',
     start_in_insert = true,
     insert_mappings = true, -- whether or not the open mapping applies in insert mode
     persist_size = true,
---     direction = 'float',
+    direction = 'float',
     close_on_exit = true, -- close the terminal window when the process exits
---     float_opts = {
---        border = 'curved',--//'double' |'shadow'|'curved'|
---        --winblend = 3,
---        highlights = {
---            border = "Normal",
---            background = "Normal",
---        }
---     }
+    float_opts = {
+       border = 'curved',--//'double' |'shadow'|'curved'|
+       winblend = 1,
+       highlights = {
+           border = "Normal",
+           background = "Normal",
+       }
+    }
 --
 }
 
@@ -102,9 +100,9 @@ require('Comment').setup()
 require('nvim-autopairs').setup{}
 
 require("indent_blankline").setup{ 
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
+    -- space_char_blankline = " ",
+    -- show_current_context = true,
+    -- show_current_context_start = true,
     buftype_exclude = {"terminal", "chadtree","scratch", "dbui"},
     filetype_exclude = {"dashboard", "chadtree", 'scratch', 'packer', 'NvimTree', 'dbui' },
 }
