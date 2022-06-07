@@ -70,8 +70,12 @@ require'packer'.startup( function()
     --use 'rcarriga/nvim-notify'
     --use 'bluz71/vim-moonfly-colors'
     --use({ "catppuccin/nvim", as = "catppuccin" })
+    -- use 'nvim-lua/popup.nvim'
+    --use 'mfussenegger/nvim-dap'
+    --use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    --use 'folke/lsp-colors.nvim'
+
     use 'haya14busa/is.vim'
-    use 'folke/lsp-colors.nvim'
     use 'tanvirtin/monokai.nvim'
     use "windwp/nvim-autopairs"
     use 'wbthomason/packer.nvim'
@@ -105,11 +109,11 @@ require'packer'.startup( function()
 
     use 'famiu/bufdelete.nvim'
     use 'gregsexton/matchtag'
-    use 'nvim-lua/popup.nvim'
-    use 'kyazdani42/nvim-tree.lua'
     use {'kaicataldo/material.vim', branch='main' }
     use {'ms-jpq/chadtree', branch='chad'}
-    use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    use {
+        'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'
+    }
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
     use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
     use { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' }
@@ -142,9 +146,8 @@ require'packer'.startup( function()
         requires = "kyazdani42/nvim-web-devicons",
         config = function()
             require( 'trouble' ).setup {
-                action_keys = {
-                    toggle_fold = { '<Space>' }
-                },
+                position = "bottom", -- position of the list can be: bottom, top, left, right
+                mode = 'workspace_diagnostics',
                 signs = {
                     error = ' ',
                     warning = ' ',
