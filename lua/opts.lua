@@ -18,7 +18,7 @@ require("toggleterm").setup{
     }
 --
 }
-
+--
 require'marks'.setup {
     default_mappings = true,
     builtin_marks = {},
@@ -45,7 +45,7 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
     },
 }
-
+--
 require'Comment'.setup{
     padding = true,
     sticky = true,
@@ -72,19 +72,19 @@ require'Comment'.setup{
     pre_hook = nil,
     post_hook = nil,
 }
-
+--
 require("bufferline").setup{}
 require('Comment').setup()
 require('nvim-autopairs').setup{}
-
-require("indent_blankline").setup{ 
+--
+require("indent_blankline").setup{
     -- space_char_blankline = " ",
     -- show_current_context = true,
     -- show_current_context_start = true,
     buftype_exclude = {"terminal", "chadtree","scratch", "dbui"},
     filetype_exclude = {"dashboard", "chadtree", 'scratch', 'packer', 'NvimTree', 'dbui' },
 }
-
+--
 local actions = require "telescope.actions"
 
 require('telescope').setup{
@@ -97,6 +97,7 @@ require('telescope').setup{
         }
     },
 }
+
 require("todo-comments").setup { }
 
 local lsp_installer = require("nvim-lsp-installer")
@@ -107,7 +108,6 @@ lsp_installer.on_server_ready(function(server)
 end)
 
 
-require('vgit').setup()
 
 --- good config
 local signs = {
@@ -121,3 +121,7 @@ for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
 end
+
+
+--- arreglar este plugin
+require('vgit').setup()

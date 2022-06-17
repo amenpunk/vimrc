@@ -46,7 +46,7 @@ set.backup=false
 set.writebackup=false
 set.swapfile=false
 --forv git set.incsearch=true
-set.incsearch=true
+set.incsearch=false
 set.hlsearch=true
 -- set.guifont='Fira Code 12'
 set.wildignore='*.pyc,*.o,*.obj,*.svn,*.swp,*.class,*.hg,*.DS_Store,*.min.*,node_modules'
@@ -60,7 +60,8 @@ set.cmdheight=1
 set.updatetime=200
 --
 -- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
-set.signcolumn='auto'
+-- set.signcolumn='auto'
+set.signcolumn='yes'
 
 set.termguicolors=true
 set.laststatus=0
