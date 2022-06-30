@@ -107,8 +107,6 @@ lsp_installer.on_server_ready(function(server)
     server:setup(opts)
 end)
 
-
-
 --- good config
 local signs = {
     Error = " ",
@@ -125,3 +123,16 @@ end
 
 --- arreglar este plugin
 require('vgit').setup()
+require("nvim-tree").setup({ 
+    view = {
+        adaptive_size = false,
+        hide_root_folder = true,
+        mappings = {
+            list = {
+                { key = "u", action = "dir_up" },
+            },
+        },
+    },
+    })
+
+

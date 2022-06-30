@@ -14,9 +14,10 @@ map('n', '<leader>v', 'gv<CR>', options)
 map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
 
 --- lsp config
+--
+map('n','==',':lua vim.lsp.buf.formatting()<CR>', options)
 map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', options)
 map('n', 'gi', ':lua vim.lsp.buf.references()<CR>', options)
-map('n', 'g=', ':lua vim.lsp.buf.formatting()<CR>', options)
 --map('n', '<C-space>', ':lua vim.lsp.buf.code_action()<CR>', options)
 map('n', '<C-space>', ':CodeActionMenu<CR>', options)
 map('n', '<C-,>', ':lua vim.lsp.buf.hover()<cr>', options)
@@ -70,8 +71,9 @@ map('n','<A-9>', '<Cmd>BufferLineGoToBuffer 9 <CR>', { silent=true, noremap=true
 map('n','<A-0>', ":Bdelete <CR>", { silent=true, noremap=true })
 
 
-map('n','<A-<>', ':BufferLineMovePrev <CR>', { silent=true, noremap=true })
-map('n','<A->>', ':BufferLineMoveNext <CR>', { silent=true, noremap=true })
+map('n','<C-<>', ':BufferLineMovePrev <CR>', options)
+map('n','<C->>', ':BufferLineMoveNext <CR>', options)
+
 
 -- coc config
 -- map('n', '<leader>s', ':CocList -I symbols<CR>', { noremap = true, nowait=true })
