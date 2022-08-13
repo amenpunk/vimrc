@@ -7,8 +7,13 @@ vim.g.material_theme_style='darker'
 vim.opt.list = true
 -- vim.wo.signcolumn = 'yes'
 
+vim.o.background = "dark" -- or "light" for light mode
+-- vim.cmd("colorscheme sonokai")
 vim.cmd("colorscheme material")
--- vim.cmd("colorscheme monokai")
+-- vim.cmd("colorscheme monokai_soda")
+-- vim.cmd("colorscheme onedark")
+-- vim.cmd([[colorscheme gruvbox]])
+
 -- sets
 set.clipboard='unnamedplus' -- only one clipboard
 set.hidden=true
@@ -97,6 +102,10 @@ g('db_ui_auto_execute_table_helpers', 1)
 g('db_ui_use_nerd_fonts' , 1)
 g('indent_blankline_buftype_exclude' , {'dbui'})
 g('indent_blankline_bufname_exclude' , {'dbui'})
+-- g('indent_blankline_char_blankline' , '┆')
+-- g("indent_blankline_char_list", {'|', '¦', '┆', '┊'})
+-- g("indent_blankline_char" , '|')
+-- g("indent_blankline_char" , '┆')
 
 g("compe_source_vim_dadbod_completion", true)
 

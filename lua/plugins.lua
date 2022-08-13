@@ -1,17 +1,17 @@
-local use = require'packer'.use
+local use = require 'packer'.use
 
-require'packer'.init{
-    ensure_dependencies   = true, -- Should packer install plugin dependencies?
-    plugin_package = 'packer', -- The default package for plugins
-    max_jobs = nil, -- Limit the number of simultaneous jobs. nil means no limit
-    auto_clean = true, -- During sync(), remove unused plugins
-    compile_on_sync = true, -- During sync(), run packer.compile()
-    disable_commands = false, -- Disable creating commands
-    opt_default = false, -- Default to using opt (as opposed to start) plugins
-    transitive_opt = true, -- Make dependencies of opt plugins also opt by default
-    transitive_disable = true, -- Automatically disable dependencies of disabled plugins
+require 'packer'.init {
+    ensure_dependencies  = true, -- Should packer install plugin dependencies?
+    plugin_package       = 'packer', -- The default package for plugins
+    max_jobs             = nil, -- Limit the number of simultaneous jobs. nil means no limit
+    auto_clean           = true, -- During sync(), remove unused plugins
+    compile_on_sync      = true, -- During sync(), run packer.compile()
+    disable_commands     = false, -- Disable creating commands
+    opt_default          = false, -- Default to using opt (as opposed to start) plugins
+    transitive_opt       = true, -- Make dependencies of opt plugins also opt by default
+    transitive_disable   = true, -- Automatically disable dependencies of disabled plugins
     auto_reload_compiled = true, -- Automatically reload the compiled file after creating it.
-    git = {
+    git                  = {
         cmd = 'git', -- The base command for git operations
         subcommands = { -- Format strings for git subcommands
             update         = 'pull --ff-only --progress --rebase=false',
@@ -30,30 +30,30 @@ require'packer'.init{
         clone_timeout = 60, -- Timeout, in seconds, for git clones
         default_url_format = 'https://github.com/%s' -- Lua format string used for "aaa/bbb" style plugins
     },
-    display = {
+    display              = {
         non_interactive = false, -- If true, disable display windows for all operations
-        open_fn  = nil, -- An optional function to open a window for packer's display
-        open_cmd = '65vnew \\[packer\\]', -- An optional command to open a window for packer's display
-        working_sym = '⟳', -- The symbol for a plugin being installed/updated
-        error_sym = '✗', -- The symbol for a plugin with an error in installation/updating
-        done_sym = '✓', -- The symbol for a plugin which has completed installation/updating
-        removed_sym = '-', -- The symbol for an unused plugin which was removed
-        moved_sym = '→', -- The symbol for a plugin which was moved (e.g. from opt to start)
-        header_sym = '━', -- The symbol for the header line in packer's display
-        show_all_info = true, -- Should packer show all update details automatically?
-        prompt_border = 'double', -- Border style of prompt popups.
-        keybindings = { -- Keybindings for the display window
+        open_fn         = nil, -- An optional function to open a window for packer's display
+        open_cmd        = '65vnew \\[packer\\]', -- An optional command to open a window for packer's display
+        working_sym     = '⟳', -- The symbol for a plugin being installed/updated
+        error_sym       = '✗', -- The symbol for a plugin with an error in installation/updating
+        done_sym        = '✓', -- The symbol for a plugin which has completed installation/updating
+        removed_sym     = '-', -- The symbol for an unused plugin which was removed
+        moved_sym       = '→', -- The symbol for a plugin which was moved (e.g. from opt to start)
+        header_sym      = '━', -- The symbol for the header line in packer's display
+        show_all_info   = true, -- Should packer show all update details automatically?
+        prompt_border   = 'double', -- Border style of prompt popups.
+        keybindings     = { -- Keybindings for the display window
             quit = 'q',
             toggle_info = '<CR>',
             diff = 'd',
             prompt_revert = 'r',
         }
     },
-    luarocks = {
+    luarocks             = {
         python_cmd = 'python3' -- Set the python command to use for running hererocks
     },
-    log = { level = 'warn' }, -- The default print log level. One of: "trace", "debug", "info", "warn", "error", "fatal".
-    profile = {
+    log                  = { level = 'warn' }, -- The default print log level. One of: "trace", "debug", "info", "warn", "error", "fatal".
+    profile              = {
         enable = false,
         threshold = 1, -- integer in milliseconds, plugins which load faster than this won't be shown in profile output
     }
@@ -61,7 +61,7 @@ require'packer'.init{
 }
 
 
-require'packer'.startup( function()
+require 'packer'.startup(function()
     --use 'tamton-aquib/staline.nvim'
     --use "rebelot/kanagawa.nvim"
     --use 'phanviet/vim-monokai-pro'
@@ -79,7 +79,7 @@ require'packer'.startup( function()
     use 'tanvirtin/monokai.nvim'
     use "windwp/nvim-autopairs"
     use 'wbthomason/packer.nvim'
-    use {'nvim-treesitter/nvim-treesitter'}
+    use { 'nvim-treesitter/nvim-treesitter' }
     use "tpope/vim-dadbod"
     use 'kristijanhusak/vim-dadbod-completion'
     use "kristijanhusak/vim-dadbod-ui"
@@ -105,17 +105,17 @@ require'packer'.startup( function()
     }
     use "pangloss/vim-javascript"
     use 'chentoast/marks.nvim'
-    use {"akinsho/toggleterm.nvim", tag = 'v1.*', config = function() require("toggleterm").setup() end}
+    use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function() require("toggleterm").setup() end }
 
     use 'famiu/bufdelete.nvim'
     use 'gregsexton/matchtag'
-    use {'kaicataldo/material.vim', branch='main' }
-    use {'ms-jpq/chadtree', branch='chad'}
+    use { 'kaicataldo/material.vim', branch = 'main' }
+    use { 'ms-jpq/chadtree', branch = 'chad' }
     use {
         'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'
     }
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
-    use { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } }
+    use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
     use { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' }
 
     --- LSP plugins
@@ -145,7 +145,7 @@ require'packer'.startup( function()
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",
         config = function()
-            require( 'trouble' ).setup {
+            require('trouble').setup {
                 position = "bottom", -- position of the list can be: bottom, top, left, right
                 mode = 'workspace_diagnostics',
                 signs = {
@@ -167,12 +167,9 @@ require'packer'.startup( function()
         tag = 'nightly' -- optional, updated every week. (see issue #1193)
     }
 
-    use {
-        'declancm/cinnamon.nvim',
-        config = function() require('cinnamon').setup() end
-    }
+    use 'navarasu/onedark.nvim'
+
+    use { "ellisonleao/gruvbox.nvim" }
 
 
 end)
-
-

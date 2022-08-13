@@ -1,4 +1,4 @@
-require("toggleterm").setup{
+require("toggleterm").setup {
     size = 10,
     open_mapping = [[<Leader><Enter>]],
     hide_numbers = true, -- hide the number column in toggleterm buffers
@@ -9,23 +9,23 @@ require("toggleterm").setup{
     direction = 'float',
     close_on_exit = true, -- close the terminal window when the process exits
     float_opts = {
-       border = 'curved',--//'double' |'shadow'|'curved'|
-       winblend = 1,
-       highlights = {
-           border = "Normal",
-           background = "Normal",
-       }
+        border = 'curved', --//'double' |'shadow'|'curved'|
+        winblend = 1,
+        highlights = {
+            border = "Normal",
+            background = "Normal",
+        }
     }
---
+    --
 }
 --
-require'marks'.setup {
+require 'marks'.setup {
     default_mappings = true,
     builtin_marks = {},
     cyclic = true,
     force_write_shada = false,
     refresh_interval = 250,
-    sign_priority = { lower=10, upper=15, builtin=8, bookmark=20 },
+    sign_priority = { lower = 10, upper = 15, builtin = 8, bookmark = 20 },
     excluded_filetypes = {},
     bookmark_0 = {
         sign = "⚑",
@@ -33,7 +33,7 @@ require'marks'.setup {
     mappings = {}
 }
 
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     sync_install = false,
     indent = {
         enable = true
@@ -46,7 +46,7 @@ require'nvim-treesitter.configs'.setup {
     },
 }
 --
-require'Comment'.setup{
+require 'Comment'.setup {
     padding = true,
     sticky = true,
     ignore = nil,
@@ -73,21 +73,21 @@ require'Comment'.setup{
     post_hook = nil,
 }
 --
-require("bufferline").setup{}
+require("bufferline").setup {}
 require('Comment').setup()
-require('nvim-autopairs').setup{}
+require('nvim-autopairs').setup {}
 --
-require("indent_blankline").setup{
+require("indent_blankline").setup {
     -- space_char_blankline = " ",
     -- show_current_context = true,
     -- show_current_context_start = true,
-    buftype_exclude = {"terminal", "chadtree","scratch", "dbui"},
-    filetype_exclude = {"dashboard", "chadtree", 'scratch', 'packer', 'NvimTree', 'dbui' },
+    buftype_exclude = { "terminal", "chadtree", "scratch", "dbui" },
+    filetype_exclude = { "dashboard", "chadtree", 'scratch', 'packer', 'NvimTree', 'dbui' },
 }
 --
 local actions = require "telescope.actions"
 
-require('telescope').setup{
+require('telescope').setup {
     defaults = {
         mappings = {
             i = {
@@ -98,7 +98,7 @@ require('telescope').setup{
     },
 }
 
-require("todo-comments").setup { }
+require("todo-comments").setup {}
 
 local lsp_installer = require("nvim-lsp-installer")
 
@@ -123,8 +123,25 @@ end
 
 --- arreglar este plugin
 require('vgit').setup()
-require("nvim-tree").setup({ 
+require("nvim-tree").setup({
+    auto_reload_on_write = true,
+    create_in_closed_folder = false,
+    disable_netrw = false,
+    hijack_cursor = false,
+    hijack_netrw = true,
+    hijack_unnamed_buffer_when_opening = false,
+    ignore_buffer_on_setup = false,
+    open_on_setup = false,
+    open_on_setup_file = false,
+    open_on_tab = false,
+    sort_by = "name",
+    --root_dirs = {},
+    prefer_startup_root = false,
+    --sync_root_with_cwd = true,
+    reload_on_bufenter = false,
+    respect_buf_cwd = false,
     view = {
+        width = 20,
         adaptive_size = false,
         hide_root_folder = true,
         mappings = {
@@ -133,6 +150,30 @@ require("nvim-tree").setup({
             },
         },
     },
-    })
+})
+
+-- require('onedark').load()
+
+require('onedark').setup  {
+    style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+    transparent = true,  -- Show/hide background
+    term_colors = true, -- Change terminal color as per the selected theme style
+    ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+    cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+    toggle_style_key = '<leader>ts', -- Default keybinding to toggle
+    toggle_style_list = {'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'}, -- List of styles to toggle between
+    code_style = {
+        comments = 'italic',
+        keywords = 'none',
+        functions = 'none',
+        strings = 'none',
+        variables = 'none'
+    },
+    diagnostics = {
+        darker = true, -- darker colors for diagnostic
+        undercurl = true,   -- use undercurl instead of underline for diagnostics
+        background = true,    -- use background color for virtual text
+    }
+}
 
 
