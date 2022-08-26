@@ -8,8 +8,9 @@ vim.opt.list = true
 -- vim.wo.signcolumn = 'yes'
 
 vim.o.background = "dark" -- or "light" for light mode
--- vim.cmd("colorscheme sonokai")
 vim.cmd("colorscheme material")
+-- vim.cmd("colorscheme sonokai")
+-- vim.cmd("colorscheme monokai_pro")
 -- vim.cmd("colorscheme monokai_soda")
 -- vim.cmd("colorscheme onedark")
 -- vim.cmd([[colorscheme gruvbox]])
@@ -69,8 +70,8 @@ set.updatetime=200
 set.signcolumn='yes'
 
 set.termguicolors=true
-set.laststatus=0
--- set.laststatus=2
+-- set.laststatus=0 --set 0 when dont show bar
+set.laststatus=2
 set.showtabline=2
 
 local chadtree_settings = {

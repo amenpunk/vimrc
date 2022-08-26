@@ -168,8 +168,7 @@ require 'packer'.startup(function()
     }
 
     use 'navarasu/onedark.nvim'
-
-    use { "ellisonleao/gruvbox.nvim" }
-
+    use 'phanviet/vim-monokai-pro'
+    use { 'bluz71/vim-mistfly-statusline', branch = 'moonfly-compat' }
 
 end)
