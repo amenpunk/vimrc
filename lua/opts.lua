@@ -77,12 +77,13 @@ require("bufferline").setup {}
 require('Comment').setup()
 require('nvim-autopairs').setup {}
 --
+
 require("indent_blankline").setup {
-    -- space_char_blankline = " ",
+    space_char_blankline = " ",
     -- show_current_context = true,
     -- show_current_context_start = true,
     buftype_exclude = { "terminal", "chadtree", "scratch", "dbui" },
-    filetype_exclude = { "dashboard", "chadtree", 'scratch', 'packer', 'NvimTree', 'dbui' },
+    filetype_exclude = { "dashboard", "chadtree", 'scratch', 'packer', 'dbui' },
 }
 --
 local actions = require "telescope.actions"
@@ -147,8 +148,8 @@ require("nvim-tree").setup({
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
-        width = 25,
-        adaptive_size = true,
+        width = 21,
+        adaptive_size = false,
         hide_root_folder = true,
         mappings = {
             list = {
@@ -181,3 +182,12 @@ require('onedark').setup {
         background = true, -- use background color for virtual text
     }
 }
+
+require("lsp-colors").setup({
+  Error = "#db4b4b",
+  Warning = "#e0af68",
+  Information = "#0db9d7",
+  Hint = "#10B981"
+})
+
+

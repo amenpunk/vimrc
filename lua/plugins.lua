@@ -65,18 +65,16 @@ require 'packer'.startup(function()
     --use 'tamton-aquib/staline.nvim'
     --use "rebelot/kanagawa.nvim"
     --use 'phanviet/vim-monokai-pro'
-    --use 'dart-lang/dart-vim-plugin'
+    use 'dart-lang/dart-vim-plugin'
     --use 'thosakwe/vim-flutter'
     --use 'rcarriga/nvim-notify'
     --use 'bluz71/vim-moonfly-colors'
-    --use({ "catppuccin/nvim", as = "catppuccin" })
     -- use 'nvim-lua/popup.nvim'
     --use 'mfussenegger/nvim-dap'
     --use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    --use 'folke/lsp-colors.nvim'
+    use 'folke/lsp-colors.nvim'
 
-    use 'haya14busa/is.vim'
-    use 'tanvirtin/monokai.nvim'
+    --use 'tanvirtin/monokai.nvim'
     use "windwp/nvim-autopairs"
     use 'wbthomason/packer.nvim'
     use { 'nvim-treesitter/nvim-treesitter' }
@@ -105,7 +103,9 @@ require 'packer'.startup(function()
     }
     use "pangloss/vim-javascript"
     use 'chentoast/marks.nvim'
-    use { "akinsho/toggleterm.nvim", tag = 'v1.*', config = function() require("toggleterm").setup() end }
+    use {"akinsho/toggleterm.nvim", tag = '*', config = function()
+      require("toggleterm").setup()
+    end}
 
     use 'famiu/bufdelete.nvim'
     use 'gregsexton/matchtag'
@@ -169,6 +169,7 @@ require 'packer'.startup(function()
 
     use 'navarasu/onedark.nvim'
     use 'phanviet/vim-monokai-pro'
-    use { 'bluz71/vim-mistfly-statusline', branch = 'moonfly-compat' }
+    use 'https://gitlab.com/__tpb/monokai-pro.nvim'
+    use 'bluz71/vim-mistfly-statusline'
 
 end)

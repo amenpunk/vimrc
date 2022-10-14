@@ -7,6 +7,9 @@ vim.g.material_theme_style='darker'
 vim.opt.list = true
 -- vim.wo.signcolumn = 'yes'
 
+
+-- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
+vim.g.monokaipro_filter = "classic"
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme sonokai")
@@ -14,6 +17,7 @@ vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme monokai_soda")
 -- vim.cmd("colorscheme onedark")
 -- vim.cmd([[colorscheme gruvbox]])
+-- vim.cmd("colorscheme monokaipro")
 
 -- sets
 set.clipboard='unnamedplus' -- only one clipboard
@@ -37,14 +41,14 @@ set.colorcolumn = '0' --  color column
 set.textwidth = 120 --  color column
 set.background='dark'
 set.relativenumber=true
-set.ts=4
+set.ts=2
 set.autoindent=true
 set.smartindent=true
 set.cindent=true
 set.expandtab=true
 set.softtabstop=2
 set.tabstop=8
-set.shiftwidth=4
+set.shiftwidth=2
 set.ignorecase=true
 set.winwidth=110
 set.number=true
@@ -82,6 +86,7 @@ g("chadtree_settings", chadtree_settings)
 vim.g.material_theme_style='darker'
 vim.g.material_terminal_italics = 1
 
+
 g("db_ui_winwidth", 27)
 g('flutter_hot_reload_on_save', 1)
 g('flutter_autoscroll', 1)
@@ -109,6 +114,9 @@ g('indent_blankline_bufname_exclude' , {'dbui'})
 -- g("indent_blankline_char" , '┆')
 
 g("compe_source_vim_dadbod_completion", true)
+g("monokaipro_filter", "spectrum")
+vim.g.monokaipro_filter = "spectrum"
+
 
 -- g('db_ui_default_query' , 'select * from "{table}" limit 10')
 -- g("startify_custom_header",{'     _           _                      _             ',
