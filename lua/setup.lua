@@ -9,7 +9,7 @@ vim.opt.list = true
 
 
 -- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
-vim.g.monokaipro_filter = "classic"
+vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme sonokai")
@@ -69,13 +69,13 @@ set.showcmd=false
 set.cmdheight=1
 set.updatetime=200
 --
--- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
+set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
 -- set.signcolumn='auto'
-set.signcolumn='yes'
+-- set.signcolumn='yes'
 
 set.termguicolors=true
--- set.laststatus=0 --set 0 when dont show bar
-set.laststatus=2
+set.laststatus=0 --set 0 when dont show bar
+-- set.laststatus=2
 set.showtabline=2
 
 local chadtree_settings = {
@@ -98,7 +98,7 @@ g("startify_bookmarks", {
 })
 
 --g('toggleterm_terminal_mapping', '<C-t>')
-g('closetag_filenames', '.html,*.xhtml,*.phtml,*.jx')
+g('closetag_filenames', '.html,*.xhtml,*.phtml,*.jx,*.js,*.jsx')
 g('closetag_shortcut', '>')
 
 g('indent_blankline_filetype_exclude', {'scratch', 'chadtree'})
@@ -112,6 +112,7 @@ g('indent_blankline_bufname_exclude' , {'dbui'})
 -- g("indent_blankline_char_list", {'|', '¦', '┆', '┊'})
 -- g("indent_blankline_char" , '|')
 -- g("indent_blankline_char" , '┆')
+g("indent_blankline_char" , '¦')
 
 g("compe_source_vim_dadbod_completion", true)
 g("monokaipro_filter", "spectrum")

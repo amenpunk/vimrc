@@ -148,6 +148,7 @@ require("nvim-tree").setup({
     reload_on_bufenter = false,
     respect_buf_cwd = false,
     view = {
+        side = 'right',
         width = 21,
         adaptive_size = false,
         hide_root_folder = true,
@@ -183,11 +184,11 @@ require('onedark').setup {
     }
 }
 
-require("lsp-colors").setup({
+--[[ require("lsp-colors").setup({
   Error = "#db4b4b",
   Warning = "#e0af68",
   Information = "#0db9d7",
   Hint = "#10B981"
-})
+}) ]]
 
 

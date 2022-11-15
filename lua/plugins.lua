@@ -65,16 +65,16 @@ require 'packer'.startup(function()
     --use 'tamton-aquib/staline.nvim'
     --use "rebelot/kanagawa.nvim"
     --use 'phanviet/vim-monokai-pro'
-    use 'dart-lang/dart-vim-plugin'
+    --use 'dart-lang/dart-vim-plugin'
     --use 'thosakwe/vim-flutter'
     --use 'rcarriga/nvim-notify'
     --use 'bluz71/vim-moonfly-colors'
     -- use 'nvim-lua/popup.nvim'
     --use 'mfussenegger/nvim-dap'
     --use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    use 'folke/lsp-colors.nvim'
-
+    --use 'folke/lsp-colors.nvim'
     --use 'tanvirtin/monokai.nvim'
+  --
     use "windwp/nvim-autopairs"
     use 'wbthomason/packer.nvim'
     use { 'nvim-treesitter/nvim-treesitter' }
@@ -84,7 +84,7 @@ require 'packer'.startup(function()
     use "lukas-reineke/indent-blankline.nvim"
     use 'mhinz/vim-startify'
     use 'tpope/vim-fugitive'
-    use 'alvan/vim-closetag'
+    --use 'alvan/vim-closetag'
     use 'tpope/vim-surround'
     use 'ryanoasis/vim-webdevicons'
     use 'kyazdani42/nvim-web-devicons'

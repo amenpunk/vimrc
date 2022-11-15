@@ -72,9 +72,8 @@ map('n','<A-9>', '<Cmd>BufferLineGoToBuffer 9 <CR>', { silent=true, noremap=true
 map('n','<A-0>', ":Bdelete <CR>", { silent=true, noremap=true })
 
 
-map('n','<C-<>', ':BufferLineMovePrev <CR>', options)
-map('n','<C->>', ':BufferLineMoveNext <CR>', options)
-
+map('n','<A-,>', ':BufferLineMovePrev <CR>', { silent=true, noremap=true})
+map('n','<A-.>', ':BufferLineMoveNext <CR>', { silent=true, noremap=true})
 
 -- coc config
 -- map('n', '<leader>s', ':CocList -I symbols<CR>', { noremap = true, nowait=true })
