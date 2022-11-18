@@ -73,7 +73,13 @@ require 'Comment'.setup {
     post_hook = nil,
 }
 --
-require("bufferline").setup {}
+require("bufferline").setup {
+  options = {
+    numbers  ="ordinal",
+    diagnostics = "nvim_lsp"
+  }
+}
+
 require('Comment').setup()
 require('nvim-autopairs').setup {}
 --

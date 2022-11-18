@@ -74,7 +74,7 @@ require 'packer'.startup(function()
     --use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     --use 'folke/lsp-colors.nvim'
     --use 'tanvirtin/monokai.nvim'
-  --
+    --use 'alvan/vim-closetag'
     use "windwp/nvim-autopairs"
     use 'wbthomason/packer.nvim'
     use { 'nvim-treesitter/nvim-treesitter' }
@@ -84,7 +84,6 @@ require 'packer'.startup(function()
     use "lukas-reineke/indent-blankline.nvim"
     use 'mhinz/vim-startify'
     use 'tpope/vim-fugitive'
-    --use 'alvan/vim-closetag'
     use 'tpope/vim-surround'
     use 'ryanoasis/vim-webdevicons'
     use 'kyazdani42/nvim-web-devicons'

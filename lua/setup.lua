@@ -9,7 +9,7 @@ vim.opt.list = true
 
 
 -- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
-vim.g.monokaipro_filter = "spectrum"
+-- vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme sonokai")
@@ -112,7 +112,7 @@ g('indent_blankline_bufname_exclude' , {'dbui'})
 -- g("indent_blankline_char_list", {'|', '¦', '┆', '┊'})
 -- g("indent_blankline_char" , '|')
 -- g("indent_blankline_char" , '┆')
-g("indent_blankline_char" , '¦')
+-- g("indent_blankline_char" , '¦')
 
 g("compe_source_vim_dadbod_completion", true)
 g("monokaipro_filter", "spectrum")
@@ -131,22 +131,6 @@ vim.g.monokaipro_filter = "spectrum"
 --                              '     ▕│                                        ',
 --                              '                 ‾                      ‾             '})
 --
-
-g('header_ascii', {
-   '   ⣿⣿⠏⣠⣾⣦⡐⢌⢿⣷⣦⣅⡑⠕⠡⠐⢿⠿⣛⠟⠛⠛⠛⠛⠡⢷⡈⢂⢕⢂ ',
-   '   ⠟⣡⣾⣿⣿⣿⣿⣦⣑⠝⢿⣿⣿⣿⣿⣿⡵⢁⣤⣶⣶⣿⢿⢿⢿⡟⢻⣤⢑⢂ ',
-   '   ⣾⣿⣿⡿⢟⣛⣻⣿⣿⣿⣦⣬⣙⣻⣿⣿⣷⣿⣿⢟⢝⢕⢕⢕⢕⢽⣿⣿⣷⣔ ',
-   '   ⣿⣿⠵⠚⠉⢀⣀⣀⣈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣗⢕⢕⢕⢕⢕⢕⣽⣿⣿⣿⣿ ',
-   '   ⢷⣂⣠⣴⣾⡿⡿⡻⡻⣿⣿⣴⣿⣿⣿⣿⣿⣿⣷⣵⣵⣵⣷⣿⣿⣿⣿⣿⣿⡿ ',
-   '   ⢌⠻⣿⡿⡫⡪⡪⡪⡪⣺⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃ ',
-   '   ⠣⡁⠹⡪⡪⡪⡪⣪⣾⣿⣿⣿⣿⠋⠐⢉⢍⢄⢌⠻⣿⣿⣿⣿⣿⣿⣿⣿⠏⠈ ',
-   '   ⡣⡘⢄⠙⣾⣾⣾⣿⣿⣿⣿⣿⣿⡀⢐⢕⢕⢕⢕⢕⡘⣿⣿⣿⣿⣿⣿⠏⠠⠈ ',
-   '   ⠌⢊⢂⢣⠹⣿⣿⣿⣿⣿⣿⣿⣿⣧⢐⢕⢕⢕⢕⢕⢅⣿⣿⣿⣿⡿⢋⢜⠠⠈ ',
-   '   ⠄⠁⠕⢝⡢⠈⠻⣿⣿⣿⣿⣿⣿⣿⣷⣕⣑⣑⣑⣵⣿⣿⣿⡿⢋⢔⢕⣿⠠⠈ ',
-})
 -- g("startify_custom_header", 'g:header_ascii')
 
 require('database')
-
-
-
