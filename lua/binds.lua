@@ -17,7 +17,6 @@ map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
 --
 map('n','<leader>da', ":lua require'servers.javascript'.attach()<CR> ", options)
 -- map('n','<leader>ba', ":lua require'dap'.javascript'.attach()<CR> ", options)
-vim.keymap.set('n', 'ba', function() require"dap".toggle_breakpoint() end)
 
 map('n','==',':lua vim.lsp.buf.formatting()<CR>', options)
 map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', options)
@@ -88,3 +87,16 @@ map('n','<A-.>', ':BufferLineMoveNext <CR>', { silent=true, noremap=true})
 
 map('v', 'J', ":m '>+1<CR>gv=gv", { noremap=true })
 map('v', 'K', ":m '<-2<CR>gv=gv", { noremap=true })
+
+
+--- DAP CONFIG
+--
+map('n', 'ba', ":lua require'dap'.toggle_breakpoint()<CR>", options )
+map('n', 'bi', ":lua require'dapui'.open()<CR>", options )
+map("n", "<F5>", ":lua require'dap'.step_into()<CR>", options)
+map("n", "<F6>", ":lua require'dap'.step_over()<CR>", options)
+map("n", "<F7>", ":lua require'dap'.continue()<CR>", options)
+map("n", "<F4>", ":lua require'dap'.step_out()<CR>", options)
+-- map("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
+-- map("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+-- map("n", "<leader>lp", ":lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")

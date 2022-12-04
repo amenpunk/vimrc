@@ -71,7 +71,7 @@ require 'packer'.startup(function()
     --use 'bluz71/vim-moonfly-colors'
     -- use 'nvim-lua/popup.nvim'
     use 'mfussenegger/nvim-dap'
-    --use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     --use 'folke/lsp-colors.nvim'
     --use 'tanvirtin/monokai.nvim'
     --use 'alvan/vim-closetag'
