@@ -15,6 +15,10 @@ map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)
 
 --- lsp config
 --
+map('n','<leader>da', ":lua require'servers.javascript'.attach()<CR> ", options)
+-- map('n','<leader>ba', ":lua require'dap'.javascript'.attach()<CR> ", options)
+vim.keymap.set('n', 'ba', function() require"dap".toggle_breakpoint() end)
+
 map('n','==',':lua vim.lsp.buf.formatting()<CR>', options)
 map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', options)
 map('n', 'gi', ':lua vim.lsp.buf.references()<CR>', options)
@@ -35,6 +39,7 @@ map('n', '<C-,>', ':lua vim.lsp.buf.hover()<cr>', options)
 
 map('', '<leader>a', '<Plug>(easymotion-bd-w)', { silent = true })
 map('', '<leader>l', ':Telescope  lsp_document_symbols<CR>', { silent = true })
+map('', '<leader>t', ':Telescope  buffers<CR>', { silent = true })
 map('', '<leader>m', '<cmd>Telescope marks<cr>', { silent = true })
 map('', '<leader>b', ':DBUI<CR>', { silent = true })
 -- map('', '<leader>f', ':Rg<CR>', { silent = true })

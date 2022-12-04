@@ -6,3 +6,4 @@ require('setup')
 
 -- servers
 require('servers.java')
+require('servers.javascript')

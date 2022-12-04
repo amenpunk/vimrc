@@ -47,30 +47,30 @@ require 'nvim-treesitter.configs'.setup {
 }
 --
 require 'Comment'.setup {
-    padding = true,
-    sticky = true,
-    ignore = nil,
-    toggler = {
-        line = 'gcc',
-        block = 'gbc',
-    },
-
-    opleader = {
-        line = 'gc',
-        block = 'gb',
-    },
-    extra = {
-        above = 'gcO',
-        below = 'gco',
-        eol = 'gcA',
-    },
-    mappings = {
-        basic = true,
-        extra = true,
-        extended = false,
-    },
-    pre_hook = nil,
-    post_hook = nil,
+    -- padding = true,
+    -- sticky = true,
+    -- ignore = nil,
+    -- toggler = {
+    --     line = 'gcc',
+    --     block = 'gbc',
+    -- },
+    --
+    -- opleader = {
+    --     line = 'gc',
+    --     block = 'gb',
+    -- },
+    -- extra = {
+    --     above = 'gcO',
+    --     below = 'gco',
+    --     eol = 'gcA',
+    -- },
+    -- mappings = {
+    --     basic = true,
+    --     extra = true,
+    --     extended = false,
+    -- },
+    -- pre_hook = nil,
+    -- post_hook = nil,
 }
 --
 require("bufferline").setup {
@@ -155,7 +155,7 @@ require("nvim-tree").setup({
     respect_buf_cwd = false,
     view = {
         side = 'right',
-        width = 21,
+        width = 27,
         adaptive_size = false,
         hide_root_folder = true,
         mappings = {
@@ -197,4 +197,20 @@ require('onedark').setup {
   Hint = "#10B981"
 }) ]]
 
+require'nvim-treesitter.configs'.setup {
+  autotag = {
+    enable = true,
+  }
+}
 
+vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
+  vim.lsp.diagnostic.on_publish_diagnostics,
+  {
+    underline = true,
+    virtual_text = {
+      spacing = 5,
+      severity_limit = 'Warning',
+    },
+    update_in_insert = true,
+  }
+)

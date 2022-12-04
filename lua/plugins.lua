@@ -70,11 +70,13 @@ require 'packer'.startup(function()
     --use 'rcarriga/nvim-notify'
     --use 'bluz71/vim-moonfly-colors'
     -- use 'nvim-lua/popup.nvim'
-    --use 'mfussenegger/nvim-dap'
+    use 'mfussenegger/nvim-dap'
     --use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
     --use 'folke/lsp-colors.nvim'
     --use 'tanvirtin/monokai.nvim'
     --use 'alvan/vim-closetag'
+    use 'kajamite/vim-monokai2'
+    use { "ellisonleao/gruvbox.nvim" }
     use "windwp/nvim-autopairs"
     use 'wbthomason/packer.nvim'
     use { 'nvim-treesitter/nvim-treesitter' }
@@ -107,7 +109,8 @@ require 'packer'.startup(function()
     end}
 
     use 'famiu/bufdelete.nvim'
-    use 'gregsexton/matchtag'
+    -- use 'gregsexton/matchtag'
+    use 'windwp/nvim-ts-autotag'
     use { 'kaicataldo/material.vim', branch = 'main' }
     use { 'ms-jpq/chadtree', branch = 'chad' }
     use {

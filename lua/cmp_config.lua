@@ -91,7 +91,7 @@ cmp.setup {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
             { name = 'path' }
-        }, 
+        },
         {
             { name = 'cmdline' }
         })
@@ -108,5 +108,7 @@ vim.cmd[[
 ]]
 
 vim.cmd[[
-    autocmd BufWritePre * :%s/\s\+$//e
+nnoremap * :keepjumps normal! mi*`i<CR>
 ]]
+
+

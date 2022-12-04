@@ -18,6 +18,8 @@ vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme onedark")
 -- vim.cmd([[colorscheme gruvbox]])
 -- vim.cmd("colorscheme monokaipro")
+-- vim.cmd("colorscheme monokai2")
+-- vim.cmd("colorscheme gruvbox")
 
 -- sets
 set.clipboard='unnamedplus' -- only one clipboard
@@ -69,8 +71,8 @@ set.showcmd=false
 set.cmdheight=1
 set.updatetime=200
 --
-set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
--- set.signcolumn='auto'
+-- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
+set.signcolumn='auto'
 -- set.signcolumn='yes'
 
 set.termguicolors=true
@@ -116,10 +118,9 @@ g('indent_blankline_bufname_exclude' , {'dbui'})
 
 g("compe_source_vim_dadbod_completion", true)
 g("monokaipro_filter", "spectrum")
+g('db_ui_default_query' , 'select * from "{table}" limit 10')
 vim.g.monokaipro_filter = "spectrum"
 
-
--- g('db_ui_default_query' , 'select * from "{table}" limit 10')
 -- g("startify_custom_header",{'     _           _                      _             ',
 --                              '             ▕                                 ',
 --                              '  ▕ ███       ▕│█     ___   ___                 ',
