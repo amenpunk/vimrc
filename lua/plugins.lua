@@ -161,6 +161,8 @@ require 'packer'.startup(function()
 
     }
 
+    use {'srcery-colors/srcery-vim', as = 'srcery'}
+
     use {
         'kyazdani42/nvim-tree.lua',
         requires = {

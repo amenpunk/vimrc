@@ -20,6 +20,7 @@ vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme monokaipro")
 -- vim.cmd("colorscheme monokai2")
 -- vim.cmd("colorscheme gruvbox")
+-- vim.cmd("colorscheme srcery")
 
 -- sets
 set.clipboard='unnamedplus' -- only one clipboard
