@@ -22,6 +22,7 @@ map('n', 'gd', ':lua vim.lsp.buf.definition()<cr>', options)
 map('n', 'gi', ':lua vim.lsp.buf.references()<CR>', options)
 --map('n', '<C-space>', ':lua vim.lsp.buf.code_action()<CR>', options)
 map('n', '<C-space>', ':CodeActionMenu<CR>', options)
+map('n', '<leader>e', ':lua vim.diagnostic.open_float()<CR>', options)
 map('n', '<C-,>', ':lua vim.lsp.buf.hover()<cr>', options)
 --- lsp config
 

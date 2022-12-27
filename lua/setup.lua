@@ -21,6 +21,8 @@ vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme monokai2")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme srcery")
+vim.cmd.colorscheme "oxocarbon"
+
 
 -- sets
 set.clipboard='unnamedplus' -- only one clipboard
@@ -71,6 +73,7 @@ set.scrollback=20
 set.showcmd=false
 set.cmdheight=1
 set.updatetime=200
+-- set.cmdheight=2
 --
 -- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
 set.signcolumn='auto'

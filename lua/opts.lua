@@ -84,8 +84,7 @@ require("bufferline").setup {
 }
 
 require('Comment').setup()
-require('nvim-autopairs').setup {}
---
+-- require('nvim-autopairs').setup {}
 
 require("indent_blankline").setup {
   space_char_blankline = " ",
@@ -220,3 +219,5 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 
 
 require("dapui").setup()
+
+require("autoclose").setup({})

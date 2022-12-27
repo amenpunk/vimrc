@@ -77,7 +77,7 @@ require 'packer'.startup(function()
     --use 'alvan/vim-closetag'
     use 'kajamite/vim-monokai2'
     use { "ellisonleao/gruvbox.nvim" }
-    use "windwp/nvim-autopairs"
+    --use "windwp/nvim-autopairs"
     use 'wbthomason/packer.nvim'
     use { 'nvim-treesitter/nvim-treesitter' }
     use "tpope/vim-dadbod"
@@ -110,7 +110,7 @@ require 'packer'.startup(function()
 
     use 'famiu/bufdelete.nvim'
     -- use 'gregsexton/matchtag'
-    use 'windwp/nvim-ts-autotag'
+    --use 'windwp/nvim-ts-autotag'
     use { 'kaicataldo/material.vim', branch = 'main' }
     use { 'ms-jpq/chadtree', branch = 'chad' }
     use {
@@ -161,7 +161,9 @@ require 'packer'.startup(function()
 
     }
 
-    use {'srcery-colors/srcery-vim', as = 'srcery'}
+    -- use {'srcery-colors/srcery-vim', as = 'srcery'}
+    use {'nyoom-engineering/oxocarbon.nvim'}
+    use 'm4xshen/autoclose.nvim'
 
     use {
         'kyazdani42/nvim-tree.lua',
@@ -175,5 +177,6 @@ require 'packer'.startup(function()
     use 'phanviet/vim-monokai-pro'
     use 'https://gitlab.com/__tpb/monokai-pro.nvim'
     use 'bluz71/vim-mistfly-statusline'
+    use 'tribela/vim-transparent'
 
 end)
