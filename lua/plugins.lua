@@ -111,8 +111,8 @@ require 'packer'.startup(function()
     use 'famiu/bufdelete.nvim'
     -- use 'gregsexton/matchtag'
     --use 'windwp/nvim-ts-autotag'
+    --use { 'ms-jpq/chadtree', branch = 'chad' }
     use { 'kaicataldo/material.vim', branch = 'main' }
-    use { 'ms-jpq/chadtree', branch = 'chad' }
     use {
         'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'
     }
@@ -176,7 +176,11 @@ require 'packer'.startup(function()
     use 'navarasu/onedark.nvim'
     use 'phanviet/vim-monokai-pro'
     use 'https://gitlab.com/__tpb/monokai-pro.nvim'
-    use 'bluz71/vim-mistfly-statusline'
-    use 'tribela/vim-transparent'
+    -- use 'bluz71/vim-mistfly-statusline'
+    -- use 'tribela/vim-transparent'
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+    }
 
 end)

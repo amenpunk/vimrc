@@ -5,6 +5,8 @@ vim.g.code_action_menu_window_border = 'single'
 vim.opt.termguicolors = true
 vim.g.material_theme_style='darker'
 vim.opt.list = true
+vim.o.cmdheight=0
+
 -- vim.wo.signcolumn = 'yes'
 
 
@@ -21,7 +23,7 @@ vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme monokai2")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme srcery")
-vim.cmd.colorscheme "oxocarbon"
+-- vim.cmd.colorscheme "oxocarbon"
 
 
 -- sets
@@ -35,7 +37,6 @@ set.ruler = false
 --set.completeopt="menu,menuone,noselect,noinsert"
 set.completeopt="menu,menuone,noselect"
 
--- set.cmdheight=2
 -- set.ma=true
 set.splitbelow=true
 set.showmatch=true
@@ -71,9 +72,8 @@ set.foldlevel=99
 set.scrollback=20
 -- set.ruler=true
 set.showcmd=false
-set.cmdheight=1
 set.updatetime=200
--- set.cmdheight=2
+set.cmdheight=0
 --
 -- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
 set.signcolumn='auto'
