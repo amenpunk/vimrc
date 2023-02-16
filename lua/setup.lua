@@ -137,5 +137,3 @@ vim.g.monokaipro_filter = "spectrum"
 --                              '                 ‾                      ‾             '})
 --
 -- g("startify_custom_header", 'g:header_ascii')
-
-require('database')

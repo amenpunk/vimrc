@@ -8,3 +8,6 @@ require('ui')
 -- servers
 require('servers.java')
 require('servers.javascript')
+
+-- database
+require('database')

@@ -113,9 +113,7 @@ require 'packer'.startup(function()
     --use 'windwp/nvim-ts-autotag'
     --use { 'ms-jpq/chadtree', branch = 'chad' }
     use { 'kaicataldo/material.vim', branch = 'main' }
-    use {
-        'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'
-    }
+    use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
     use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
     use { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' }
@@ -177,10 +175,7 @@ require 'packer'.startup(function()
     use 'phanviet/vim-monokai-pro'
     use 'https://gitlab.com/__tpb/monokai-pro.nvim'
     -- use 'bluz71/vim-mistfly-statusline'
-    -- use 'tribela/vim-transparent'
-    use {
-      'nvim-lualine/lualine.nvim',
-      requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+    use 'tribela/vim-transparent'
+    use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
 
 end)
