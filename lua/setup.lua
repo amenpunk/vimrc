@@ -5,7 +5,6 @@ vim.g.code_action_menu_window_border = 'single'
 vim.opt.termguicolors = true
 vim.g.material_theme_style='darker'
 vim.opt.list = true
-vim.o.cmdheight=0
 
 -- vim.wo.signcolumn = 'yes'
 
@@ -27,10 +26,10 @@ vim.cmd("colorscheme material")
 
 
 -- sets
+set.shortmess='nocI'
 set.clipboard='unnamedplus' -- only one clipboard
 set.hidden=true
 set.updatetime=300
-set.shortmess='c'
 set.ruler = false
 
 -- [completion opt in for cpm config]
