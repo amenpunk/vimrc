@@ -118,6 +118,8 @@ g('indent_blankline_bufname_exclude' , {'dbui'})
 -- g("indent_blankline_char" , '|')
 -- g("indent_blankline_char" , '┆')
 -- g("indent_blankline_char" , '¦')
+-- »
+g("indent_blankline_char" , '»')
 
 g("compe_source_vim_dadbod_completion", true)
 g("monokaipro_filter", "spectrum")
