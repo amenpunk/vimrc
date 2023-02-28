@@ -1,4 +1,12 @@
 local map = vim.api.nvim_set_keymap
+local options = { noremap = true }
+local snip_opts = { noremap = true, silent = true  }
+
+--luasnip
+map("i", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", snip_opts)
+map("s", "<c-j>", "<cmd>lua require'luasnip'.jump(1)<CR>", snip_opts)
+map("i", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", snip_opts)
+map("s", "<c-k>", "<cmd>lua require'luasnip'.jump(-1)<CR>", snip_opts)
 
 -- map the leader key
 map('n', '<Space>', '', {})
@@ -8,7 +16,6 @@ vim.g.mapleader = ' '
 vim.g.code_action_menu_window_border = 'single'
 
 
-local options = { noremap = true }
 map('n', '<leader>q', ':q!<CR>', options)
 map('n', '<leader>v', 'gv<CR>', options)
 map('', '<C-p>', '<cmd>Telescope find_files<cr>', options)

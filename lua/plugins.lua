@@ -131,7 +131,7 @@ require 'packer'.startup(function()
     run = 'yarn install --frozen-lockfile && yarn compile'
   }
   
-  -- use "rafamadriz/friendly-snippets" --  FIX:
+  use "rafamadriz/friendly-snippets"
   use "saadparwaiz1/cmp_luasnip"
   use "L3MON4D3/LuaSnip"
 

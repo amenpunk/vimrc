@@ -2,7 +2,7 @@ require('plugins')
 require('snip')
 require('cmp_config')
 require('opts')
-require('binds')
+require('maps')
 require('setup')
 require('ui')
 
