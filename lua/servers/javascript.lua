@@ -3,7 +3,7 @@ local dap = require('dap')
 dap.adapters.node2 = {
   type = 'executable';
   command = 'node';
-  args = { os.getenv('home') .. '/DAP/vscode-node-debug2/out/src/nodeDebug.js' };
+  args = { os.getenv('HOME') .. '/DAP/vscode-node-debug2/out/src/nodeDebug.js' };
 }
 
 vim.fn.sign_define('DapBreakpoint', { text = '🐞',texthl='', linehl='', numhl='' })
