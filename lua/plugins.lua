@@ -121,6 +121,7 @@ require 'packer'.startup(function()
   use 'hrsh7th/vim-vsnip'
   use 'hrsh7th/vim-vsnip-integ'
   use "hrsh7th/nvim-cmp"
+  use 'hrsh7th/cmp-copilot'
   use 'hrsh7th/cmp-cmdline'
   use "hrsh7th/cmp-buffer"
   use "hrsh7th/cmp-path"
@@ -163,7 +164,7 @@ require 'packer'.startup(function()
     end
 
   }
-
+  use "github/copilot.vim"
   use { 'nyoom-engineering/oxocarbon.nvim' }
   use 'm4xshen/autoclose.nvim'
   use {'srcery-colors/srcery-vim', as = 'srcery'}

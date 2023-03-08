@@ -1,6 +1,4 @@
 local ls = require("luasnip")
--- require("luasnip.loaders.from_vscode").lazy_load()
--- require("luasnip.loaders.from_vscode").load({ include = { "javascript" } })
 
 local snip = ls.snippet
 local node = ls.snippet_node
@@ -33,4 +31,10 @@ ls.add_snippets(nil, {
   },
 })
 
+
+
+require("luasnip.loaders.from_snipmate").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load { paths = { "./snippets/typescript" } }
+ls.filetype_extend("all", { "_" })
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").load({ include = { "javascript" } })
