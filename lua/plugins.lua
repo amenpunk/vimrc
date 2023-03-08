@@ -69,15 +69,15 @@ require 'packer'.startup(function()
   --use 'rcarriga/nvim-notify'
   --use 'bluz71/vim-moonfly-colors'
   -- use 'nvim-lua/popup.nvim'
-  use 'mfussenegger/nvim-dap'
-  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   --use 'folke/lsp-colors.nvim'
   --use 'tanvirtin/monokai.nvim'
   --use 'alvan/vim-closetag'
-  use 'kajamite/vim-monokai2'
-  use { "ellisonleao/gruvbox.nvim" }
+  --use 'kajamite/vim-monokai2'
+  ---use { "ellisonleao/gruvbox.nvim" }
   --use "windwp/nvim-autopairs"
   use 'wbthomason/packer.nvim'
+  use 'mfussenegger/nvim-dap'
+  use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
   use { 'nvim-treesitter/nvim-treesitter' }
   use "tpope/vim-dadbod"
   use 'kristijanhusak/vim-dadbod-completion'
@@ -101,7 +101,7 @@ require 'packer'.startup(function()
       require('Comment').setup()
     end
   }
-  use "pangloss/vim-javascript"
+  --use "pangloss/vim-javascript"
   use 'chentoast/marks.nvim'
   use { "akinsho/toggleterm.nvim", tag = '*', config = function()
     require("toggleterm").setup()
@@ -138,7 +138,6 @@ require 'packer'.startup(function()
 
   use "onsails/lspkind-nvim"
   use "hrsh7th/cmp-nvim-lsp-signature-help"
-
 
   use {
     'tanvirtin/vgit.nvim',
