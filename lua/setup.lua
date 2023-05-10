@@ -5,26 +5,7 @@ vim.g.code_action_menu_window_border = 'single'
 vim.opt.termguicolors = true
 vim.g.material_theme_style='darker'
 vim.opt.list = true
-
 -- vim.wo.signcolumn = 'yes'
-
-
--- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
--- vim.g.monokaipro_filter = "spectrum"
-vim.o.background = "dark" -- or "light" for light mode
-vim.cmd("colorscheme material")
--- vim.cmd("colorscheme sonokai")
--- vim.cmd("colorscheme monokai_pro")
--- vim.cmd("colorscheme monokai_soda")
--- vim.cmd("colorscheme onedark")
--- vim.cmd([[colorscheme gruvbox]])
--- vim.cmd("colorscheme monokaipro")
--- vim.cmd("colorscheme monokai2")
--- vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme srcery")
--- vim.cmd.colorscheme "oxocarbon"
-
-
 -- sets
 set.shortmess='nocI'
 set.clipboard='unnamedplus' -- only one clipboard
@@ -72,6 +53,7 @@ set.scrollback=20
 -- set.ruler=true
 set.showcmd=false
 set.updatetime=200
+-- set.cmdheight=1
 set.cmdheight=0
 --
 -- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
@@ -119,7 +101,7 @@ g('indent_blankline_bufname_exclude' , {'dbui'})
 -- g("indent_blankline_char" , '┆')
 -- g("indent_blankline_char" , '¦')
 -- »
-g("indent_blankline_char" , '»')
+-- g("indent_blankline_char" , '»')
 
 g("compe_source_vim_dadbod_completion", true)
 g("monokaipro_filter", "spectrum")

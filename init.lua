@@ -7,7 +7,7 @@ require('setup')
 require('ui')
 
 -- servers
-require('servers.java')
+-- require('servers.java')
 require('servers.javascript')
 
 -- database
