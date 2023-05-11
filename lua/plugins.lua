@@ -75,6 +75,7 @@ require 'packer'.startup(function()
   --use 'kajamite/vim-monokai2'
   ---use { "ellisonleao/gruvbox.nvim" }
   --use "windwp/nvim-autopairs"
+  -- use "junegunn/fzf.vim"
   use 'wbthomason/packer.nvim'
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
@@ -88,12 +89,11 @@ require 'packer'.startup(function()
   use 'tpope/vim-surround'
   use 'ryanoasis/vim-webdevicons'
   use 'kyazdani42/nvim-web-devicons'
-  use 'easymotion/vim-easymotion'
+  use 'phaazon/hop.nvim'
   use 'tveskag/nvim-blame-line'
   use 'mxw/vim-jsx'
   use 'yuezk/vim-js'
   use 'maxmellon/vim-jsx-pretty'
-  use "junegunn/fzf.vim"
   use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu', }
   use {
     'numToStr/Comment.nvim',

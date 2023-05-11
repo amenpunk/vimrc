@@ -221,3 +221,5 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 require("dapui").setup()
 
 require("autoclose").setup({})
+
+require'hop'.setup()

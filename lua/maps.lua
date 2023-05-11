@@ -42,7 +42,8 @@ map('n', '<C-,>', ':lua vim.lsp.buf.hover()<cr>', options)
  map('n', 'gp', ':VGit hunk_up<CR>', options)
 --- GIT CONFIF
 
-map('', '<leader>a', '<Plug>(easymotion-bd-w)', { silent = true })
+map('', '<leader>a', ':HopWord<CR>', { silent = true })
+
 map('', '<leader>l', ':Telescope  lsp_document_symbols<CR>', { silent = true })
 map('', '<leader>t', ':Telescope  buffers<CR>', { silent = true })
 map('', '<leader>m', '<cmd>Telescope marks<cr>', { silent = true })
