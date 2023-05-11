@@ -115,7 +115,7 @@ require 'packer'.startup(function()
   use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
   use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
-  use { 'neovim/nvim-lspconfig', 'williamboman/nvim-lsp-installer' }
+  use { 'neovim/nvim-lspconfig'}
 
   --- LSP plugins
   use 'hrsh7th/vim-vsnip'
@@ -131,6 +131,12 @@ require 'packer'.startup(function()
   use {'dsznajder/vscode-es7-javascript-react-snippets',
     run = 'yarn install --frozen-lockfile && yarn compile'
   }
+
+  use {
+      "williamboman/mason.nvim",
+  }
+
+  use { "williamboman/mason-lspconfig.nvim" }
   
   use "rafamadriz/friendly-snippets"
   use "saadparwaiz1/cmp_luasnip"

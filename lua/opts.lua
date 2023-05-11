@@ -109,12 +109,12 @@ require('telescope').setup {
 
 require("todo-comments").setup {}
 
-local lsp_installer = require("nvim-lsp-installer")
-
-lsp_installer.on_server_ready(function(server)
-  local opts = {}
-  server:setup(opts)
-end)
+-- local lsp_installer = require("nvim-lsp-installer")
+--
+-- lsp_installer.on_server_ready(function(server)
+--   local opts = {}
+--   server:setup(opts)
+-- end)
 
 --- good config
 local signs = {
@@ -223,3 +223,6 @@ require("dapui").setup()
 require("autoclose").setup({})
 
 require'hop'.setup()
+
+require("mason").setup()
+require("mason-lspconfig").setup()
