@@ -99,7 +99,7 @@ map('v', 'K', ":m '<-2<CR>gv=gv", { noremap=true })
 --- DAP CONFIG
 map('n','<leader>da', ":lua require'servers.javascript'.attach()<CR> ", options)
 map('n', '<leader>ba', ":lua require'dap'.toggle_breakpoint()<CR>", options )
-map('n', '<leader>dv', ":lua require'dapui'.open()<CR>", options )
+map('n', '<leader>du', ":lua require'dapui'.open()<CR>", options )
 map("n", "<F5>", ":lua require'dap'.step_into()<CR>", options)
 map("n", "<F6>", ":lua require'dap'.step_over()<CR>", options)
 map("n", "<F7>", ":lua require'dap'.continue()<CR>", options)
