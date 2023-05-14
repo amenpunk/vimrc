@@ -220,7 +220,7 @@ lualine.setup(config)
 
 
 -- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
--- vim.g.monokaipro_filter = "spectrum"
+vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme sonokai")
@@ -233,6 +233,6 @@ vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme gruvbox")
 -- vim.cmd("colorscheme srcery")
 -- vim.cmd.colorscheme "oxocarbon"
--- vim.cmd.colorscheme "xcodelight"
+-- vim.cmd.colorscheme "xcodedarkhc"
 
 

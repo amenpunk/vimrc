@@ -34,9 +34,9 @@ require 'marks'.setup {
 }
 
 require 'nvim-treesitter.configs'.setup {
-  ensure_installed = { "help", "javascript", "html", "php", "css", "html", "lua", "java", "python", "typescript" },
+  -- ensure_installed = { "help", "javascript", "html", "php", "css", "html", "lua", "java", "python", "typescript" },
   sync_install = false,
-  auto_install = true,
+  auto_install = false,
   indent = {
     enable = true
   },
@@ -156,7 +156,7 @@ require("nvim-tree").setup({
   reload_on_bufenter = false,
   respect_buf_cwd = false,
   view = {
-    side = 'right',
+    side = 'left',
     width = 27,
     adaptive_size = false,
     hide_root_folder = true,
@@ -170,27 +170,27 @@ require("nvim-tree").setup({
 
 -- require('onedark').load()
 
-require('onedark').setup {
-  style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
-  transparent = true, -- Show/hide background
-  term_colors = true, -- Change terminal color as per the selected theme style
-  ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
-  cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
-  toggle_style_key = '<leader>ts', -- Default keybinding to toggle
-  toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
-  code_style = {
-    comments = 'italic',
-    keywords = 'none',
-    functions = 'none',
-    strings = 'none',
-    variables = 'none'
-  },
-  diagnostics = {
-    darker = true, -- darker colors for diagnostic
-    undercurl = true, -- use undercurl instead of underline for diagnostics
-    background = true, -- use background color for virtual text
-  }
-}
+-- require('onedark').setup {
+--   style = 'warmer', -- Default theme style. Choose between 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer' and 'light'
+--   transparent = true, -- Show/hide background
+--   term_colors = true, -- Change terminal color as per the selected theme style
+--   ending_tildes = false, -- Show the end-of-buffer tildes. By default they are hidden
+--   cmp_itemkind_reverse = false, -- reverse item kind highlights in cmp menu
+--   toggle_style_key = '<leader>ts', -- Default keybinding to toggle
+--   toggle_style_list = { 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light' }, -- List of styles to toggle between
+--   code_style = {
+--     comments = 'italic',
+--     keywords = 'none',
+--     functions = 'none',
+--     strings = 'none',
+--     variables = 'none'
+--   },
+--   diagnostics = {
+--     darker = true, -- darker colors for diagnostic
+--     undercurl = true, -- use undercurl instead of underline for diagnostics
+--     background = true, -- use background color for virtual text
+--   }
+-- }
 
 --[[ require("lsp-colors").setup({
   Error = "#db4b4b",
@@ -219,10 +219,18 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 
 
 require("dapui").setup()
-
 require("autoclose").setup({})
-
 require'hop'.setup()
-
 require("mason").setup()
 require("mason-lspconfig").setup()
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.completion.spell,
+    },
+})
+

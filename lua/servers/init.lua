@@ -5,6 +5,8 @@ require('servers.javascript')
 require('servers.java')
 
 local on_attach = function(client, bufnr)
+  client.server_capabilities.semanticTokensProvider = nil
+
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
@@ -15,7 +17,7 @@ local on_attach = function(client, bufnr)
   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
   local opts = { noremap = true, silent = true }
-
+  --
   buf_set_keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
   buf_set_keymap("n", "<leader>lh", ":lua vim.lsp.buf.hover()<CR>", opts)
   buf_set_keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
@@ -29,7 +31,19 @@ local on_attach = function(client, bufnr)
   buf_set_keymap("n", "<leader>lf", ":lua vim.lsp.buf.formatting()<CR>", opts)
 end
 
----@diagnostic disable-next-line: undefined-global
+
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+
+-- -@diagnostic disable-next-line: undefined-global
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 --

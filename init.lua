@@ -5,6 +5,7 @@ require('opts')
 require('maps')
 require('setup')
 require('ui')
+require('modals')
 
 -- servers
 require('servers')
