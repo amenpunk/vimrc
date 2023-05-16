@@ -14,7 +14,6 @@ require 'packer'.init {
   git                  = {
     cmd = 'git',                   -- The base command for git operations
     subcommands = {
-                                   -- Format strings for git subcommands
       update         = 'pull --ff-only --progress --rebase=false',
       install        = 'clone --depth %i --no-single-branch --progress',
       fetch          = 'fetch --depth 999999 --progress',
@@ -44,7 +43,6 @@ require 'packer'.init {
     show_all_info   = true,                  -- Should packer show all update details automatically?
     prompt_border   = 'double',              -- Border style of prompt popups.
     keybindings     = {
-                                             -- Keybindings for the display window
       quit = 'q',
       toggle_info = '<CR>',
       diff = 'd',
@@ -169,9 +167,36 @@ require 'packer'.startup(function()
   use 'maxmellon/vim-jsx-pretty'
   use { "ellisonleao/gruvbox.nvim" }
   use "pangloss/vim-javascript"
-  -- use "jose-elias-alvarez/null-ls.nvim"
+  use "jose-elias-alvarez/null-ls.nvim"
   use 'anuvyklack/hydra.nvim'
   use 'mbbill/undotree'
+  use({
+    'NTBBloodbath/doom-one.nvim',
+    setup = function()
+      vim.g.doom_one_cursor_coloring = false
+      vim.g.doom_one_terminal_colors = true
+      vim.g.doom_one_italic_comments = false
+      vim.g.doom_one_enable_treesitter = true
+      vim.g.doom_one_diagnostics_text_color = false
+      vim.g.doom_one_transparent_background = false
+      vim.g.doom_one_pumblend_enable = false
+      vim.g.doom_one_pumblend_transparency = 20
+      vim.g.doom_one_plugin_neorg = true
+      vim.g.doom_one_plugin_barbar = false
+      vim.g.doom_one_plugin_telescope = false
+      vim.g.doom_one_plugin_neogit = true
+      vim.g.doom_one_plugin_nvim_tree = true
+      vim.g.doom_one_plugin_dashboard = true
+      vim.g.doom_one_plugin_startify = true
+      vim.g.doom_one_plugin_whichkey = true
+      vim.g.doom_one_plugin_indent_blankline = true
+      vim.g.doom_one_plugin_vim_illuminate = true
+      vim.g.doom_one_plugin_lspsaga = false
+    end,
+    config = function()
+      vim.cmd("colorscheme doom-one")
+    end,
+  })
 
 
   -- use {'srcery-colors/srcery-vim', as = 'srcery'}

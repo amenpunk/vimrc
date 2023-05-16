@@ -1,7 +1,5 @@
 local lualine = require('lualine')
 
--- Color table for highlights
--- stylua: ignore
 local colors = {
   bg       = '#1e1e1e',
   fg       = '#bbc2cf',
@@ -214,7 +212,6 @@ ins_right {
   padding = { left = 1 },
 }
 
--- Now don't forget to initialize lualine
 lualine.setup(config)
 
 
@@ -222,7 +219,8 @@ lualine.setup(config)
 -- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
 vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
-vim.cmd("colorscheme material")
+-- vim.cmd("colorscheme material")
+-- vim.cmd("colorscheme doom-one")
 -- vim.cmd("colorscheme sonokai")
 -- vim.cmd("colorscheme monokai_pro")
 -- vim.cmd("colorscheme monokai_soda")

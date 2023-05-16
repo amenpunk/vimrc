@@ -3,6 +3,7 @@
 
 require('servers.javascript')
 require('servers.java')
+require('servers.php')
 
 local on_attach = function(client, bufnr)
   client.server_capabilities.semanticTokensProvider = nil
