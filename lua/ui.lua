@@ -214,12 +214,21 @@ ins_right {
 
 lualine.setup(config)
 
+vim.opt.list = true
+vim.opt.listchars:append "space: "
+vim.opt.listchars:append "eol:↴"
+
+require("indent_blankline").setup {
+    show_end_of_line = true,
+    space_char_blankline = " ",
+}
 
 
 -- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
 vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
--- vim.cmd("colorscheme material")
+vim.cmd("colorscheme material")
+-- vim.cmd("colorscheme one_monokai")
 -- vim.cmd("colorscheme doom-one")
 -- vim.cmd("colorscheme sonokai")
 -- vim.cmd("colorscheme monokai_pro")

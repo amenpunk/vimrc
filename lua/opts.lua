@@ -224,4 +224,6 @@ require'hop'.setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
 
-
+require("one_monokai").setup({
+    -- your options
+})

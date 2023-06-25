@@ -74,3 +74,27 @@ require("lspconfig")["jsonls"].setup({
   on_attach = on_attach,
   capabilities = capabilities,
 })
+
+require("lspconfig")["psalm"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+require("lspconfig")["phpactor"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+require("lspconfig")["intelephense"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+require("lspconfig")["elixirls"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
+
+require("lspconfig")["clojure_lsp"].setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+})
