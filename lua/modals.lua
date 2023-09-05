@@ -4,7 +4,7 @@ local dap = require('dap')
 local dapui = require('dapui')
 
 local hint = [[
-                 _f_: files       _m_: marks
+                 _t_: themes       _m_: marks
    🭇🬭🬭🬭🬭🬭🬭🬭🬭🬼    _o_: old files   _g_: live grep
   🭉🭁🭠🭘    🭣🭕🭌🬾   _p_: projects    _/_: search in file
   🭅█ ▁     █🭐
@@ -30,7 +30,7 @@ Hydra({
   mode = 'n',
   body = '<Leader>t',
   heads = {
-    { 'f',       cmd 'Telescope find_files' },
+    { 't',       cmd 'Telescope colorscheme' },
     { 'g',       cmd 'Telescope live_grep' },
     { 'o',       cmd 'Telescope oldfiles',                  { desc = 'recently opened files' } },
     { 'h',       cmd 'Telescope help_tags',                 { desc = 'vim help' } },

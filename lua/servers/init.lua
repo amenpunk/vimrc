@@ -1,6 +1,3 @@
--- TODO:
--- setup all lsp servers here
-
 require('servers.javascript')
 require('servers.java')
 require('servers.php')
@@ -44,55 +41,19 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
 
--- -@diagnostic disable-next-line: undefined-global
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
---
---
-require("lspconfig")["jdtls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
 
-require("lspconfig")["lua_ls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+local servers = {
+  'jdtls', 'tsserver', 'lua_ls',
+  'jsonls', 'psalm', --'phpactor',
+  'unocss', 'cssls', 'intelephense',
+  'cssmodules_ls'
+}
 
-
-require("lspconfig")["tsserver"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-require("lspconfig")["phpactor"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-require("lspconfig")["jsonls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-require("lspconfig")["psalm"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-
-require("lspconfig")["phpactor"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
--- require("lspconfig")["rome"].setup({
---   on_attach = on_attach,
---   capabilities = capabilities,
--- })
-require("lspconfig")["cssls"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
-require("lspconfig")["intelephense"].setup({
-  on_attach = on_attach,
-  capabilities = capabilities,
-})
+for k, v in pairs(servers) do
+  require("lspconfig")[v].setup({
+    on_attach = on_attach,
+    capabilities = capabilities,
+  })
+end

@@ -9,7 +9,7 @@ require("toggleterm").setup {
   direction = 'float',
   close_on_exit = true, -- close the terminal window when the process exits
   float_opts = {
-    border = 'curved', --//'double' |'shadow'|'curved'|
+    border = 'curved',  --//'double' |'shadow'|'curved'|
     winblend = 1,
     highlights = {
       border = "Normal",
@@ -97,6 +97,11 @@ require("indent_blankline").setup {
 local actions = require "telescope.actions"
 
 require('telescope').setup {
+  pickers = {
+    colorscheme = {
+      enable_preview = true
+    }
+  },
   defaults = {
     mappings = {
       i = {
@@ -220,10 +225,25 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 
 require("dapui").setup()
 require("autoclose").setup({})
-require'hop'.setup()
+require 'hop'.setup()
 require("mason").setup()
 require("mason-lspconfig").setup()
 
 require("one_monokai").setup({
-    -- your options
+  transparent = true,
+  colors = {},
+  themes = function(colors)
+    return {}
+  end,
+  italics = true, -- your options
 })
+
+-- default configuration
+-- require('illuminate').configure({
+--   providers = {
+--     'lsp',
+--     'treesitter',
+--     'regex',
+--   },
+--   delay = 100,
+-- })

@@ -111,10 +111,7 @@ require 'packer'.startup(function()
     run = 'yarn install --frozen-lockfile && yarn compile'
   }
 
-  use {
-    "williamboman/mason.nvim",
-  }
-
+  use { "williamboman/mason.nvim", }
   use { "williamboman/mason-lspconfig.nvim" }
 
   use "rafamadriz/friendly-snippets"
@@ -160,7 +157,6 @@ require 'packer'.startup(function()
     tag = 'nightly'                   -- optional, updated every week. (see issue #1193)
   }
   use 'https://gitlab.com/__tpb/monokai-pro.nvim'
-  use 'dominikduda/vim_current_word'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use 'mxw/vim-jsx'
   use 'yuezk/vim-js'
@@ -169,8 +165,9 @@ require 'packer'.startup(function()
   use "pangloss/vim-javascript"
   use "jose-elias-alvarez/null-ls.nvim"
   use 'anuvyklack/hydra.nvim'
-  use 'mbbill/undotree'
   use "cpea2506/one_monokai.nvim"
+  -- use 'mbbill/undotree'
+  -- use 'dominikduda/vim_current_word'
   -- use({
   --   'NTBBloodbath/doom-one.nvim',
   --   setup = function()
@@ -222,5 +219,5 @@ require 'packer'.startup(function()
   --use { 'ms-jpq/chadtree', branch = 'chad' }
   --use { 'nyoom-engineering/oxocarbon.nvim' }
   -- use 'bluz71/vim-mistfly-statusline'
-  -- use 'tribela/vim-transparent'
+  use 'tribela/vim-transparent'
 end)

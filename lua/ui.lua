@@ -77,7 +77,7 @@ ins_left {
   function()
     return '▊'
   end,
-  color = { fg = colors.blue }, -- Sets highlighting of component
+  color = { fg = colors.blue },      -- Sets highlighting of component
   padding = { left = 0, right = 1 }, -- We don't need space before this
 }
 
@@ -173,7 +173,7 @@ ins_left {
 
 -- Add components to right sections
 ins_right {
-  'o:encoding', -- option component same as &encoding in viml
+  'o:encoding',       -- option component same as &encoding in viml
   fmt = string.upper, -- I'm not sure why it's upper case either ;)
   cond = conditions.hide_in_width,
   color = { fg = colors.green, gui = 'bold' },
@@ -219,8 +219,8 @@ vim.opt.listchars:append "space: "
 vim.opt.listchars:append "eol:↴"
 
 require("indent_blankline").setup {
-    show_end_of_line = true,
-    space_char_blankline = " ",
+  show_end_of_line = true,
+  space_char_blankline = " ",
 }
 
 
@@ -228,6 +228,7 @@ require("indent_blankline").setup {
 vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd("colorscheme material")
+-- vim.cmd.colorscheme "one_monokai"
 -- vim.cmd("colorscheme one_monokai")
 -- vim.cmd("colorscheme doom-one")
 -- vim.cmd("colorscheme sonokai")
@@ -241,5 +242,3 @@ vim.cmd("colorscheme material")
 -- vim.cmd("colorscheme srcery")
 -- vim.cmd.colorscheme "oxocarbon"
 -- vim.cmd.colorscheme "xcodedarkhc"
-
-

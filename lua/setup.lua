@@ -105,6 +105,9 @@ g('indent_blankline_bufname_exclude' , {'dbui'})
 g("compe_source_vim_dadbod_completion", true)
 g("monokaipro_filter", "spectrum")
 g('db_ui_default_query' , 'select * from "{table}" limit 10')
+g('db_ui_save_location' , '~/QUERYS')
+
+
 vim.g.monokaipro_filter = "spectrum"
 
 -- g("startify_custom_header",{'     _           _                      _             ',

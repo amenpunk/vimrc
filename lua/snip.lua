@@ -29,6 +29,15 @@ ls.add_snippets(nil, {
       text({ "console.log(" }), insert(1, 'var'), text({ ")" })
     })
   },
+  php = {
+    snip({
+      trig = "pre",
+      namr = "pretty print in php",
+      dscr = "Print in javascript"
+    }, {
+      text({ ' echo "<pre>"; echo var_dump(' }), insert(1, 'var'), text({ '); echo "</pre>";' })
+    })
+  },
 })
 
 
