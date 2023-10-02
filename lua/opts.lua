@@ -85,18 +85,23 @@ require("bufferline").setup {
 
 require('Comment').setup()
 -- require('nvim-autopairs').setup {}
-
-require("indent_blankline").setup {
-  space_char_blankline = " ",
-  -- show_current_context = true,
-  -- show_current_context_start = true,
-  buftype_exclude = { "terminal", "chadtree", "scratch", "dbui" },
-  filetype_exclude = { "dashboard", "chadtree", 'scratch', 'packer', 'dbui' },
-}
 --
 local actions = require "telescope.actions"
 
 require('telescope').setup {
+  extensions = {
+    project = {
+      base_dirs = {
+        '~/workspace/',
+        { path = '~/workspace/' },
+      },
+      hidden_files = true, -- default: false
+      theme = "dropdown",
+      order_by = "asc",
+      search_by = "title",
+      sync_with_nvim_tree = true, -- default false
+    }
+  },
   pickers = {
     colorscheme = {
       enable_preview = true

@@ -1,4 +1,5 @@
 local lualine = require('lualine')
+local g = vim.api.nvim_set_var
 
 local colors = {
   bg       = '#1e1e1e',
@@ -117,7 +118,6 @@ ins_left {
 
 -- ins_left {
 --   -- filesize component
---   'filesize',
 --   cond = conditions.buffer_not_empty,
 -- }
 
@@ -218,27 +218,41 @@ vim.opt.list = true
 vim.opt.listchars:append "space: "
 vim.opt.listchars:append "eol:↴"
 
+
 require("indent_blankline").setup {
-  show_end_of_line = true,
-  space_char_blankline = " ",
 }
+
+-- require("indent_blankline").setup {
+--   space_char_blankline = " ",
+--   -- show_current_context = true,
+--   -- show_current_context_start = true,
+--   buftype_exclude = { "terminal", "chadtree", "scratch", "dbui" },
+--   filetype_exclude = { "dashboard", "chadtree", 'scratch', 'packer', 'dbui' },
+--   char_highlight_list = {
+--     "IndentBlanklineIndent1",
+--     "IndentBlanklineIndent2",
+--   },
+--   space_char_highlight_list = {
+--     "IndentBlanklineIndent1",
+--     "IndentBlanklineIndent2",
+--   },
+--   show_trailing_blankline_indent = false,
+--
+--
+-- }
+--
+-- -- let g:indent_blankline_char_list_blankline = ['|', '¦', '┆', '┊']
+-- -- g('indent_blankline_char' , '¦')
+-- g('indent_blankline_use_treesitter', 'true')
+-- g('indent_blankline_show_first_indent_level', 'false')
+-- g('indent_blankline_show_current_context', 'true')
+-- g('indent_blankline_enabled' , 'true')
 
 
 -- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
 vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
 vim.cmd("colorscheme material")
--- vim.cmd.colorscheme "one_monokai"
--- vim.cmd("colorscheme one_monokai")
--- vim.cmd("colorscheme doom-one")
--- vim.cmd("colorscheme sonokai")
--- vim.cmd("colorscheme monokai_pro")
--- vim.cmd("colorscheme monokai_soda")
--- vim.cmd("colorscheme onedark")
--- vim.cmd([[colorscheme gruvbox]])
--- vim.cmd("colorscheme monokaipro")
--- vim.cmd("colorscheme monokai2")
--- vim.cmd("colorscheme gruvbox")
--- vim.cmd("colorscheme srcery")
--- vim.cmd.colorscheme "oxocarbon"
--- vim.cmd.colorscheme "xcodedarkhc"
+
+require'telescope'.load_extension('project')
+

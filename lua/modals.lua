@@ -38,7 +38,7 @@ Hydra({
     { 'k',       cmd 'Telescope keymaps' },
     { 'O',       cmd 'Telescope vim_options' },
     { 'r',       cmd 'Telescope resume' },
-    { 'p',       cmd 'Telescope projects',                  { desc = 'projects' } },
+    { 'p',       cmd 'Telescope project',                  { desc = 'projects' } },
     { '/',       cmd 'Telescope current_buffer_fuzzy_find', { desc = 'search in file' } },
     { '?',       cmd 'Telescope search_history',            { desc = 'search history' } },
     { ';',       cmd 'Telescope command_history',           { desc = 'command-line history' } },

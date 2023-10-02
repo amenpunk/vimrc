@@ -1,4 +1,4 @@
 plugin
-plugin
 lua/database.lua
 lua/snippets/typescript/generated.json
+lua/telescope

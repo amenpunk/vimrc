@@ -7,7 +7,7 @@ vim.g.material_theme_style='darker'
 vim.opt.list = true
 -- vim.wo.signcolumn = 'yes'
 -- sets
-set.shortmess='nocI'
+-- set.shortmess='nocI'
 set.clipboard='unnamedplus' -- only one clipboard
 set.hidden=true
 set.updatetime=300
@@ -53,8 +53,8 @@ set.scrollback=20
 -- set.ruler=true
 set.showcmd=false
 set.updatetime=200
--- set.cmdheight=1
-set.cmdheight=0
+set.cmdheight=1
+-- set.cmdheight=0
 --
 set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
 -- set.signcolumn='auto'

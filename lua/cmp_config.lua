@@ -129,4 +129,13 @@ vim.cmd [[
   autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
 ]]
 
+-- vim.cmd [[
+--   au CmdlineEnter * setlocal cmdheight=1
+-- ]]
+--
+-- vim.cmd [[
+--  au CmdlineLeave * call timer_start(1, { tid -> execute('setlocal cmdheight=0')})
+-- ]]
+--
+--
 -- vim.cmd [[ nnoremap * :keepjumps normal! mi*`i<CR> ]] -- idk what this does

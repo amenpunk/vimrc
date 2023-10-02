@@ -55,7 +55,7 @@ map('', '<leader><Enter>', ':ToggleTerm<CR>', { silent = true })
 map('n', '<S-h>', ':bprevious<CR>', { silent = true, noremap=true })
 map('n', '<S-l>', ':bnext<CR>', { silent = true, noremap=true })
 
-map('n', '<leader>w', ':w! <cr>', options)
+map('n', '<leader>w', ':w! <CR>', options)
 map('n', '<leader>n', ':bnext<cr>', options)
 map('n', '<leader>p', ':bprev<cr>', options)
 -- map('n','<C-n>', ':CHADopen<cr>', options)

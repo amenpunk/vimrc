@@ -46,9 +46,10 @@ capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local servers = {
   'jdtls', 'tsserver', 'lua_ls',
-  'jsonls', 'psalm', --'phpactor',
+  'jsonls', 'psalm', 'phpactor',
   'unocss', 'cssls', 'intelephense',
-  'cssmodules_ls'
+  'cssmodules_ls',
+  'html'
 }
 
 for k, v in pairs(servers) do
