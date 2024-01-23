@@ -49,7 +49,9 @@ local servers = {
   'jsonls', 'psalm', 'phpactor',
   'unocss', 'cssls', 'intelephense',
   'cssmodules_ls',
-  'html'
+  'html','lemminx',
+  'jdtls','jedi_language_server',
+  'jsonnet_ls'
 }
 
 for k, v in pairs(servers) do

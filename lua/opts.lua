@@ -35,6 +35,9 @@ require 'marks'.setup {
 
 require 'nvim-treesitter.configs'.setup {
   -- ensure_installed = { "help", "javascript", "html", "php", "css", "html", "lua", "java", "python", "typescript" },
+  autotag = {
+    enable = true,
+  },
   sync_install = false,
   auto_install = false,
   indent = {
@@ -46,6 +49,29 @@ require 'nvim-treesitter.configs'.setup {
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false
+  },
+  refactor = {
+    smart_rename = {
+      enable = true,
+      keymaps = {
+        smart_rename = "grr",
+      },
+    },
+    highlight_definitions = {
+      enable = true,
+      highlight_current_scope = { enable = true },
+      clear_on_cursor_move = true,
+    },
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "gnd",
+        list_definitions = "gnD",
+        list_definitions_toc = "gO",
+        goto_next_usage = "<a-*>",
+        goto_previous_usage = "<a-#>",
+      },
+    },
   },
 }
 --
@@ -92,7 +118,6 @@ require('telescope').setup {
   extensions = {
     project = {
       base_dirs = {
-        '~/workspace/',
         { path = '~/workspace/' },
       },
       hidden_files = true, -- default: false
@@ -209,11 +234,6 @@ require("nvim-tree").setup({
   Hint = "#10B981"
 }) ]]
 
-require 'nvim-treesitter.configs'.setup {
-  autotag = {
-    enable = true,
-  }
-}
 
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics,
@@ -242,13 +262,3 @@ require("one_monokai").setup({
   end,
   italics = true, -- your options
 })
-
--- default configuration
--- require('illuminate').configure({
---   providers = {
---     'lsp',
---     'treesitter',
---     'regex',
---   },
---   delay = 100,
--- })

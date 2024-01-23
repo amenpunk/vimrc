@@ -56,8 +56,8 @@ set.updatetime=200
 set.cmdheight=1
 -- set.cmdheight=0
 --
-set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
--- set.signcolumn='auto'
+-- set.signcolumn="number"  --- hacer merge entre los numeros y gitsigns
+set.signcolumn='auto'
 -- set.signcolumn='yes'
 
 set.termguicolors=true

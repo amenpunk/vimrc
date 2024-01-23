@@ -31,17 +31,17 @@ require 'packer'.init {
     default_url_format = 'https://github.com/%s' -- Lua format string used for "aaa/bbb" style plugins
   },
   display              = {
-    non_interactive = false,                 -- If true, disable display windows for all operations
-    open_fn         = nil,                   -- An optional function to open a window for packer's display
+    non_interactive = false, -- If true, disable display windows for all operations
+    open_fn         = nil, -- An optional function to open a window for packer's display
     open_cmd        = '65vnew \\[packer\\]', -- An optional command to open a window for packer's display
-    working_sym     = '⟳',                 -- The symbol for a plugin being installed/updated
-    error_sym       = '✗',                 -- The symbol for a plugin with an error in installation/updating
-    done_sym        = '✓',                 -- The symbol for a plugin which has completed installation/updating
-    removed_sym     = '-',                   -- The symbol for an unused plugin which was removed
-    moved_sym       = '→',                 -- The symbol for a plugin which was moved (e.g. from opt to start)
-    header_sym      = '━',                 -- The symbol for the header line in packer's display
-    show_all_info   = true,                  -- Should packer show all update details automatically?
-    prompt_border   = 'double',              -- Border style of prompt popups.
+    working_sym     = '⟳', -- The symbol for a plugin being installed/updated
+    error_sym       = '✗', -- The symbol for a plugin with an error in installation/updating
+    done_sym        = '✓', -- The symbol for a plugin which has completed installation/updating
+    removed_sym     = '-', -- The symbol for an unused plugin which was removed
+    moved_sym       = '→', -- The symbol for a plugin which was moved (e.g. from opt to start)
+    header_sym      = '━', -- The symbol for the header line in packer's display
+    show_all_info   = true, -- Should packer show all update details automatically?
+    prompt_border   = 'double', -- Border style of prompt popups.
     keybindings     = {
       quit = 'q',
       toggle_info = '<CR>',
@@ -62,10 +62,11 @@ require 'packer'.init {
 
 
 require 'packer'.startup(function()
+  use 'patstockwell/vim-monokai-tasty'
   use 'wbthomason/packer.nvim'
   use 'mfussenegger/nvim-dap'
   use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
-  use { 'nvim-treesitter/nvim-treesitter' }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use "tpope/vim-dadbod"
   use 'kristijanhusak/vim-dadbod-completion'
   use "kristijanhusak/vim-dadbod-ui"
@@ -167,6 +168,7 @@ require 'packer'.startup(function()
   use 'anuvyklack/hydra.nvim'
   use "cpea2506/one_monokai.nvim"
   use 'projekt0n/caret.nvim'
+  use 'nvim-treesitter/nvim-treesitter-refactor'
   -- use 'mbbill/undotree'
   -- use 'dominikduda/vim_current_word'
   -- use({
@@ -197,7 +199,10 @@ require 'packer'.startup(function()
   --   end,
   -- })
 
-
+  use 'scrooloose/vim-slumlord'
+  use 'aklt/plantuml-syntax'
+  use "felipeagc/fleet-theme-nvim"
+  use 'cseelus/vim-colors-lucid'
   -- use {'srcery-colors/srcery-vim', as = 'srcery'}
   -- use 'navarasu/onedark.nvim'
   -- use 'phanviet/vim-monokai-pro'
@@ -220,5 +225,5 @@ require 'packer'.startup(function()
   --use { 'ms-jpq/chadtree', branch = 'chad' }
   --use { 'nyoom-engineering/oxocarbon.nvim' }
   -- use 'bluz71/vim-mistfly-statusline'
-  use 'tribela/vim-transparent'
+  -- use 'tribela/vim-transparent'
 end)
