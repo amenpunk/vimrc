@@ -167,8 +167,8 @@ require 'packer'.startup(function()
   use "jose-elias-alvarez/null-ls.nvim"
   use 'anuvyklack/hydra.nvim'
   use "cpea2506/one_monokai.nvim"
-  use 'projekt0n/caret.nvim'
   use 'nvim-treesitter/nvim-treesitter-refactor'
+  -- use 'projekt0n/caret.nvim'
   -- use 'mbbill/undotree'
   -- use 'dominikduda/vim_current_word'
   -- use({
