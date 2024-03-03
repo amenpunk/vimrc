@@ -1,65 +1,5 @@
 local use = require 'packer'.use
-
-require 'packer'.init {
-  ensure_dependencies  = true,     -- Should packer install plugin dependencies?
-  plugin_package       = 'packer', -- The default package for plugins
-  max_jobs             = nil,      -- Limit the number of simultaneous jobs. nil means no limit
-  auto_clean           = true,     -- During sync(), remove unused plugins
-  compile_on_sync      = true,     -- During sync(), run packer.compile()
-  disable_commands     = false,    -- Disable creating commands
-  opt_default          = false,    -- Default to using opt (as opposed to start) plugins
-  transitive_opt       = true,     -- Make dependencies of opt plugins also opt by default
-  transitive_disable   = true,     -- Automatically disable dependencies of disabled plugins
-  auto_reload_compiled = true,     -- Automatically reload the compiled file after creating it.
-  git                  = {
-    cmd = 'git',                   -- The base command for git operations
-    subcommands = {
-      update         = 'pull --ff-only --progress --rebase=false',
-      install        = 'clone --depth %i --no-single-branch --progress',
-      fetch          = 'fetch --depth 999999 --progress',
-      checkout       = 'checkout %s --',
-      update_branch  = 'merge --ff-only @{u}',
-      current_branch = 'branch --show-current',
-      diff           = 'log --color=never --pretty=format:FMT --no-show-signature HEAD@{1}...HEAD',
-      diff_fmt       = '%%h %%s (%%cr)',
-      get_rev        = 'rev-parse --short HEAD',
-      get_msg        = 'log --color=never --pretty=format:FMT --no-show-signature HEAD -n 1',
-      submodules     = 'submodule update --init --recursive --progress'
-    },
-    depth = 1,                                   -- Git clone depth
-    clone_timeout = 60,                          -- Timeout, in seconds, for git clones
-    default_url_format = 'https://github.com/%s' -- Lua format string used for "aaa/bbb" style plugins
-  },
-  display              = {
-    non_interactive = false, -- If true, disable display windows for all operations
-    open_fn         = nil, -- An optional function to open a window for packer's display
-    open_cmd        = '65vnew \\[packer\\]', -- An optional command to open a window for packer's display
-    working_sym     = '⟳', -- The symbol for a plugin being installed/updated
-    error_sym       = '✗', -- The symbol for a plugin with an error in installation/updating
-    done_sym        = '✓', -- The symbol for a plugin which has completed installation/updating
-    removed_sym     = '-', -- The symbol for an unused plugin which was removed
-    moved_sym       = '→', -- The symbol for a plugin which was moved (e.g. from opt to start)
-    header_sym      = '━', -- The symbol for the header line in packer's display
-    show_all_info   = true, -- Should packer show all update details automatically?
-    prompt_border   = 'double', -- Border style of prompt popups.
-    keybindings     = {
-      quit = 'q',
-      toggle_info = '<CR>',
-      diff = 'd',
-      prompt_revert = 'r',
-    }
-  },
-  luarocks             = {
-    python_cmd = 'python3'                   -- Set the python command to use for running hererocks
-  },
-  log                  = { level = 'warn' }, -- The default print log level. One of: "trace", "debug", "info", "warn", "error", "fatal".
-  profile              = {
-    enable = false,
-    threshold = 1, -- integer in milliseconds, plugins which load faster than this won't be shown in profile output
-  }
-
-}
-
+require("plunit")
 
 require 'packer'.startup(function()
   use 'patstockwell/vim-monokai-tasty'
@@ -91,7 +31,6 @@ require 'packer'.startup(function()
   end }
 
   use 'famiu/bufdelete.nvim'
-  use { 'kaicataldo/material.vim', branch = 'main' }
   use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
   use { "folke/todo-comments.nvim", requires = "nvim-lua/plenary.nvim" }
   use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' } } }
@@ -157,61 +96,72 @@ require 'packer'.startup(function()
     },
     tag = 'nightly'                   -- optional, updated every week. (see issue #1193)
   }
-  use 'https://gitlab.com/__tpb/monokai-pro.nvim'
   use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
   use 'mxw/vim-jsx'
   use 'yuezk/vim-js'
   use 'maxmellon/vim-jsx-pretty'
-  use { "ellisonleao/gruvbox.nvim" }
   use "pangloss/vim-javascript"
   use "jose-elias-alvarez/null-ls.nvim"
   use 'anuvyklack/hydra.nvim'
-  use "cpea2506/one_monokai.nvim"
   use 'nvim-treesitter/nvim-treesitter-refactor'
-  -- use 'projekt0n/caret.nvim'
-  -- use 'mbbill/undotree'
-  -- use 'dominikduda/vim_current_word'
-  -- use({
-  --   'NTBBloodbath/doom-one.nvim',
-  --   setup = function()
-  --     vim.g.doom_one_cursor_coloring = false
-  --     vim.g.doom_one_terminal_colors = true
-  --     vim.g.doom_one_italic_comments = false
-  --     vim.g.doom_one_enable_treesitter = true
-  --     vim.g.doom_one_diagnostics_text_color = false
-  --     vim.g.doom_one_transparent_background = false
-  --     vim.g.doom_one_pumblend_enable = false
-  --     vim.g.doom_one_pumblend_transparency = 20
-  --     vim.g.doom_one_plugin_neorg = true
-  --     vim.g.doom_one_plugin_barbar = false
-  --     vim.g.doom_one_plugin_telescope = false
-  --     vim.g.doom_one_plugin_neogit = true
-  --     vim.g.doom_one_plugin_nvim_tree = true
-  --     vim.g.doom_one_plugin_dashboard = true
-  --     vim.g.doom_one_plugin_startify = true
-  --     vim.g.doom_one_plugin_whichkey = true
-  --     vim.g.doom_one_plugin_indent_blankline = true
-  --     vim.g.doom_one_plugin_vim_illuminate = true
-  --     vim.g.doom_one_plugin_lspsaga = false
-  --   end,
-  --   config = function()
-  --     vim.cmd("colorscheme doom-one")
-  --   end,
-  -- })
 
-  use 'scrooloose/vim-slumlord'
-  use 'aklt/plantuml-syntax'
+
+  -- NOTE: themes:
+
+  use "cpea2506/one_monokai.nvim"
+  use { "ellisonleao/gruvbox.nvim" }
+  use 'https://gitlab.com/__tpb/monokai-pro.nvim'
+  use { 'kaicataldo/material.vim', branch = 'main' }
   use "felipeagc/fleet-theme-nvim"
-  use 'cseelus/vim-colors-lucid'
+  use 'navarasu/onedark.nvim'
+  use "rebelot/kanagawa.nvim"
+  use 'bluz71/vim-moonfly-colors'
+  use { 'nyoom-engineering/oxocarbon.nvim' }
+
+  use({
+    'NTBBloodbath/doom-one.nvim',
+    setup = function()
+      -- Add color to cursor
+      vim.g.doom_one_cursor_coloring = false
+      -- Set :terminal colors
+      vim.g.doom_one_terminal_colors = true
+      -- Enable italic comments
+      vim.g.doom_one_italic_comments = false
+      -- Enable TS support
+      vim.g.doom_one_enable_treesitter = true
+      -- Color whole diagnostic text or only underline
+      vim.g.doom_one_diagnostics_text_color = false
+      -- Enable transparent background
+      vim.g.doom_one_transparent_background = false
+
+      -- Pumblend transparency
+      vim.g.doom_one_pumblend_enable = false
+      vim.g.doom_one_pumblend_transparency = 20
+
+      -- Plugins integration
+      vim.g.doom_one_plugin_neorg = true
+      vim.g.doom_one_plugin_barbar = false
+      vim.g.doom_one_plugin_telescope = false
+      vim.g.doom_one_plugin_neogit = true
+      vim.g.doom_one_plugin_nvim_tree = true
+      vim.g.doom_one_plugin_dashboard = true
+      vim.g.doom_one_plugin_startify = true
+      vim.g.doom_one_plugin_whichkey = true
+      vim.g.doom_one_plugin_indent_blankline = true
+      vim.g.doom_one_plugin_vim_illuminate = true
+      vim.g.doom_one_plugin_lspsaga = false
+    end,
+    config = function()
+      vim.cmd("colorscheme doom-one")
+    end,
+  })
+  -- use 'cseelus/vim-colors-lucid'
   -- use {'srcery-colors/srcery-vim', as = 'srcery'}
-  -- use 'navarasu/onedark.nvim'
   -- use 'phanviet/vim-monokai-pro'
-  --use "rebelot/kanagawa.nvim"
   --use 'phanviet/vim-monokai-pro'
   --use 'dart-lang/dart-vim-plugin'
   --use 'thosakwe/vim-flutter'
   --use 'rcarriga/nvim-notify'
-  --use 'bluz71/vim-moonfly-colors'
   -- use 'nvim-lua/popup.nvim'
   --use 'folke/lsp-colors.nvim'
   --use 'tanvirtin/monokai.nvim'
@@ -223,7 +173,6 @@ require 'packer'.startup(function()
   -- use 'gregsexton/matchtag'
   --use 'windwp/nvim-ts-autotag'
   --use { 'ms-jpq/chadtree', branch = 'chad' }
-  --use { 'nyoom-engineering/oxocarbon.nvim' }
   -- use 'bluz71/vim-mistfly-statusline'
   -- use 'tribela/vim-transparent'
 end)

@@ -51,7 +51,8 @@ local servers = {
   'cssmodules_ls',
   'html','lemminx',
   'jdtls','jedi_language_server',
-  'jsonnet_ls'
+  'jsonnet_ls',
+  'yamlls'
 }
 
 for k, v in pairs(servers) do

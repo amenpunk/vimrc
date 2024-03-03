@@ -1,6 +1,4 @@
 local lualine = require('lualine')
-local g = vim.api.nvim_set_var
-
 local colors = {
   bg       = '#1e1e1e',
   fg       = '#bbc2cf',
@@ -29,32 +27,24 @@ local conditions = {
   end,
 }
 
--- Config
 local config = {
   options = {
-    -- Disable sections and component separators
     component_separators = '',
     section_separators = '',
     theme = {
-      -- We are going to use lualine_c an lualine_x as left and
-      -- right section. Both are highlighted by c theme .  So we
-      -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
     },
   },
   sections = {
-    -- these are to remove the defaults
     lualine_a = {},
     lualine_b = {},
     lualine_y = {},
     lualine_z = {},
-    -- These will be filled later
     lualine_c = {},
     lualine_x = {},
   },
   inactive_sections = {
-    -- these are to remove the defaults
     lualine_a = {},
     lualine_b = {},
     lualine_y = {},
@@ -64,12 +54,10 @@ local config = {
   },
 }
 
--- Inserts a component in lualine_c at left section
 local function ins_left(component)
   table.insert(config.sections.lualine_c, component)
 end
 
--- Inserts a component in lualine_x ot right section
 local function ins_right(component)
   table.insert(config.sections.lualine_x, component)
 end
@@ -78,8 +66,8 @@ ins_left {
   function()
     return '▊'
   end,
-  color = { fg = colors.blue },      -- Sets highlighting of component
-  padding = { left = 0, right = 1 }, -- We don't need space before this
+  color = { fg = colors.blue },
+  padding = { left = 0, right = 1 },
 }
 
 ins_left {
@@ -150,7 +138,7 @@ ins_left {
   end,
 }
 
-ins_left {
+ins_right {
   -- Lsp server name .
   function()
     local msg = 'No Active Lsp'
@@ -233,16 +221,10 @@ require("ibl").setup {
 }
 
 -- -- let g:indent_blankline_char_list_blankline = ['|', '¦', '┆', '┊']
-g('indent_blankline_char', '¦')
--- g('indent_blankline_use_treesitter', 'true')
--- g('indent_blankline_show_first_indent_level', 'false')
--- g('indent_blankline_show_current_context', 'true')
--- g('indent_blankline_enabled' , 'true')
-
-
+--
 -- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
 vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
--- vim.cmd("colorscheme material")
+vim.cmd("colorscheme material")
 
 require 'telescope'.load_extension('project')
