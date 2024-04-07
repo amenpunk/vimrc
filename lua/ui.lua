@@ -1,4 +1,6 @@
 local lualine = require('lualine')
+local g = vim.api.nvim_set_var
+-- local colors_kanagawa = require("kanagawa.colors").setup()
 local colors = {
   bg       = '#1e1e1e',
   fg       = '#bbc2cf',
@@ -206,10 +208,10 @@ vim.opt.list = true
 vim.opt.listchars:append "space: "
 vim.opt.listchars:append "eol:↴"
 
--- local highlight = {
---     "CursorColumn",
---     "Whitespace",
--- }
+local highlight = {
+    "CursorColumn",
+    "Whitespace",
+}
 
 require("ibl").setup {
   indent = { highlight = nil, char = "" },
@@ -225,6 +227,7 @@ require("ibl").setup {
 -- The theme comes with six filters, default, machine, ristretto, octogon spectrum, and classic
 vim.g.monokaipro_filter = "spectrum"
 vim.o.background = "dark" -- or "light" for light mode
+-- vim.cmd("colorscheme kanagawa")
 vim.cmd("colorscheme material")
 
-require 'telescope'.load_extension('project')
+-- require 'telescope'.load_extension('project')

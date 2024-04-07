@@ -251,7 +251,15 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(
 require("dapui").setup()
 require("autoclose").setup({})
 require 'hop'.setup()
-require("mason").setup()
+require("mason").setup({
+  ui = {
+    icons = {
+      package_installed = "✓",
+      package_pending = "➜",
+      package_uninstalled = "✗"
+    }
+  }
+})
 require("mason-lspconfig").setup()
 
 require("one_monokai").setup({

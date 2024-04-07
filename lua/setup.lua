@@ -110,6 +110,8 @@ g('db_ui_save_location' , '~/QUERYS')
 
 vim.g.monokaipro_filter = "spectrum"
 
+-- g("startify_custom_header",' startify#fortune#boxed() ')
+-- g("startify_custom_header",'startify#pad((system(date))')
 -- g("startify_custom_header",{'     _           _                      _             ',
 --                              '             ▕                                 ',
 --                              '  ▕ ███       ▕│█     ___   ___                 ',

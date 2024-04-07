@@ -45,12 +45,13 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
 
 local servers = {
-  'jdtls', 'tsserver', 'lua_ls',
-  'jsonls', 'psalm', 'phpactor',
+  'jdtls', --'phpactor',
+  'tsserver', 'lua_ls',
+  'jsonls', 'psalm', 
   'unocss', 'cssls', 'intelephense',
   'cssmodules_ls',
   'html','lemminx',
-  'jdtls','jedi_language_server',
+  'jedi_language_server',
   'jsonnet_ls',
   'yamlls'
 }
