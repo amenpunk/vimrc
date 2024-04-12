@@ -3,12 +3,13 @@
 -- Add any additional keymaps here
 
 local options = { noremap = true }
-local snip_opts = { noremap = true, silent = true }
 local map = vim.api.nvim_set_keymap
 
+map("", "<leader>a", ":HopWord<CR>", { silent = true })
 map("n", "<leader>w", ":w! <CR>", options)
 map("", "<leader><Enter>", ":ToggleTerm<CR>", { silent = true })
 map("n", "==", ":lua vim.lsp.buf.format({ async = true} )<CR>", options)
+map("", "<C-p>", "<cmd>Telescope find_files<cr>", options)
 
 -- cmd with control
 map("n", "<C-J>", "<C-W>j", options)
@@ -32,6 +33,7 @@ map("n", "<A-6>", "<Cmd>BufferLineGoToBuffer 6 <CR>", { silent = true, noremap =
 map("n", "<A-7>", "<Cmd>BufferLineGoToBuffer 7 <CR>", { silent = true, noremap = true })
 map("n", "<A-8>", "<Cmd>BufferLineGoToBuffer 8 <CR>", { silent = true, noremap = true })
 map("n", "<A-9>", "<Cmd>BufferLineGoToBuffer 9 <CR>", { silent = true, noremap = true })
+map("n", "<A-0>", ":Bdelete <CR>", { silent = true, noremap = true })
 
 -- visual select move
 map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })

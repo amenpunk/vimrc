@@ -6,3 +6,5 @@ require("lualine").setup({
     theme = require("material.lualine"),
   },
 })
+
+require("hop").setup()
