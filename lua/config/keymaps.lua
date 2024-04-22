@@ -10,7 +10,8 @@ map("n", "<leader>w", ":w! <CR>", options)
 map("", "<leader><Enter>", ":ToggleTerm<CR>", { silent = true })
 map("n", "==", ":lua vim.lsp.buf.format({ async = true} )<CR>", options)
 map("", "<C-p>", "<cmd>Telescope find_files<cr>", options)
-
+map("n", "<C-n>", ":Neotree<cr>", options)
+map("", "<leader>dd", ":DBUI<CR>", { silent = true })
 -- cmd with control
 map("n", "<C-J>", "<C-W>j", options)
 map("n", "<C-K>", "<C-W>k", options)
