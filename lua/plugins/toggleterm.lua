@@ -1,10 +1,5 @@
 return {
-  {
-    "akinsho/toggleterm.nvim",
-    lazy = true,
-    tag = "*",
-    config = function()
-      require("toggleterm").setup()
-    end,
-  },
+  -- amongst your other plugins
+  { "akinsho/toggleterm.nvim", version = "*", config = true },
+  -- or
 }

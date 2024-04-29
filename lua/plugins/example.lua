@@ -111,6 +111,7 @@ return {
       ensure_installed = {
         "bash",
         "html",
+        "java",
         "javascript",
         "json",
         "lua",
@@ -123,6 +124,7 @@ return {
         "typescript",
         "vim",
         "yaml",
+        "php",
       },
     },
   },
