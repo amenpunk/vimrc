@@ -39,3 +39,5 @@ map("n", "<A-0>", ":Bdelete <CR>", { silent = true, noremap = true })
 -- visual select move
 map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
 map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+
+map("n", "<C-space>", ":CodeActionMenu<CR>", options)
