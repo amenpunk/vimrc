@@ -4,3 +4,7 @@
 
 vim.g.material_theme_style = "darker"
 vim.g.material_terminal_italics = 1
+
+vim.cmd([[
+  autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} })
+]])
