@@ -26,4 +26,7 @@ return {
     logo = string.rep("\n", 8) .. logo .. "\n\n"
     opts.config.header = vim.split(logo, "\n")
   end,
+  config = function()
+    -- require("dashboard").setup({})
+  end,
 }
