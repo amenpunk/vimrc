@@ -24,6 +24,7 @@ return {
     ]]
 
     logo = string.rep("\n", 1) .. logo .. "\n\n"
+    vim.cmd([[highlight DashboardHeader guifg=#ff0000]])
     opts.config.header = vim.split(logo, "\n")
   end,
   -- config = function()
