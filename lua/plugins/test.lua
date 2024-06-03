@@ -38,6 +38,7 @@ return {
           end,
         })
       )
+      table.insert(opts.adapters, require("neotest-java"))
       table.insert(opts.adapters, require("neotest-vitest"))
     end,
   },
