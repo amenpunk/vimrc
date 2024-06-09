@@ -22,10 +22,27 @@ return {
   --   },
   -- },
 
-  -- Lazy
+  -- -- monokai theme
+  -- {
+  --   "polirritmico/monokai-nightasty.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {
+  --     dark_style_background = "transparent",
+  --   },
+  -- },
+  -- flet theme
   {
-    "polirritmico/monokai-nightasty.nvim",
-    lazy = false,
-    priority = 1000,
+    "felipeagc/fleet-theme-nvim",
+    config = function()
+      vim.cmd("colorscheme fleet")
+    end,
   },
+  -- evangelion theme
+  -- {
+  --   "nyngwang/nvimgelion",
+  --   config = function()
+  --     -- do whatever you want for further customization~
+  --   end,
+  -- },
 }

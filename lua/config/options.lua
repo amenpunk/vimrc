@@ -2,6 +2,7 @@
 -- Default options that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/options.lua
 -- Add any additional options here
 
+vim.opt.background = "dark" -- default to dark or light style
 vim.g.material_theme_style = "darker"
 vim.g.material_terminal_italics = 1
 vim.g.code_action_menu_window_border = "single"

@@ -1,14 +1,8 @@
+local f = require("utils.file").is_pkg_dir
+
 return {
-  "nvim-java/nvim-java",
+  "williamboman/mason-lspconfig.nvim",
   dependencies = {
-    "nvim-java/lua-async-await",
-    "nvim-java/nvim-java-core",
-    "nvim-java/nvim-java-test",
-    "nvim-java/nvim-java-dap",
-    "nvim-java/nvim-java-refactor",
-    "MunifTanjim/nui.nvim",
-    "neovim/nvim-lspconfig",
-    "mfussenegger/nvim-dap",
     {
       "williamboman/mason.nvim",
       opts = {
@@ -18,15 +12,50 @@ return {
         },
       },
     },
+
     {
-      "williamboman/mason-lspconfig.nvim",
+      "nvim-java/nvim-java",
+      dir = f("~/Workspace/nvim-java"),
       opts = {
-        handlers = {
-          ["jdtls"] = function()
-            require("java").setup()
-          end,
+        jdk = {
+          auto_install = false,
+        },
+        notifications = {
+          dap = false,
         },
       },
+      dependencies = {
+        {
+          "nvim-java/lua-async-await",
+          dir = f("~/workspace/java/lua-async-await"),
+        },
+        {
+          "nvim-java/nvim-java-core",
+          dir = f("~/workspace/java/nvim-java-core"),
+        },
+        {
+          "nvim-java/nvim-java-test",
+          dir = f("~/workspace/java/nvim-java-test"),
+        },
+        {
+          "nvim-java/nvim-java-dap",
+          dir = f("~/workspace/java/nvim-java-dap"),
+        },
+        {
+          "nvim-java/nvim-java-refactor",
+          dir = f("~/workspace/java/nvim-java-refactor"),
+        },
+        "MunifTanjim/nui.nvim",
+        "neovim/nvim-lspconfig",
+        "mfussenegger/nvim-dap",
+      },
+    },
+  },
+  opts = {
+    handlers = {
+      ["jdtls"] = function()
+        require("lspconfig").jdtls.setup({})
+      end,
     },
   },
 }
