@@ -3,7 +3,8 @@
 -- Add any additional autocmds here
 require("lualine").setup({
   options = {
-    theme = require("material.lualine"),
+    -- theme = require("material.lualine"),
+    theme = "monokai-nightasty",
   },
 })
 

@@ -9,16 +9,23 @@ return {
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- "nyngwang/nvimgelion",
 
-  "kaicataldo/material.vim",
-  branch = "main",
-  lazy = true,
+  -- branch = "main",
+  -- lazy = true,
 
+  -- "kaicataldo/material.vim",
   -- {
   --   "LazyVim/LazyVim",
   --   opts = {
   --     colorscheme = "material",
-  --     style = "darker",
-  --     material_theme_style = "darker",
+  --     -- style = "darker",
+  --     material_theme_style = "palenight",
   --   },
   -- },
+
+  -- Lazy
+  {
+    "polirritmico/monokai-nightasty.nvim",
+    lazy = false,
+    priority = 1000,
+  },
 }
