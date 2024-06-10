@@ -25,6 +25,8 @@ return {
 
     logo = string.rep("\n", 1) .. logo .. "\n\n"
     vim.cmd([[highlight DashboardHeader guifg=#ff0000]])
+    vim.cmd([[highlight WinSeparator guifg=#292929]])
+    vim.cmd([[set fillchars+=vert:\▏]])
     opts.config.header = vim.split(logo, "\n")
   end,
   -- config = function()

@@ -12,15 +12,15 @@ return {
   -- branch = "main",
   -- lazy = true,
 
-  -- "kaicataldo/material.vim",
-  -- {
-  --   "LazyVim/LazyVim",
-  --   opts = {
-  --     colorscheme = "material",
-  --     -- style = "darker",
-  --     material_theme_style = "palenight",
-  --   },
-  -- },
+  "kaicataldo/material.vim",
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "material",
+      -- style = "darker",
+      material_theme_style = "palenight",
+    },
+  },
 
   -- -- monokai theme
   -- {
@@ -32,12 +32,12 @@ return {
   --   },
   -- },
   -- flet theme
-  {
-    "felipeagc/fleet-theme-nvim",
-    config = function()
-      vim.cmd("colorscheme fleet")
-    end,
-  },
+  -- {
+  --   "felipeagc/fleet-theme-nvim",
+  --   config = function()
+  --     vim.cmd("colorscheme fleet")
+  --   end,
+  -- },
   -- evangelion theme
   -- {
   --   "nyngwang/nvimgelion",
