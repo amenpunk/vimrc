@@ -27,9 +27,11 @@ return {
       ensure_installed = {
         "bash",
         "c",
+        "php",
         "diff",
         "html",
         "javascript",
+        "java",
         "jsdoc",
         "json",
         "jsonc",

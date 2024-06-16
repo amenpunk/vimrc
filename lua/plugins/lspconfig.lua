@@ -4,6 +4,7 @@ local ls_to_exec_map = {
   lua_ls = "lua-language-server",
   marksman = "marksman",
   tsserver = "typescript-language-server",
+  phpactor = "phpactor",
 }
 
 return {
@@ -22,6 +23,32 @@ return {
           opts.servers[server].mason = false
         end
       end
+
+      opts.diagnostics = {
+        virtual_text = false,
+        underline = true,
+        update_in_insert = true,
+        severity_sort = true,
+        float = {
+          border = "single",
+          format = function(diagnostic)
+            return string.format(
+              "%s (%s) [%s]",
+              diagnostic.message,
+              diagnostic.source,
+              diagnostic.code or diagnostic.user_data.lsp.code
+            )
+          end,
+        },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
+            [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
+            [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
+            [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
+          },
+        },
+      }
 
       return opts
     end,

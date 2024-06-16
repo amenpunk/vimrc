@@ -1,3 +1,4 @@
+local diagnostics = require("trouble.sources.diagnostics")
 return {
   {
     "folke/trouble.nvim",
@@ -26,6 +27,27 @@ return {
           end
         end,
         desc = "Previous Trouble/Quickfix Item",
+      },
+    },
+    opts = {
+      modes = {
+        diagnostics = {
+          auto_open = false,
+          auto_close = true,
+        },
+        preview_float = {
+          mode = "diagnostics",
+          preview = {
+            type = "float",
+            relative = "editor",
+            border = "rounded",
+            title = "Preview",
+            title_pos = "center",
+            position = { 0, -2 },
+            size = { width = 0.3, height = 0.3 },
+            zindex = 200,
+          },
+        },
       },
     },
   },
