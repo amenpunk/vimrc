@@ -2,27 +2,23 @@ return {
   -- "cpea2506/one_monokai.nvim",
   -- { "ellisonleao/gruvbox.nvim" },
   -- "https://gitlab.com/__tpb/monokai-pro.nvim",
-  -- "felipeagc/fleet-theme-nvim",
   -- "navarasu/onedark.nvim",
   -- "rebelot/kanagawa.nvim",
-  -- "bluz71/vim-moonfly-colors",
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- "nyngwang/nvimgelion",
-
-  -- branch = "main",
-  -- lazy = true,
-
-  "kaicataldo/material.vim",
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "material",
-      -- style = "darker",
-      material_theme_style = "palenight",
-    },
-  },
-
-  -- -- monokai theme
+  -- material
+  -- {
+  --   "kaicataldo/material.vim",
+  --   {
+  --     "LazyVim/LazyVim",
+  --     opts = {
+  --       -- colorscheme = "material",
+  --       style = "darker",
+  --       material_theme_style = "palenight",
+  --     },
+  --   },
+  -- },
+  -- -- -- monokai theme
   -- {
   --   "polirritmico/monokai-nightasty.nvim",
   --   lazy = false,
@@ -33,16 +29,48 @@ return {
   -- },
   -- flet theme
   -- {
-  --   "felipeagc/fleet-theme-nvim",
-  --   config = function()
-  --     vim.cmd("colorscheme fleet")
-  --   end,
+  --   {
+  --     "felipeagc/fleet-theme-nvim",
+  --     -- gonfig = function()
+  --     --   -- vim.cmd("colorscheme fleet")
+  --     -- end,
+  --   },
   -- },
-  -- evangelion theme
-  -- {
-  --   "nyngwang/nvimgelion",
-  --   config = function()
-  --     -- do whatever you want for further customization~
-  --   end,
-  -- },
+  -- doom one
+  {
+    "NTBBloodbath/doom-one.nvim",
+    config = function()
+      vim.cmd("colorscheme doom-one")
+    end,
+    setup = function()
+      vim.g.doom_one_cursor_coloring = false
+      -- Set :terminal colors
+      vim.g.doom_one_terminal_colors = true
+      -- Enable italic comments
+      vim.g.doom_one_italic_comments = false
+      -- Enable TS support
+      vim.g.doom_one_enable_treesitter = true
+      -- Color whole diagnostic text or only underline
+      vim.g.doom_one_diagnostics_text_color = false
+      -- Enable transparent background
+      vim.g.doom_one_transparent_background = true
+
+      -- Pumblend transparency
+      vim.g.doom_one_pumblend_enable = false
+      vim.g.doom_one_pumblend_transparency = 100
+
+      -- Plugins integration
+      vim.g.doom_one_plugin_neorg = true
+      vim.g.doom_one_plugin_barbar = false
+      vim.g.doom_one_plugin_telescope = false
+      vim.g.doom_one_plugin_neogit = true
+      vim.g.doom_one_plugin_nvim_tree = true
+      vim.g.doom_one_plugin_dashboard = true
+      vim.g.doom_one_plugin_startify = true
+      vim.g.doom_one_plugin_whichkey = true
+      vim.g.doom_one_plugin_indent_blankline = true
+      vim.g.doom_one_plugin_vim_illuminate = true
+      vim.g.doom_one_plugin_lspsaga = false
+    end,
+  },
 }
