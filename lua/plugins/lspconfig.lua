@@ -5,6 +5,8 @@ local ls_to_exec_map = {
   marksman = "marksman",
   tsserver = "typescript-language-server",
   phpactor = "phpactor",
+  psalm = "psalm",
+  intelephense = "intelephense",
 }
 
 return {
