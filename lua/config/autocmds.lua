@@ -9,3 +9,12 @@ require("lualine").setup({
 })
 
 require("hop").setup()
+
+require("conform").setup({
+  formatters_by_ft = {
+    lua = { "stylua" },
+    -- python = { "isort", "black" },
+    -- javascript = { { "prettierd", "prettier" } },
+    php = { { "php-cs-fixer", "phpcbf", "pint", "tlint" } },
+  },
+})

@@ -27,7 +27,7 @@ return {
       end
 
       opts.diagnostics = {
-        virtual_text = false,
+        virtual_text = true,
         underline = false,
         update_in_insert = true,
         severity_sort = true,
