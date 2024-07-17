@@ -5,6 +5,7 @@
 vim.opt.background = "dark" -- default to dark or light style
 vim.g.material_theme_style = "darker-community"
 vim.g.material_terminal_italics = 1
+
 vim.g.code_action_menu_window_border = "single"
 vim.g.diagnostic_enable_virtual_text = 1
 vim.g.lazyvim_picker = "telescope"

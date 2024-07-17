@@ -12,10 +12,14 @@ return {
     {
       "LazyVim/LazyVim",
       opts = {
-        colorscheme = "material",
-        style = "darker",
-        material_theme_style = "palenight",
+        -- colorscheme = "material",
+        -- style = "darker",
+        -- material_theme_style = "palenight",
       },
+      setup = function()
+        vim.opt.background = "lighter" -- default to dark or light style
+        -- vim.g.material_theme_style = "lighter"
+      end,
     },
   },
   -- -- -- monokai theme

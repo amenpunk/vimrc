@@ -32,7 +32,7 @@ return {
     opts = {
       modes = {
         diagnostics = {
-          auto_open = false,
+          auto_open = true,
           auto_close = true,
         },
         preview_float = {
