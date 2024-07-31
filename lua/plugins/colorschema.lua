@@ -3,7 +3,15 @@ return {
   -- { "ellisonleao/gruvbox.nvim" },
   -- "https://gitlab.com/__tpb/monokai-pro.nvim",
   -- "navarasu/onedark.nvim",
-  -- "rebelot/kanagawa.nvim",
+  {
+    "rebelot/kanagawa.nvim",
+  },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000, -- Ensure it loads first
+  },
+  { "savq/melange-nvim" },
+
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- "nyngwang/nvimgelion",
   -- material
@@ -33,12 +41,12 @@ return {
   -- },
   -- flet theme
   -- {
-  --   {
-  --     "felipeagc/fleet-theme-nvim",
-  --     -- gonfig = function()
-  --     --   -- vim.cmd("colorscheme fleet")
-  --     -- end,
-  --   },
+  {
+    "felipeagc/fleet-theme-nvim",
+    config = function()
+      -- vim.cmd("colorscheme fleet")
+    end,
+  },
   -- },
   -- -- doom one
   -- {

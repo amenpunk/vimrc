@@ -7,6 +7,8 @@ local ls_to_exec_map = {
   phpactor = "phpactor",
   psalm = "psalm",
   intelephense = "intelephense",
+  pyright = "pyright",
+  pylsp = "pyslp",
 }
 
 return {
