@@ -2,8 +2,10 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
+local builtin = require("telescope.builtin")
 local options = { noremap = true }
 local map = vim.api.nvim_set_keymap
+local wk = require("which-key")
 
 map("", "<leader>a", ":HopWord<CR>", { silent = true })
 map("n", "<leader>w", ":w! <CR>", options)
@@ -11,7 +13,12 @@ map("", "<leader><Enter>", ":ToggleTerm<CR>", { silent = true })
 map("n", "==", ":lua vim.lsp.buf.format({ async = true} )<CR>", options)
 map("", "<C-p>", "<cmd>Telescope find_files<cr>", options)
 map("n", "<C-n>", ":Neotree<cr>", options)
-map("", "<leader>dd", ":DBUI<CR>", { silent = true })
+map("", "<leader>dd", ":DBUI<CR>", options)
+
+-- telescope
+vim.keymap.set("n", "<C-b>", builtin.buffers, {})
+vim.keymap.set("n", "<leader>pc", builtin.colorscheme, {})
+vim.keymap.set("n", "<leader>pf", builtin.lsp_document_symbols, {})
 -- cmd with control
 map("n", "<C-J>", "<C-W>j", options)
 map("n", "<C-K>", "<C-W>k", options)
@@ -39,3 +46,9 @@ map("n", "<A-0>", ":Bdelete <CR>", { silent = true, noremap = true })
 -- visual select move
 map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
 map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+
+wk.add({
+  { "<leader>pc", desc = "pick colorscheme" },
+  { "<leader>pf", desc = "pick function" },
+  { "<leader>ps", desc = "pick session" },
+})

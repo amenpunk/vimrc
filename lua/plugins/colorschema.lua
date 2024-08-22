@@ -11,6 +11,17 @@ return {
     priority = 1000, -- Ensure it loads first
   },
   { "savq/melange-nvim" },
+  {
+    "ribru17/bamboo.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- require("bamboo").setup({
+      --   -- optional configuration here
+      -- })
+      -- require("bamboo").load()
+    end,
+  },
 
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- "nyngwang/nvimgelion",
@@ -87,11 +98,11 @@ return {
   -- },
 
   -- grubox material
-  -- {
-  --   "f4z3r/gruvbox-material.nvim",
-  --   name = "gruvbox-material",
-  --   lazy = false,
-  --   priority = 1,
-  --   opts = {},
-  -- },
+  {
+    "f4z3r/gruvbox-material.nvim",
+    name = "gruvbox-material",
+    lazy = false,
+    priority = 9999,
+    opts = {},
+  },
 }

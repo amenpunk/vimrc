@@ -28,6 +28,7 @@ return {
         "bash",
         "c",
         "php",
+        "php_only",
         "diff",
         "html",
         "javascript",
