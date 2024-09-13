@@ -4,3 +4,17 @@
 ![Screenshot](/scrot/1.png)
 ![Screenshot](/scrot/2.png)
 ![Screenshot](/scrot/3.png)
+
+## SETUP
+
+# Make symbolic link
+
+```sh
+    ln -s $HOME/vimrc $HOME/.config/nvim
+```
+
+# create database file
+
+```sh
+  $ touch $HOME/vimrc/lua/config/database.lua
+```

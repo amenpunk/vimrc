@@ -3,25 +3,25 @@ return {
   -- { "ellisonleao/gruvbox.nvim" },
   -- "https://gitlab.com/__tpb/monokai-pro.nvim",
   -- "navarasu/onedark.nvim",
-  {
-    "rebelot/kanagawa.nvim",
-  },
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000, -- Ensure it loads first
-  },
-  { "savq/melange-nvim" },
-  {
-    "ribru17/bamboo.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      -- require("bamboo").setup({
-      --   -- optional configuration here
-      -- })
-      -- require("bamboo").load()
-    end,
-  },
+  -- {
+  --   "rebelot/kanagawa.nvim",
+  -- },
+  -- {
+  --   "olimorris/onedarkpro.nvim",
+  --   priority = 1000, -- Ensure it loads first
+  -- },
+  -- { "savq/melange-nvim" },
+  -- {
+  --   "ribru17/bamboo.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     -- require("bamboo").setup({
+  --     --   -- optional configuration here
+  --     -- })
+  --     -- require("bamboo").load()
+  --   end,
+  -- },
 
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- "nyngwang/nvimgelion",
@@ -31,13 +31,13 @@ return {
     {
       "LazyVim/LazyVim",
       opts = {
-        -- colorscheme = "material",
-        -- style = "darker",
-        -- material_theme_style = "palenight",
+        colorscheme = "material",
+        style = "darker",
+        material_theme_style = "palenight",
       },
       setup = function()
         vim.opt.background = "lighter" -- default to dark or light style
-        -- vim.g.material_theme_style = "lighter"
+        vim.g.material_theme_style = "dark"
       end,
     },
   },
@@ -52,12 +52,12 @@ return {
   -- },
   -- flet theme
   -- {
-  {
-    "felipeagc/fleet-theme-nvim",
-    config = function()
-      -- vim.cmd("colorscheme fleet")
-    end,
-  },
+  -- {
+  --   "felipeagc/fleet-theme-nvim",
+  --   config = function()
+  --     -- vim.cmd("colorscheme fleet")
+  --   end,
+  -- },
   -- },
   -- -- doom one
   -- {
@@ -98,11 +98,11 @@ return {
   -- },
 
   -- grubox material
-  {
-    "f4z3r/gruvbox-material.nvim",
-    name = "gruvbox-material",
-    lazy = false,
-    priority = 9999,
-    opts = {},
-  },
+  -- {
+  --   "f4z3r/gruvbox-material.nvim",
+  --   name = "gruvbox-material",
+  --   lazy = false,
+  --   priority = 9999,
+  --   opts = {},
+  -- },
 }

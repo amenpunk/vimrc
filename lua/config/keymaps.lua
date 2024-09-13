@@ -8,12 +8,12 @@ local map = vim.api.nvim_set_keymap
 local wk = require("which-key")
 
 map("", "<leader>a", ":HopWord<CR>", { silent = true })
-map("n", "<leader>w", ":w! <CR>", options)
+map("n", "<leader>w", "<Cmd>w! <CR>", options)
 map("", "<leader><Enter>", ":ToggleTerm<CR>", { silent = true })
-map("n", "==", ":lua vim.lsp.buf.format({ async = true} )<CR>", options)
-map("", "<C-p>", "<cmd>Telescope find_files<cr>", options)
-map("n", "<C-n>", ":Neotree<cr>", options)
-map("", "<leader>dd", ":DBUI<CR>", options)
+map("n", "==", "<Cmd>lua vim.lsp.buf.format({ async = true} )<CR>", options)
+map("", "<C-p>", "<Cmd>Telescope find_files<cr>", options)
+map("n", "<C-n>", "<Cmd>Neotree<cr>", options)
+map("", "<leader>dd", "<Cmd>DBUI<CR>", options)
 
 -- telescope
 vim.keymap.set("n", "<C-b>", builtin.buffers, {})
@@ -26,10 +26,10 @@ map("n", "<C-L>", "<C-W>l", options)
 map("n", "<C-H>", "<C-W>h", options)
 
 -- buffer resize
-map("n", "<M-h>", ":vertical resize +5<CR>", options)
-map("n", "<M-l>", ":vertical resize -5<CR>", options)
-map("n", "<M-k>", ":resize -5<CR>", options)
-map("n", "<M-j>", ":resize +5<CR>", options)
+map("n", "<M-h>", "<Cmd>vertical resize +5<CR>", options)
+map("n", "<M-l>", "<Cmd>vertical resize -5<CR>", options)
+map("n", "<M-k>", "<Cmd>resize -5<CR>", options)
+map("n", "<M-j>", "<Cmd>resize +5<CR>", options)
 
 -- buffer search by number
 map("n", "<A-1>", "<Cmd>BufferLineGoToBuffer 1 <CR>", { silent = true, noremap = true })
@@ -41,7 +41,7 @@ map("n", "<A-6>", "<Cmd>BufferLineGoToBuffer 6 <CR>", { silent = true, noremap =
 map("n", "<A-7>", "<Cmd>BufferLineGoToBuffer 7 <CR>", { silent = true, noremap = true })
 map("n", "<A-8>", "<Cmd>BufferLineGoToBuffer 8 <CR>", { silent = true, noremap = true })
 map("n", "<A-9>", "<Cmd>BufferLineGoToBuffer 9 <CR>", { silent = true, noremap = true })
-map("n", "<A-0>", ":Bdelete <CR>", { silent = true, noremap = true })
+map("n", "<A-0>", "<Cmd>BufferLinePickClose <CR>", { silent = true, noremap = true })
 
 -- visual select move
 map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })

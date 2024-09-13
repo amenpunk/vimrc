@@ -94,6 +94,14 @@ return {
       end
       local cmp = require("cmp")
       local Kind = cmp.lsp.CompletionItemKind
+
+      cmp.setup.filetype({ "sql" }, {
+        sources = {
+          { name = "vim-dadbob-completion" },
+          { name = "buffer" },
+        },
+      })
+
       cmp.setup(opts)
       cmp.event:on("confirm_done", function(event)
         if not vim.tbl_contains(opts.auto_brackets or {}, vim.bo.filetype) then

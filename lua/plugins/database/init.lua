@@ -25,6 +25,7 @@ return {
       connection_error = "✕",
     }
     vim.g.db_ui_show_help = 1
+    vim.g.db_ui_save_location = "~/Drive/Querys"
     vim.g.db_ui_winwidth = 30
     vim.g.db_ui_table_helpers = {
       postgres = {
