@@ -1,4 +1,13 @@
 return {
+  -- {
+  --   "vague2k/vague.nvim",
+  --   config = function()
+  --     require("vague").setup({
+  --       -- optional configuration here
+  --     })
+  --   end,
+  -- },
+
   -- "cpea2506/one_monokai.nvim",
   -- { "ellisonleao/gruvbox.nvim" },
   -- "https://gitlab.com/__tpb/monokai-pro.nvim",

@@ -29,7 +29,7 @@ return {
     vim.cmd([[set fillchars+=vert:\▏]])
     opts.config.header = vim.split(logo, "\n")
   end,
-  -- config = function()
-  --   -- require("dashboard").setup({})
-  -- end,
+  config = function()
+    -- require("dashboard").setup({})
+  end,
 }

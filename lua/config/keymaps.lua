@@ -15,6 +15,8 @@ map("", "<C-p>", "<Cmd>Telescope find_files<cr>", options)
 map("n", "<C-n>", "<Cmd>Neotree<cr>", options)
 map("", "<leader>dd", "<Cmd>DBUI<CR>", options)
 
+-- autosesison
+vim.keymap.set("n", "<Leader>ps", require("auto-session.session-lens").search_session, { noremap = true })
 -- telescope
 vim.keymap.set("n", "<C-b>", builtin.buffers, {})
 vim.keymap.set("n", "<leader>pc", builtin.colorscheme, {})

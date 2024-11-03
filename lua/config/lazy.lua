@@ -23,9 +23,8 @@ require("lazy").setup({
       "LazyVim/LazyVim",
       import = "lazyvim.plugins",
       opts = {
-        -- colorscheme = "onedark",
         -- colorscheme = "monokai-nightasty",
-        -- colorscheme = "material",
+        colorscheme = "material",
         -- colorscheme = "melange",
         -- colorscheme = "kanagawa",
       },
