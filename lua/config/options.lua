@@ -10,6 +10,8 @@ vim.g.code_action_menu_window_border = "single"
 vim.g.diagnostic_enable_virtual_text = 1
 vim.g.lazyvim_picker = "telescope"
 
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+
 vim.cmd([[highlight DashboardHeader guifg=#ff0000]])
 vim.cmd([[highlight WinSeparator guifg=#292929]])
 vim.cmd([[set fillchars+=vert:\▏]])

@@ -6,10 +6,10 @@ require("hop").setup()
 
 require("conform").setup({
   formatters_by_ft = {
-    lua = { "stylua" },
+    lua = { "stylua", "luaformatter" },
     python = { "blue" },
     javascript = { "prettier" },
-    -- php = { { "php-cs-fixer", "phpcbf", "pint", "tlint" } },
+    --php = { { "php-cs-fixer", "phpcbf", "pint", "tlint" } },
     php = { "pint" },
     yaml = { "yamlfix" },
     html = { "prettier", "prettierd" },

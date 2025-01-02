@@ -1,5 +1,6 @@
 return {
   "kristijanhusak/vim-dadbod-ui",
+  lazy = true,
   dependencies = {
     { "tpope/vim-dadbod", lazy = true },
     { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
@@ -29,10 +30,10 @@ return {
     vim.g.db_ui_winwidth = 30
     vim.g.db_ui_table_helpers = {
       postgres = {
-        select = "SELECT * FROM %s LIMIT 100",
+        select = "SELECT * FROM %s LIMIT 10",
       },
       mysql = {
-        select = "SELECT * FROM %s LIMIT 100",
+        select = "SELECT * FROM %s LIMIT 10",
       },
     }
   end,

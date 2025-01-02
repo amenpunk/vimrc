@@ -1,17 +1,18 @@
-local pkg_bin_map = {}
-
-local function binary_available(pkg)
-  local binary_name = pkg_bin_map[pkg] and pkg_bin_map[pkg] or pkg
-  return vim.fn.executable(binary_name) ~= 1
-end
-
 return {
   "williamboman/mason.nvim",
-  opts = function(_, opts)
-    opts.ensure_installed = vim.tbl_filter(function(pkg)
-      return binary_available(pkg)
-    end, opts.ensure_installed)
+  config = function(_, opts)
+    local conf = vim.tbl_deep_extend("keep", opts, {
+      ui = {
+        icons = {
+          package_installed = "✓",
+          package_pending = "➜",
+          package_uninstalled = "✗",
+        },
+      },
+    })
+    -- ^^^^^ Here we are basically merge you configuration with OPTS
+    -- OPTS contains configurations defined elsewhere like nvim-java
 
-    return opts
+    require("mason").setup(conf)
   end,
 }
