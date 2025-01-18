@@ -31,25 +31,25 @@ return {
   --     -- require("bamboo").load()
   --   end,
   -- },
-
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- "nyngwang/nvimgelion",
   -- material
-  {
-    "kaicataldo/material.vim",
-    {
-      "LazyVim/LazyVim",
-      opts = {
-        colorscheme = "material",
-        style = "darker",
-        material_theme_style = "palenight",
-      },
-      setup = function()
-        vim.opt.background = "lighter" -- default to dark or light style
-        vim.g.material_theme_style = "dark"
-      end,
-    },
-  },
+  -- {
+  --   "kaicataldo/material.vim",
+  --   {
+  --     "LazyVim/LazyVim",
+  --     opts = {
+  --       colorscheme = "material",
+  --       style = "darker",
+  --       material_theme_style = "palenight",
+  --     },
+  --     setup = function()
+  --       vim.opt.background = "lighter" -- default to dark or light style
+  --       vim.g.material_theme_style = "dark"
+  --     end,
+  --   },
+  -- },
   -- -- -- monokai theme
   -- {
   --   "polirritmico/monokai-nightasty.nvim",

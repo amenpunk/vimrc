@@ -9,6 +9,7 @@ local ls_to_exec_map = {
   intelephense = "intelephense",
   pyright = "pyright",
   pylsp = "pyslp",
+  graphql = "graphql",
 }
 
 return {
