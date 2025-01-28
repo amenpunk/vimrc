@@ -9,7 +9,6 @@ vim.g.material_terminal_italics = 1
 --" catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 vim.g.code_action_menu_window_border = "single"
-vim.g.diagnostic_enable_virtual_text = 1
 vim.g.lazyvim_picker = "telescope"
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
@@ -21,5 +20,3 @@ vim.cmd([[set fillchars+=vert:\▏]])
 -- ~/.config/nvim/neovim.cat
 -- vim.g.dashboard_preview_file_height = 12
 -- vim.g.dashboard_preview_file_width = 80
-
--- vim.cmd([[ " autocmd FileType sql,mysql,plsql lua require('cmp').setup.buffer({ sources = {{ name = 'vim-dadbod-completion' }} }) ]])

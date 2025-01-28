@@ -29,22 +29,29 @@ return {
         end
       end
 
+      -- opts.inlay_hints = {
+      --   enabled = true,
+      -- }
+      --
       opts.diagnostics = {
-        virtual_text = true,
-        underline = false,
-        update_in_insert = true,
-        severity_sort = true,
-        float = {
-          border = "single",
-          format = function(diagnostic)
-            return string.format(
-              "%s (%s) [%s]",
-              diagnostic.message,
-              diagnostic.source,
-              diagnostic.code or diagnostic.user_data.lsp.code
-            )
-          end,
-        },
+        virtual_lines = true,
+        -- virtual_text = {
+        --   prefix = "icons",
+        -- },
+        underline = true,
+        --update_in_insert = true,
+        --severity_sort = true,
+        -- float = {
+        --   border = "single",
+        --   format = function(diagnostic)
+        --     return string.format(
+        --       "%s (%s) [%s]",
+        --       diagnostic.message,
+        --       diagnostic.source,
+        --       diagnostic.code or diagnostic.user_data.lsp.code
+        --     )
+        --   end,
+        -- },
         signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
