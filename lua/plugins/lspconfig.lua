@@ -34,10 +34,10 @@ return {
       -- }
       --
       opts.diagnostics = {
-        virtual_lines = true,
-        -- virtual_text = {
-        --   prefix = "icons",
-        -- },
+        virtual_lines = {
+          prefix = "",
+          spacing = 2,
+        },
         underline = true,
         --update_in_insert = true,
         --severity_sort = true,
@@ -53,6 +53,12 @@ return {
         --   end,
         -- },
         signs = {
+          lines = {
+            [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
+            [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
+            [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
+            [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
+          },
           text = {
             [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
             [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
