@@ -31,7 +31,7 @@ return {
   --     -- require("bamboo").load()
   --   end,
   -- },
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  --{ "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- "nyngwang/nvimgelion",
   -- material
