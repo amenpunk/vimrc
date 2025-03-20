@@ -3,20 +3,20 @@
 -- Add any additional autocmds here
 
 require("hop").setup()
-require("obsidian").setup({
-  workspaces = {
-    {
-      name = "drive",
-      path = "~/Drive/Obsidian/",
-    },
-  },
-})
+-- require("obsidian").setup({
+--   workspaces = {
+--     {
+--       name = "drive",
+--       path = "~/Drive/Obsidian/",
+--     },
+--   },
+-- })
 
-require("precognition").setup({
-  startup = false,
-  startVisible = false,
-  showBlankVirtLine = true,
-})
+-- require("precognition").setup({
+--   startup = false,
+--   startVisible = false,
+--   showBlankVirtLine = true,
+-- })
 
 require("conform").setup({
   formatters_by_ft = {
@@ -30,5 +30,11 @@ require("conform").setup({
     html = { "prettier", "prettierd" },
   },
 })
+
+require("lualine").setup({
+  options = {
+    theme = require("material.lualine"),
+  },
+})
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin")
+--vim.cmd.colorscheme("catppuccin")

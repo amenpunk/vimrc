@@ -1,10 +1,8 @@
 return {
   -- {
-  --   "vague2k/vague.nvim",
+  --   "felipeagc/fleet-theme-nvim",
   --   config = function()
-  --     require("vague").setup({
-  --       -- optional configuration here
-  --     })
+  --     vim.cmd("colorscheme fleet")
   --   end,
   -- },
 
@@ -35,21 +33,21 @@ return {
   -- { "nyoom-engineering/oxocarbon.nvim" },
   -- "nyngwang/nvimgelion",
   -- material
-  -- {
-  --   "kaicataldo/material.vim",
-  --   {
-  --     "LazyVim/LazyVim",
-  --     opts = {
-  --       colorscheme = "material",
-  --       style = "darker",
-  --       material_theme_style = "palenight",
-  --     },
-  --     setup = function()
-  --       vim.opt.background = "lighter" -- default to dark or light style
-  --       vim.g.material_theme_style = "dark"
-  --     end,
-  --   },
-  -- },
+  {
+    "kaicataldo/material.vim",
+    {
+      "LazyVim/LazyVim",
+      opts = {
+        colorscheme = "material",
+        style = "darker",
+        material_theme_style = "palenight",
+      },
+      setup = function()
+        vim.opt.background = "dark" -- default to dark or light style
+        vim.g.material_theme_style = "dark"
+      end,
+    },
+  },
   -- -- -- monokai theme
   -- {
   --   "polirritmico/monokai-nightasty.nvim",
@@ -105,13 +103,10 @@ return {
   --     vim.g.doom_one_plugin_lspsaga = false
   --   end,
   -- },
-
-  -- grubox material
-  -- {
-  --   "f4z3r/gruvbox-material.nvim",
-  --   name = "gruvbox-material",
-  --   lazy = false,
-  --   priority = 9999,
-  --   opts = {},
-  -- },
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "material",
+    },
+  },
 }
