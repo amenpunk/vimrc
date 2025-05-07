@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.opt.background = "dark" -- default to dark or light style
+vim.o.background = "dark" -- default to dark or light style
 vim.g.material_theme_style = "darker-community"
 vim.g.material_terminal_italics = 1
 --vim.cmd.colorscheme("catppuccin-mocha")
