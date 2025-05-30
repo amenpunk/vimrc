@@ -45,6 +45,15 @@ map("n", "<A-8>", "<Cmd>BufferLineGoToBuffer 8 <CR>", { silent = true, noremap =
 map("n", "<A-9>", "<Cmd>BufferLineGoToBuffer 9 <CR>", { silent = true, noremap = true })
 map("n", "<A-0>", "<Cmd>BufferLinePickClose <CR>", { silent = true, noremap = true })
 
+-- Salir a modo normal con ESC en terminal
+map('t', '<Esc>', '<C-\\><C-n>', { noremap = true })
+
+-- Moverse entre ventanas desde modo terminal (Ej: Ctrl + h/j/k/l)
+map('t', '<C-h>', '<C-\\><C-n><C-w>h', { noremap = true })
+map('t', '<C-j>', '<C-\\><C-n><C-w>j', { noremap = true })
+map('t', '<C-k>', '<C-\\><C-n><C-w>k', { noremap = true })
+map('t', '<C-l>', '<C-\\><C-n><C-w>l', { noremap = true })
+
 -- visual select move
 map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
 map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })

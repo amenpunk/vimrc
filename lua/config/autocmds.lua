@@ -21,7 +21,7 @@ require("hop").setup()
 require("conform").setup({
   formatters_by_ft = {
     lua = { "stylua", "luaformatter" },
-    python = { "blue" },
+    python = { "blue", "jupytext" },
     javascript = { "prettier" },
     typescript = { "prettier" },
     graphql = { "prettier" },
@@ -31,9 +31,15 @@ require("conform").setup({
   },
 })
 
+-- require("one_monokai").setup({
+--   transparent = true,
+-- })
+
 require("lualine").setup({
   options = {
-    theme = require("material.lualine"),
+    theme = "catppuccin",
+    -- theme = require("material.lualine"),
+    -- theme = require("one_monokai"),
   },
 })
 -- setup must be called before loading
