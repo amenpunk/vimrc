@@ -44,6 +44,7 @@ map("n", "<A-7>", "<Cmd>BufferLineGoToBuffer 7 <CR>", { silent = true, noremap =
 map("n", "<A-8>", "<Cmd>BufferLineGoToBuffer 8 <CR>", { silent = true, noremap = true })
 map("n", "<A-9>", "<Cmd>BufferLineGoToBuffer 9 <CR>", { silent = true, noremap = true })
 map("n", "<A-0>", "<Cmd>BufferLinePickClose <CR>", { silent = true, noremap = true })
+vim.keymap.set('n', '<Tab>', ':EagleWin<CR>', { noremap = true, silent = true })
 
 -- Salir a modo normal con ESC en terminal
 map('t', '<Esc>', '<C-\\><C-n>', { noremap = true })

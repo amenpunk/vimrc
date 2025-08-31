@@ -34,11 +34,12 @@ return {
       -- }
       --
       opts.diagnostics = {
-        virtual_lines = {
-          prefix = "",
-          spacing = 2,
-        },
-        underline = true,
+        -- NOTE: uncomment to enable diagnostics virtual text to underline
+        -- virtual_lines = {
+        --   prefix = "",
+        --   spacing = 2,
+        -- },
+        -- underline = true,
         --update_in_insert = true,
         --severity_sort = true,
         -- float = {

@@ -103,6 +103,17 @@ return {
   --     vim.g.doom_one_plugin_lspsaga = false
   --   end,
   -- },
+  -- {
+  --   "felipeagc/fleet-theme-nvim",
+  --   config = function() vim.cmd("colorscheme fleet") end,
+  --   {
+  --     "LazyVim/LazyVim",
+  --     opts = {
+  --       colorscheme = "fleet",
+  --     },
+  --   },
+  -- },
+
   {
     "catppuccin/nvim",
     name = "catppuccin",
