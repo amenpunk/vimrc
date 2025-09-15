@@ -11,6 +11,14 @@ return {
     local ui = require("dapui")
     local dap = require("dap")
     configurations.setup(dap)
+
+    vim.keymap.set("n", "<F5>", function() require("dap").continue() end, { desc = "Debug: Start/Continue" })
+    vim.keymap.set("n", "<F6>", function() require("dap").step_over() end, { desc = "Debug: Step Over" })
+    vim.keymap.set("n", "<F7>", function() require("dap").step_into() end, { desc = "Debug: Step Into" })
+    vim.keymap.set("n", "<F8>", function() require("dap").step_out() end, { desc = "Debug: Step Out" })
+    vim.keymap.set("n", "<leader>b", function() require("dap").toggle_breakpoint() end, { desc = "Debug: Toggle Breakpoint" })
+    vim.keymap.set("n", "<leader>du", function() require("dapui").toggle() end, { desc = "Debug: Toggle UI" })
+
     ui.setup({
       icons = { expanded = "▾", collapsed = "▸" },
       mappings = {

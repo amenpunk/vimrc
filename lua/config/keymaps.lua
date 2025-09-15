@@ -16,7 +16,7 @@ map("n", "<C-n>", "<Cmd>Neotree<cr>", options)
 map("", "<leader>dd", "<Cmd>DBUI<CR>", options)
 
 -- autosesison
-vim.keymap.set("n", "<Leader>ps", require("auto-session.session-lens").search_session, { noremap = true })
+-- vim.keymap.set("n", "<Leader>ps", require("auto-session.session-lens").search_session, { noremap = true })
 -- telescope
 vim.keymap.set("n", "<C-b>", builtin.buffers, {})
 vim.keymap.set("n", "<leader>pc", builtin.colorscheme, {})
@@ -63,4 +63,41 @@ wk.add({
   { "<leader>pc", desc = "pick colorscheme" },
   { "<leader>pf", desc = "pick function" },
   { "<leader>ps", desc = "pick session" },
+})
+
+-- Custom function to compile and debug C/C++
+local function compile_and_debug()
+  local current_file = vim.fn.expand("%:p")
+  local executable_name = vim.fn.expand("%:r")
+  local filetype = vim.bo.filetype
+
+  local compile_command
+  if filetype == "c" then
+    compile_command = "gcc -g " .. vim.fn.shellescape(current_file) .. " -o " .. vim.fn.shellescape(executable_name)
+  elseif filetype == "cpp" then
+    compile_command = "g++ -g " .. vim.fn.shellescape(current_file) .. " -o " .. vim.fn.shellescape(executable_name)
+  else
+    vim.notify("Not a C or C++ file, cannot compile and debug.", vim.log.levels.ERROR)
+    return
+  end
+
+  vim.notify("Compiling: " .. compile_command)
+  vim.fn.jobstart(compile_command, {
+    on_exit = function(_, exit_code)
+      vim.schedule(function()
+        if exit_code == 0 then
+          vim.notify("Compilation successful. Starting debugger...")
+          require("dap").continue()
+        else
+          vim.notify("Compilation failed. Check for errors.", vim.log.levels.ERROR)
+        end
+      end)
+    end,
+  })
+end
+
+-- Create the custom command
+vim.api.nvim_create_user_command("DebugRun", compile_and_debug, {
+  nargs = 0,
+  desc = "Compile and run the current C/C++ file with the debugger",
 })

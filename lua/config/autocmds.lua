@@ -38,6 +38,8 @@ require("eagle").setup({
   --override the default values found in config.lua
 })
 
+require("bufferline").setup({})
+
 require("lualine").setup({
   options = {
     theme = "catppuccin",
