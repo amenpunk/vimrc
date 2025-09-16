@@ -1,0 +1,27 @@
+return {
+  "rest-nvim/rest.nvim",
+  ft = "http",
+  dependencies = { "nvim-lua/plenary.nvim" },
+  config = function()
+    require("rest-nvim").setup({
+      --- Whether to skip SSL verification, useful for self-signed certificates
+      skip_ssl_verification = false,
+      --- Encode URL before making request
+      encode_url = true,
+      --- Show request info before sending it
+      show_url = true,
+      --- Highlight response body on preview
+      highlight = { enable = true, timeout = 150 },
+      --- Result window options
+      result = {
+        split = "horizontal",
+        show_curl_command = false,
+      },
+    })
+
+    -- Optional: Keybindings
+    vim.keymap.set("n", "<leader>rr", "<Plug>RestNvim", { desc = "Run REST request under cursor" })
+    vim.keymap.set("n", "<leader>rp", "<Plug>RestNvimPreview", { desc = "Preview REST request" })
+    vim.keymap.set("n", "<leader>rl", "<Plug>RestNvimLast", { desc = "Re-run last REST request" })
+  end,
+}
