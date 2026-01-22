@@ -4,7 +4,7 @@ return {
     "jay-babu/mason-nvim-dap.nvim",
     "mfussenegger/nvim-dap",
     "nvim-neotest/nvim-nio",
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
   },
   config = function()
     local configurations = require("plugins.dap.config")

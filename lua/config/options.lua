@@ -15,9 +15,9 @@ vim.o.mousemoveevent = true
 
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
-vim.cmd([[highlight DashboardHeader guifg=#ff0000]])
-vim.cmd([[highlight WinSeparator guifg=#292929]])
-vim.cmd([[set fillchars+=vert:\▏]])
+-- vim.cmd([[highlight DashboardHeader guifg=#ff0000]])
+-- vim.cmd([[highlight WinSeparator guifg=#292929]])
+-- vim.cmd([[set fillchars+=vert:\▏]])
 -- vim.cmd([[set termguicolors]])
 -- vim.g.dashboard_preview_file = path to logo file like
 -- ~/.config/nvim/neovim.cat
