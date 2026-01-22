@@ -9,6 +9,7 @@ local langs = {
   "java",
   "jsdoc",
   "json",
+  "http",
   "jsonc",
   "lua",
   "luadoc",
