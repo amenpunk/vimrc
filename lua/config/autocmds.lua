@@ -93,13 +93,67 @@ require("catppuccin").setup({
 })
 
 -- setup must be called before loading
-vim.cmd.colorscheme("catppuccin")
-
+-- vim.cmd.colorscheme("catppuccin")
 require("lualine").setup({
   options = {
-    theme = "catppuccin",
+    icons_enabled = true,
+    theme = "material",
+    component_separators = { left = "", right = "" },
+    section_separators = { left = "", right = "" },
+    disabled_filetypes = {
+      statusline = {},
+      winbar = {},
+    },
+    ignore_focus = {},
+    always_divide_middle = true,
+    always_show_tabline = true,
+    globalstatus = false,
+    refresh = {
+      statusline = 1000,
+      tabline = 1000,
+      winbar = 1000,
+      refresh_time = 16, -- ~60fps
+      events = {
+        "WinEnter",
+        "BufEnter",
+        "BufWritePost",
+        "SessionLoadPost",
+        "FileChangedShellPost",
+        "VimResized",
+        "Filetype",
+        "CursorMoved",
+        "CursorMovedI",
+        "ModeChanged",
+      },
+    },
   },
+  sections = {
+    lualine_a = { "mode" },
+    lualine_b = { "branch", "diff", "diagnostics" },
+    lualine_c = { "filename" },
+    lualine_x = { "encoding", "fileformat", "filetype" },
+    lualine_y = { "progress" },
+    lualine_z = { "location" },
+  },
+  inactive_sections = {
+    lualine_a = {},
+    lualine_b = {},
+    lualine_c = { "filename" },
+    lualine_x = { "location" },
+    lualine_y = {},
+    lualine_z = {},
+  },
+  tabline = {},
+  winbar = {},
+  inactive_winbar = {},
+  extensions = {},
 })
+-- require("lualine").setup({
+--   options = {
+--     -- theme = "catppuccin",
+--     theme = "material",
+--   },
+-- })
 
 require("focus").setup()
 
@@ -152,3 +206,87 @@ require("java").setup({
     show_location = false,
   },
 })
+
+require("material").setup({
+
+  contrast = {
+    terminal = false, -- Enable contrast for the built-in terminal
+    sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
+    floating_windows = false, -- Enable contrast for floating windows
+    cursor_line = false, -- Enable darker background for the cursor line
+    lsp_virtual_text = false, -- Enable contrasted background for lsp virtual text
+    non_current_windows = false, -- Enable contrasted background for non-current windows
+    filetypes = {}, -- Specify which filetypes get the contrasted (darker) background
+  },
+
+  styles = { -- Give comments style such as bold, italic, underline etc.
+    comments = { --[[ italic = true ]]
+    },
+    strings = { --[[ bold = true ]]
+    },
+    keywords = { --[[ underline = true ]]
+    },
+    functions = { --[[ bold = true, undercurl = true ]]
+    },
+    variables = {},
+    operators = {},
+    types = {},
+  },
+
+  plugins = { -- Uncomment the plugins that you use to highlight them
+    -- Available plugins:
+    -- "blink",
+    -- "coc",
+    -- "colorful-winsep",
+    "dap",
+    "dashboard",
+    -- "eyeliner",
+    -- "fidget",
+    -- "flash",
+    "gitsigns",
+    -- "harpoon",
+    -- "hop",
+    -- "illuminate",
+    -- "indent-blankline",
+    -- "lspsaga",
+    -- "mini",
+    -- "neo-tree",
+    -- "neogit",
+    -- "neorg",
+    -- "neotest",
+    -- "noice",
+    -- "nvim-cmp",
+    -- "nvim-navic",
+    -- "nvim-notify",
+    -- "nvim-tree",
+    "nvim-web-devicons",
+    -- "rainbow-delimiters",
+    -- "sneak",
+    "telescope",
+    -- "trouble",
+    -- "which-key",
+  },
+
+  disable = {
+    colored_cursor = false, -- Disable the colored cursor
+    borders = false, -- Disable borders between vertically split windows
+    background = true, -- Prevent the theme from setting the background (NeoVim then uses your terminal background)
+    term_colors = false, -- Prevent the theme from setting terminal colors
+    eob_lines = false, -- Hide the end-of-buffer lines
+  },
+
+  high_visibility = {
+    lighter = false, -- Enable higher contrast text for lighter style
+    darker = false, -- Enable higher contrast text for darker style
+  },
+
+  lualine_style = "default", -- Lualine style ( can be 'stealth' or 'default' )
+
+  async_loading = true, -- Load parts of the theme asynchronously for faster startup (turned on by default)
+
+  custom_colors = nil, -- If you want to override the default colors, set this to a function
+
+  custom_highlights = {}, -- Overwrite highlights with your own
+})
+
+vim.cmd([[colorscheme material-darker]])
