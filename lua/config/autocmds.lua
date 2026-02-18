@@ -155,7 +155,7 @@ require("lualine").setup({
 --   },
 -- })
 
-require("focus").setup()
+-- require("focus").setup()
 
 require("java").setup({
   -- Startup checks
