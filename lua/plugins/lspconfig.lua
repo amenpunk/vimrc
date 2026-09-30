@@ -10,6 +10,7 @@ local ls_to_exec_map = {
   pyright = "pyright",
   pylsp = "pyslp",
   graphql = "graphql",
+  terraform = "terraform-ls",
 }
 
 return {

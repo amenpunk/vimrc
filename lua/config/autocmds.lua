@@ -28,6 +28,8 @@ require("conform").setup({
     php = { "pint" },
     yaml = { "yamlfix" },
     html = { "prettier", "prettierd" },
+    tf = { "tflint", "tfsec", "terraform" },
+    terraform = { "tflint", "tfsec", "terraform" },
   },
 })
 
