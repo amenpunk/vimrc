@@ -3,12 +3,13 @@ local ls_to_exec_map = {
   jsonls = "vscode-json-language-server",
   lua_ls = "lua-language-server",
   marksman = "marksman",
+  ts_ls = "typescript-language-server",
   tsserver = "typescript-language-server",
   phpactor = "phpactor",
   psalm = "psalm",
   intelephense = "intelephense",
   pyright = "pyright",
-  pylsp = "pyslp",
+  pylsp = "pylsp",
   graphql = "graphql",
   terraform = "terraform-ls",
 }
@@ -17,56 +18,26 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = function(_, opts)
-      -- disable installation from mason if the executable is available in the
-      -- systemt already
+      opts.servers = opts.servers or {}
+
+      -- disable installation from mason if the executable is available in the system already
       for server, exec_name in pairs(ls_to_exec_map) do
-        -- if the server config not found, enable the server
         if not opts.servers[server] then
           opts.servers[server] = {}
         end
 
-        if vim.fn.executable(exec_name) then
+        if vim.fn.executable(exec_name) == 1 then
           opts.servers[server].mason = false
         end
       end
 
-      -- opts.inlay_hints = {
-      --   enabled = true,
-      -- }
-      --
-      opts.diagnostics = {
-        -- NOTE: uncomment to enable diagnostics virtual text to underline
-        -- virtual_lines = {
-        --   prefix = "",
-        --   spacing = 2,
-        -- },
-        -- underline = true,
-        --update_in_insert = true,
-        --severity_sort = true,
-        -- float = {
-        --   border = "single",
-        --   format = function(diagnostic)
-        --     return string.format(
-        --       "%s (%s) [%s]",
-        --       diagnostic.message,
-        --       diagnostic.source,
-        --       diagnostic.code or diagnostic.user_data.lsp.code
-        --     )
-        --   end,
-        -- },
-        signs = {
-          lines = {
-            [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
-            [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
-            [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
-            [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
-          },
-          text = {
-            [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
-            [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
-            [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
-            [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
-          },
+      opts.diagnostics = opts.diagnostics or {}
+      opts.diagnostics.signs = {
+        text = {
+          [vim.diagnostic.severity.ERROR] = LazyVim.config.icons.diagnostics.Error,
+          [vim.diagnostic.severity.WARN] = LazyVim.config.icons.diagnostics.Warn,
+          [vim.diagnostic.severity.HINT] = LazyVim.config.icons.diagnostics.Hint,
+          [vim.diagnostic.severity.INFO] = LazyVim.config.icons.diagnostics.Info,
         },
       }
 

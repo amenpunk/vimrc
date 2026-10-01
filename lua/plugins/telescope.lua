@@ -77,10 +77,16 @@ return {
       local actions = require("telescope.actions")
 
       local open_with_trouble = function(...)
-        return require("trouble.providers.telescope").open_with_trouble(...)
+        local ok, trouble = pcall(require, "trouble.sources.telescope")
+        if ok then
+          return trouble.open(...)
+        end
       end
       local open_selected_with_trouble = function(...)
-        return require("trouble.providers.telescope").open_selected_with_trouble(...)
+        local ok, trouble = pcall(require, "trouble.sources.telescope")
+        if ok then
+          return trouble.open(...)
+        end
       end
       local find_files_no_ignore = function()
         local action_state = require("telescope.actions.state")

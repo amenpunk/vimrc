@@ -1,68 +1,74 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
 
-local builtin = require("telescope.builtin")
-local options = { noremap = true }
-local map = vim.api.nvim_set_keymap
-local wk = require("which-key")
+local map = vim.keymap.set
 
-map("", "<leader>a", ":HopWord<CR>", { silent = true })
-map("n", "<leader>w", "<Cmd>w! <CR>", options)
-map("", "<leader><Enter>", ":ToggleTerm<CR>", { silent = true })
-map("n", "==", "<Cmd>lua vim.lsp.buf.format({ async = true} )<CR>", options)
-map("", "<C-p>", "<Cmd>Telescope find_files<cr>", options)
-map("n", "<C-n>", "<Cmd>Neotree<cr>", options)
-map("", "<leader>dd", "<Cmd>DBUI<CR>", options)
+-- Acciones rápidas
+map({ "n", "x", "o" }, "<leader>a", "<cmd>HopWord<CR>", { desc = "Hop Word" })
+map("n", "<leader>w", "<cmd>w!<CR>", { desc = "Save File Force" })
+map({ "n", "t" }, "<leader><Enter>", "<cmd>ToggleTerm<CR>", { desc = "Toggle Terminal" })
+map("n", "==", function()
+  vim.lsp.buf.format({ async = true })
+end, { desc = "LSP Format" })
+map({ "n", "v" }, "<C-p>", "<cmd>Telescope find_files<CR>", { desc = "Find Files" })
+map("n", "<C-n>", "<cmd>Neotree toggle<CR>", { desc = "Toggle NeoTree" })
+map({ "n", "v" }, "<leader>dd", "<cmd>DBUI<CR>", { desc = "Database UI" })
 
--- autosesison
--- vim.keymap.set("n", "<Leader>ps", require("auto-session.session-lens").search_session, { noremap = true })
--- telescope
-vim.keymap.set("n", "<C-b>", builtin.buffers, {})
-vim.keymap.set("n", "<leader>pc", builtin.colorscheme, {})
-vim.keymap.set("n", "<leader>pf", builtin.lsp_document_symbols, {})
--- cmd with control
-map("n", "<C-J>", "<C-W>j", options)
-map("n", "<C-K>", "<C-W>k", options)
-map("n", "<C-L>", "<C-W>l", options)
-map("n", "<C-H>", "<C-W>h", options)
+-- Telescope pickers diferidos (lazy friendly)
+map("n", "<C-b>", function()
+  require("telescope.builtin").buffers()
+end, { desc = "Find Buffers" })
+map("n", "<leader>pc", function()
+  require("telescope.builtin").colorscheme()
+end, { desc = "Pick Colorscheme" })
+map("n", "<leader>pf", function()
+  require("telescope.builtin").lsp_document_symbols()
+end, { desc = "Pick Function / Symbol" })
 
--- buffer resize
-map("n", "<M-h>", "<Cmd>vertical resize +5<CR>", options)
-map("n", "<M-l>", "<Cmd>vertical resize -5<CR>", options)
-map("n", "<M-k>", "<Cmd>resize -5<CR>", options)
-map("n", "<M-j>", "<Cmd>resize +5<CR>", options)
+-- Navegación entre ventanas
+map("n", "<C-h>", "<C-w>h", { desc = "Go to Left Window" })
+map("n", "<C-j>", "<C-w>j", { desc = "Go to Lower Window" })
+map("n", "<C-k>", "<C-w>k", { desc = "Go to Upper Window" })
+map("n", "<C-l>", "<C-w>l", { desc = "Go to Right Window" })
 
--- buffer search by number
-map("n", "<A-1>", "<Cmd>BufferLineGoToBuffer 1 <CR>", { silent = true, noremap = true })
-map("n", "<A-2>", "<Cmd>BufferLineGoToBuffer 2 <CR>", { silent = true, noremap = true })
-map("n", "<A-3>", "<Cmd>BufferLineGoToBuffer 3 <CR>", { silent = true, noremap = true })
-map("n", "<A-4>", "<Cmd>BufferLineGoToBuffer 4 <CR>", { silent = true, noremap = true })
-map("n", "<A-5>", "<Cmd>BufferLineGoToBuffer 5 <CR>", { silent = true, noremap = true })
-map("n", "<A-6>", "<Cmd>BufferLineGoToBuffer 6 <CR>", { silent = true, noremap = true })
-map("n", "<A-7>", "<Cmd>BufferLineGoToBuffer 7 <CR>", { silent = true, noremap = true })
-map("n", "<A-8>", "<Cmd>BufferLineGoToBuffer 8 <CR>", { silent = true, noremap = true })
-map("n", "<A-9>", "<Cmd>BufferLineGoToBuffer 9 <CR>", { silent = true, noremap = true })
-map("n", "<A-0>", "<Cmd>BufferLinePickClose <CR>", { silent = true, noremap = true })
+-- Redimensión de buffers/ventanas
+map("n", "<M-h>", "<cmd>vertical resize +5<CR>", { desc = "Increase Window Width" })
+map("n", "<M-l>", "<cmd>vertical resize -5<CR>", { desc = "Decrease Window Width" })
+map("n", "<M-k>", "<cmd>resize -5<CR>", { desc = "Decrease Window Height" })
+map("n", "<M-j>", "<cmd>resize +5<CR>", { desc = "Increase Window Height" })
 
--- Salir a modo normal con ESC en terminal
-map("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
+-- Navegación de BufferLine por número
+for i = 1, 9 do
+  map(
+    "n",
+    string.format("<A-%d>", i),
+    string.format("<cmd>BufferLineGoToBuffer %d<CR>", i),
+    { desc = string.format("Go to Buffer %d", i) }
+  )
+end
+map("n", "<A-0>", "<cmd>BufferLinePickClose<CR>", { desc = "BufferLine Pick Close" })
 
--- Moverse entre ventanas desde modo terminal (Ej: Ctrl + h/j/k/l)
-map("t", "<C-h>", "<C-\\><C-n><C-w>h", { noremap = true })
-map("t", "<C-j>", "<C-\\><C-n><C-w>j", { noremap = true })
-map("t", "<C-k>", "<C-\\><C-n><C-w>k", { noremap = true })
-map("t", "<C-l>", "<C-\\><C-n><C-w>l", { noremap = true })
+-- Modo terminal
+map("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
+map("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Terminal Window Left" })
+map("t", "<C-j>", "<C-\\><C-n><C-w>j", { desc = "Terminal Window Down" })
+map("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Terminal Window Up" })
+map("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Terminal Window Right" })
 
--- visual select move
-map("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
-map("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
+-- Mover bloques en modo visual
+map("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move Selection Down" })
+map("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move Selection Up" })
 
-wk.add({
-  { "<leader>pc", desc = "pick colorscheme" },
-  { "<leader>pf", desc = "pick function" },
-  { "<leader>ps", desc = "pick session" },
-})
+-- Registro de descripciones para which-key de forma segura
+local ok_wk, wk = pcall(require, "which-key")
+if ok_wk then
+  wk.add({
+    { "<leader>p", group = "pick" },
+    { "<leader>pc", desc = "Pick colorscheme" },
+    { "<leader>pf", desc = "Pick function / symbol" },
+    { "<leader>ps", desc = "Pick session" },
+  })
+end
 
 -- Custom function to compile and debug C/C++
 local function compile_and_debug()

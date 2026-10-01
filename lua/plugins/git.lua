@@ -1,24 +1,32 @@
 return {
-  "tpope/vim-fugitive",
-  dependencies = {
-    "tpope/vim-rhubarb",
-    "shumphrey/fugitive-gitlab.vim",
-    "lewis6991/gitsigns.nvim",
+  {
+    "tpope/vim-fugitive",
+    dependencies = {
+      "tpope/vim-rhubarb",
+      "shumphrey/fugitive-gitlab.vim",
+    },
+    cmd = { "Git", "GBrowse", "Gdiffsplit", "Gread", "Gwrite", "Ggrep", "GMove", "GDelete" },
+    keys = {
+      { "<leader>gc", "<cmd>Git commit<CR>", desc = "Git Commit" },
+      { "<leader>gp", "<cmd>Git push<CR>", desc = "Git Push" },
+      { "<leader>gl", "<cmd>Git log<CR>", desc = "Git Log" },
+      { "<leader>gb", "<cmd>GBrowse<CR>", desc = "Git Browse" },
+    },
+    init = function()
+      vim.g.netrw_banner = 0 -- disable netrw banner for GitBrowse to work
+      vim.g.fugitive_gitlab_domains = { os.getenv("JLR_GITLAB_ADDRESS") }
+    end,
   },
-  config = function()
-    require("gitsigns").setup()
-    vim.keymap.set("n", "<leader>gc", ":Git commit<CR>", { silent = true })
-    vim.keymap.set("n", "<leader>gp", ":Git push<CR>", { silent = true })
-    -- vim.keymap.set('n', '<leader>gb', ':Git blame<CR>', {silent = true})
-    vim.keymap.set("n", "<leader>gl", ":Git log<CR>", { silent = true })
-
-    vim.keymap.set("n", "]g", ":Gitsigns next_hunk<CR>", { noremap = true, silent = true })
-    vim.keymap.set("n", "[g", ":Gitsigns prev_hunk<CR>", { noremap = true, silent = true })
-    vim.keymap.set("n", "guh", ":Gitsigns reset_hunk<CR>", { noremap = true, silent = true })
-    vim.keymap.set("n", "gp", ":Gitsigns preview_hunk<CR>", { noremap = true, silent = true })
-
-    vim.g.netrw_banner = 0 -- disable netrw banner for GitBrowse to work
-    vim.g.fugitive_gitlab_domains = { os.getenv("JLR_GITLAB_ADDRESS") }
-    vim.keymap.set("n", "<leader>gb", ":GBrowse<CR>", { silent = true })
-  end,
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = function(_, opts)
+      return opts
+    end,
+    keys = {
+      { "]g", "<cmd>Gitsigns next_hunk<CR>", desc = "Next Hunk" },
+      { "[g", "<cmd>Gitsigns prev_hunk<CR>", desc = "Prev Hunk" },
+      { "guh", "<cmd>Gitsigns reset_hunk<CR>", desc = "Reset Hunk" },
+      { "gp", "<cmd>Gitsigns preview_hunk<CR>", desc = "Preview Hunk" },
+    },
+  },
 }
